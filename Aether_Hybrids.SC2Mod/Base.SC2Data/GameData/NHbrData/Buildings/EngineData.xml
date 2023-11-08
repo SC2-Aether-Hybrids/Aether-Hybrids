@@ -1,0 +1,705 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CAbilResearch id="NHbrEngineResearch">
+        <EditorCategories value="Race:NHbr,AbilityorEffectType:Units"/>
+        <InfoArray index="Research1" Time="200" Upgrade="NHbrEngineResearch@ProtectionArmor">
+            <Resource index="Minerals" value="200"/>
+            <Resource index="Vespene" value="200"/>
+            <Button DefaultButtonFace="NHbrEngineResearch@ResearchProtectionArmor" Requirements="NHbrEngineResearch@ProtectionArmorShow"/>
+        </InfoArray>
+        <InfoArray index="Research2" Time="115" Upgrade="NHbrSpiritCloaking@Cloaking">
+            <Resource index="Minerals" value="150"/>
+            <Resource index="Vespene" value="100"/>
+            <Button DefaultButtonFace="NHbrSpiritCloaking@Cloaking" Requirements="NHbrSpiritCloaking@Cloaking"/>
+        </InfoArray>
+        <InfoArray index="Research3" Time="330" Upgrade="NHbrEngineResearch@ProtectionArmor2">
+            <Resource index="Minerals" value="400"/>
+            <Resource index="Vespene" value="400"/>
+            <Button DefaultButtonFace="NHbrEngineResearch@ResearchProtectionArmor2" Requirements="LearnNHbrEngineResearch@ProtectionArmor2"/>
+        </InfoArray>
+    </CAbilResearch>
+    <CRequirement id="NHbrEngine@BuildRequirement">
+        <NodeArray index="Use" Link="AndCountUnitNHbrStasisCellCompleteOnlyLT497291920TechTreeCheatCountUnitNHbrEngineCompleteOnly1"/>
+    </CRequirement>
+    <CRequirement id="NHbrEngineUpgrades@GroundArmor32">
+        <EditorCategories value="Race:NHbr,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="AndEq3989683020CountUpgradeNHbrEngineUpgrades@GroundArmorsLevel3CompleteOnly1CountUnitNHbrProcessingCoreCompleteOnly"/>
+        <NodeArray index="Show" Link="EqCountUpgradeNHbrEngineUpgrades@GroundArmorsLevel4QueuedOrBetter0"/>
+    </CRequirement>
+    <CRequirement id="NHbrEngineUpgrades@GroundWeapon32">
+        <EditorCategories value="Race:NHbr,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="AndEq2174772687CountUpgradeNHbrEngineUpgrades@WeaponsLevel3CompleteOnly1CountUnitNHbrProcessingCoreCompleteOnlyTechTreeCheat"/>
+        <NodeArray index="Show" Link="EqCountUpgradeNHbrEngineUpgrades@WeaponsLevel4QueuedOrBetter0"/>
+    </CRequirement>
+    <CRequirement id="NHbrEngineResearch@ProtectionArmorShow">
+        <NodeArray index="Show" Link="EqCountUpgradeNHbrEngineResearch@ProtectionArmorQueuedOrBetter0"/>
+    </CRequirement>
+    <CRequirement id="NHbrEngineUpgrades@GroundArmor1">
+        <EditorCategories value="Race:NHbr,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="EqCountUpgradeNHbrEngineUpgrades@GroundArmorsLevel1QueuedOrBetter5390442910"/>
+    </CRequirement>
+    <CRequirement id="NHbrEngineUpgrades@GroundArmor2">
+        <EditorCategories value="Race:NHbr,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="AndEq539044291CountUpgradeNHbrEngineUpgrades@GroundArmorsLevel1CompleteOnly1"/>
+        <NodeArray index="Show" Link="EqCountUpgradeNHbrEngineUpgrades@GroundArmorsLevel2QueuedOrBetter0"/>
+    </CRequirement>
+    <CRequirement id="NHbrEngineUpgrades@GroundArmor3">
+        <EditorCategories value="Race:NHbr,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="AndEq269577956CountUpgradeNHbrEngineUpgrades@GroundArmorsLevel2CompleteOnly1CountUnitNHbrProcessingCoreCompleteOnly"/>
+        <NodeArray index="Show" Link="EqCountUpgradeNHbrEngineUpgrades@GroundArmorsLevel3QueuedOrBetter0"/>
+    </CRequirement>
+    <CRequirement id="NHbrEngineUpgrades@GroundWeapon1">
+        <EditorCategories value="Race:NHbr,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="EqCountUpgradeNHbrEngineUpgrades@GroundWeaponsLevel1QueuedOrBetter0"/>
+    </CRequirement>
+    <CRequirement id="NHbrEngineUpgrades@GroundWeapon2">
+        <EditorCategories value="Race:NHbr,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="AndEq1497987568CountUpgradeNHbrEngineUpgrades@GroundWeaponsLevel1CompleteOnly1"/>
+        <NodeArray index="Show" Link="EqCountUpgradeNHbrEngineUpgrades@WeaponsLevel2QueuedOrBetter0"/>
+    </CRequirement>
+    <CRequirement id="NHbrEngineUpgrades@GroundWeapon3">
+        <EditorCategories value="Race:NHbr,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="AndEq2174772687CountUpgradeNHbrEngineUpgrades@WeaponsLevel2CompleteOnly1CountUnitNHbrProcessingCoreCompleteOnlyTechTreeCheat"/>
+        <NodeArray index="Show" Link="EqCountUpgradeNHbrEngineUpgrades@WeaponsLevel3QueuedOrBetter0"/>
+    </CRequirement>
+    <CButton id="NHbrEngineUpgrades@GroundArmorLevel32">
+        <Tooltip value="Button/Tooltip/NHbrEngineUpgrades@UpgradeGroundArmor"/>
+        <Icon value="Assets\Icons\level4armor.dds"/>
+        <AlertTooltip value="Button/Tooltip/NHbrEngineUpgrades@UpgradeGroundArmor4"/>
+        <AlertIcon value="Assets\Icons\level4armor.dds"/>
+        <EditorCategories value="Race:NHbr"/>
+        <HotkeyAlias value="NHbrEngineUpgrades@GroundArmorLevel1"/>
+    </CButton>
+    <CButton id="NHbrEngineUpgrades@GroundWeaponsLevel32">
+        <Tooltip value="Button/Tooltip/NHbrEngineUpgrades@UpgradeGroundWeapons"/>
+        <Icon value="Assets\Icons\level4weapons.dds"/>
+        <AlertTooltip value="Button/Tooltip/NHbrEngineUpgrades@UpgradeGroundWeapons4"/>
+        <AlertIcon value="Assets\Icons\level4weapons.dds"/>
+        <Hotkey value="Button/Hotkey/NHbrEngineUpgrades@GroundWeaponsLevel1"/>
+        <EditorCategories value="Race:NHbr"/>
+        <HotkeyAlias value="NHbrEngineUpgrades@GroundWeaponsLevel1"/>
+    </CButton>
+    <CButton id="NHbrEngineResearch@ResearchProtectionArmor2">
+        <Icon value="Assets\Icons\level2protection.dds"/>
+        <AlertIcon value="Assets\Icons\level2protection.dds"/>
+        <EditorCategories value="Race:NHbr"/>
+    </CButton>
+    <CButton id="NHbrEngineResearch@ResearchProtectionArmor">
+        <Icon value="Assets\Textures\btn-ability-zeratul-warpprism-shieldboosters.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-zeratul-warpprism-shieldboosters.dds"/>
+        <EditorCategories value="Race:NHbr"/>
+    </CButton>
+    <CButton id="NHbrEngineUpgrades@GroundArmorLevel1">
+        <Icon value="Assets\Textures\btn-upgrade-dehaka-groundcarapace-level1.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-dehaka-groundcarapace-level1.dds"/>
+        <EditorCategories value="Race:NHbr"/>
+        <Tooltip value="Button/Tooltip/NHbrEngineUpgrades@UpgradeGroundArmor"/>
+        <AlertTooltip value="Button/Tooltip/NHbrEngineUpgrades@UpgradeGroundArmor"/>
+    </CButton>
+    <CButton id="NHbrEngineUpgrades@GroundArmorLevel2">
+        <Icon value="Assets\Textures\btn-upgrade-dehaka-groundcarapace-level2.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-dehaka-groundcarapace-level2.dds"/>
+        <EditorCategories value="Race:NHbr"/>
+        <HotkeyAlias value="NHbrEngineUpgrades@GroundArmorLevel1"/>
+        <Tooltip value="Button/Tooltip/NHbrEngineUpgrades@UpgradeGroundArmor"/>
+        <AlertTooltip value="Button/Tooltip/NHbrEngineUpgrades@UpgradeGroundArmor"/>
+    </CButton>
+    <CButton id="NHbrEngineUpgrades@GroundArmorLevel3">
+        <Icon value="Assets\Textures\btn-upgrade-dehaka-groundcarapace-level3.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-dehaka-groundcarapace-level3.dds"/>
+        <EditorCategories value="Race:NHbr"/>
+        <HotkeyAlias value="NHbrEngineUpgrades@GroundArmorLevel1"/>
+        <Tooltip value="Button/Tooltip/NHbrEngineUpgrades@UpgradeGroundArmor"/>
+        <AlertTooltip value="Button/Tooltip/NHbrEngineUpgrades@UpgradeGroundArmor"/>
+    </CButton>
+    <CButton id="NHbrEngineUpgrades@GroundWeaponsLevel1">
+        <Icon value="Assets\Textures\btn-upgrade-dehaka-bothattacks-level1.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-dehaka-bothattacks-level1.dds"/>
+        <EditorCategories value="Race:NHbr"/>
+        <Tooltip value="Button/Tooltip/NHbrEngineUpgrades@UpgradeGroundWeapons"/>
+        <AlertTooltip value="Button/Tooltip/NHbrEngineUpgrades@UpgradeGroundWeapons"/>
+    </CButton>
+    <CButton id="NHbrEngineUpgrades@GroundWeaponsLevel2">
+        <Icon value="Assets\Textures\btn-upgrade-dehaka-bothattacks-level2.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-dehaka-bothattacks-level2.dds"/>
+        <Hotkey value="Button/Hotkey/NHbrEngineUpgrades@GroundWeaponsLevel1"/>
+        <EditorCategories value="Race:NHbr"/>
+        <HotkeyAlias value="NHbrEngineUpgrades@GroundWeaponsLevel1"/>
+        <Tooltip value="Button/Tooltip/NHbrEngineUpgrades@UpgradeGroundWeapons"/>
+        <AlertTooltip value="Button/Tooltip/NHbrEngineUpgrades@UpgradeGroundWeapons"/>
+    </CButton>
+    <CButton id="NHbrEngineUpgrades@GroundWeaponsLevel3">
+        <Icon value="Assets\Textures\btn-upgrade-dehaka-bothattacks-level3.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-dehaka-bothattacks-level3.dds"/>
+        <Hotkey value="Button/Hotkey/NHbrEngineUpgrades@GroundWeaponsLevel1"/>
+        <EditorCategories value="Race:NHbr"/>
+        <HotkeyAlias value="NHbrEngineUpgrades@GroundWeaponsLevel1"/>
+        <Tooltip value="Button/Tooltip/NHbrEngineUpgrades@UpgradeGroundWeapons"/>
+        <AlertTooltip value="Button/Tooltip/NHbrEngineUpgrades@UpgradeGroundWeapons"/>
+    </CButton>
+    <CRequirementAnd id="AndCountUnitNHbrStasisCellCompleteOnlyLT497291920TechTreeCheatCountUnitNHbrEngineCompleteOnly1">
+        <OperandArray value="CountUnitNHbrStasisCellCompleteOnly"/>
+        <OperandArray value="LT497291920TechTreeCheatCountUnitNHbrEngineCompleteOnly1"/>
+    </CRequirementAnd>
+    <CRequirementLT id="LT497291920TechTreeCheatCountUnitNHbrEngineCompleteOnly1">
+        <Flags index="TechTreeCheat" value="1"/>
+        <OperandArray index="0" value="CountUnitNHbrEngineCompleteOnly"/>
+        <OperandArray index="1" value="1"/>
+    </CRequirementLT>
+    <CRequirementAnd id="AndEq2174772687CountUpgradeNHbrEngineUpgrades@WeaponsLevel2CompleteOnly1CountUnitNHbrProcessingCoreCompleteOnlyTechTreeCheat">
+        <OperandArray value="Eq2174772687CountUpgradeNHbrEngineUpgrades@WeaponsLevel2CompleteOnly1"/>
+        <OperandArray value="CountUnitNHbrProcessingCoreCompleteOnlyTechTreeCheat"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndEq2174772687CountUpgradeNHbrEngineUpgrades@WeaponsLevel3CompleteOnly1CountUnitNHbrProcessingCoreCompleteOnlyTechTreeCheat">
+        <OperandArray value="Eq2174772687CountUpgradeNHbrEngineUpgrades@WeaponsLevel3CompleteOnly1"/>
+        <OperandArray value="CountUnitNHbrProcessingCoreCompleteOnlyTechTreeCheat"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndEq269577956CountUpgradeNHbrEngineUpgrades@GroundArmorsLevel2CompleteOnly1CountUnitNHbrProcessingCoreCompleteOnly">
+        <OperandArray value="Eq269577956CountUpgradeNHbrEngineUpgrades@GroundArmorsLevel2CompleteOnly1"/>
+        <OperandArray value="CountUnitNHbrProcessingCoreCompleteOnly"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndEq3989683020CountUpgradeNHbrEngineUpgrades@GroundArmorsLevel3CompleteOnly1CountUnitNHbrProcessingCoreCompleteOnly">
+        <OperandArray value="Eq3989683020CountUpgradeNHbrEngineUpgrades@GroundArmorsLevel3CompleteOnly1"/>
+        <OperandArray value="CountUnitNHbrProcessingCoreCompleteOnly"/>
+    </CRequirementAnd>
+    <CRequirementCountUnit id="CountUnitNHbrProcessingCoreCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="NHbrProcessingCore" State="CompleteOnly"/>
+    </CRequirementCountUnit>
+    <CRequirementCountUnit id="CountUnitNHbrProcessingCoreCompleteOnlyTechTreeCheat">
+        <Count Link="NHbrProcessingCore" State="CompleteOnly"/>
+    </CRequirementCountUnit>
+    <CRequirementEq id="Eq3989683020CountUpgradeNHbrEngineUpgrades@GroundArmorsLevel3CompleteOnly1">
+        <OperandArray index="0" value="CountUpgradeNHbrEngineUpgrades@GroundArmorsLevel3CompleteOnly"/>
+        <OperandArray index="1" value="1"/>
+    </CRequirementEq>
+    <CRequirementCountUpgrade id="CountUpgradeNHbrEngineUpgrades@GroundArmorsLevel3CompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="NHbrEngineUpgrades@GroundArmorsLevel3" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeNHbrEngineUpgrades@GroundArmorsLevel4QueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="NHbrEngineUpgrades@GroundArmorsLevel4" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeNHbrEngineUpgrades@WeaponsLevel3CompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="NHbrEngineUpgrades@WeaponsLevel3" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeNHbrEngineUpgrades@WeaponsLevel4QueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="NHbrEngineUpgrades@WeaponsLevel4" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementEq id="Eq2174772687CountUpgradeNHbrEngineUpgrades@WeaponsLevel3CompleteOnly1">
+        <OperandArray index="0" value="CountUpgradeNHbrEngineUpgrades@WeaponsLevel3CompleteOnly"/>
+        <OperandArray index="1" value="1"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeNHbrEngineUpgrades@GroundArmorsLevel4QueuedOrBetter0">
+        <OperandArray index="0" value="CountUpgradeNHbrEngineUpgrades@GroundArmorsLevel4QueuedOrBetter"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeNHbrEngineUpgrades@WeaponsLevel4QueuedOrBetter0">
+        <OperandArray index="0" value="CountUpgradeNHbrEngineUpgrades@WeaponsLevel4QueuedOrBetter"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementAnd id="AndEq1497987568CountUpgradeNHbrEngineUpgrades@GroundWeaponsLevel1CompleteOnly1">
+        <OperandArray value="Eq1497987568CountUpgradeNHbrEngineUpgrades@GroundWeaponsLevel1CompleteOnly1"/>
+    </CRequirementAnd>
+    <CRequirementEq id="Eq1497987568CountUpgradeNHbrEngineUpgrades@GroundWeaponsLevel1CompleteOnly1">
+        <OperandArray index="0" value="CountUpgradeNHbrEngineUpgrades@GroundWeaponsLevel1CompleteOnly"/>
+        <OperandArray index="1" value="1"/>
+    </CRequirementEq>
+    <CRequirementCountUpgrade id="CountUpgradeNHbrDreadnokSlowingEjectionQueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="NHbrDreadnokSlowingEjection" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementLT id="LTCountUpgradeNHbrDreadnokSlowingEjectionQueuedOrBetter1">
+        <OperandArray index="0" value="CountUpgradeNHbrDreadnokSlowingEjectionQueuedOrBetter"/>
+        <OperandArray index="1" value="1"/>
+    </CRequirementLT>
+    <CRequirementEq id="EqCountUpgradeNHbrEngineUpgrades@GroundArmorsLevel3QueuedOrBetter0">
+        <OperandArray index="0" value="CountUpgradeNHbrEngineUpgrades@GroundArmorsLevel3QueuedOrBetter"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeNHbrEngineUpgrades@GroundWeaponsLevel1QueuedOrBetter0">
+        <OperandArray index="0" value="CountUpgradeNHbrEngineUpgrades@GroundWeaponsLevel1QueuedOrBetter"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeNHbrEngineUpgrades@WeaponsLevel2QueuedOrBetter0">
+        <OperandArray index="0" value="CountUpgradeNHbrEngineUpgrades@WeaponsLevel2QueuedOrBetter"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeNHbrEngineUpgrades@WeaponsLevel3QueuedOrBetter0">
+        <OperandArray index="0" value="CountUpgradeNHbrEngineUpgrades@WeaponsLevel3QueuedOrBetter"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementAnd id="AndEq539044291CountUpgradeNHbrEngineUpgrades@GroundArmorsLevel1CompleteOnly1">
+        <OperandArray value="Eq539044291CountUpgradeNHbrEngineUpgrades@GroundArmorsLevel1CompleteOnly1"/>
+    </CRequirementAnd>
+    <CRequirementCountUpgrade id="CountUpgradeNHbrEngineUpgrades@GroundArmorsLevel1CompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="NHbrEngineUpgrades@GroundArmorsLevel1" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeNHbrEngineUpgrades@GroundArmorsLevel1QueuedOrBetter539044291">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="NHbrEngineUpgrades@GroundArmorsLevel1" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeNHbrEngineUpgrades@GroundArmorsLevel2CompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="NHbrEngineUpgrades@GroundArmorsLevel2" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeNHbrEngineUpgrades@GroundArmorsLevel2QueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="NHbrEngineUpgrades@GroundArmorsLevel2" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementEq id="Eq269577956CountUpgradeNHbrEngineUpgrades@GroundArmorsLevel2CompleteOnly1">
+        <OperandArray index="0" value="CountUpgradeNHbrEngineUpgrades@GroundArmorsLevel2CompleteOnly"/>
+        <OperandArray index="1" value="1"/>
+    </CRequirementEq>
+    <CRequirementEq id="Eq539044291CountUpgradeNHbrEngineUpgrades@GroundArmorsLevel1CompleteOnly1">
+        <OperandArray index="0" value="CountUpgradeNHbrEngineUpgrades@GroundArmorsLevel1CompleteOnly"/>
+        <OperandArray index="1" value="1"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeNHbrEngineUpgrades@GroundArmorsLevel1QueuedOrBetter5390442910">
+        <OperandArray index="0" value="CountUpgradeNHbrEngineUpgrades@GroundArmorsLevel1QueuedOrBetter539044291"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeNHbrEngineUpgrades@GroundArmorsLevel2QueuedOrBetter0">
+        <OperandArray index="0" value="CountUpgradeNHbrEngineUpgrades@GroundArmorsLevel2QueuedOrBetter"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementCountUpgrade id="CountUpgradeNHbrEngineUpgrades@WeaponsLevel2CompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="NHbrEngineUpgrades@WeaponsLevel2" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementEq id="Eq2174772687CountUpgradeNHbrEngineUpgrades@WeaponsLevel2CompleteOnly1">
+        <OperandArray index="0" value="CountUpgradeNHbrEngineUpgrades@WeaponsLevel2CompleteOnly"/>
+        <OperandArray index="1" value="1"/>
+    </CRequirementEq>
+    <CRequirementCountUpgrade id="CountUpgradeNHbrEngineUpgrades@GroundArmorsLevel3QueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="NHbrEngineUpgrades@GroundArmorsLevel3" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeNHbrEngineUpgrades@GroundWeaponsLevel1CompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="NHbrEngineUpgrades@GroundWeaponsLevel1" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeNHbrEngineUpgrades@GroundWeaponsLevel1QueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="NHbrEngineUpgrades@GroundWeaponsLevel1" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeNHbrEngineUpgrades@WeaponsLevel2QueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="NHbrEngineUpgrades@WeaponsLevel2" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeNHbrEngineUpgrades@WeaponsLevel3QueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="NHbrEngineUpgrades@WeaponsLevel3" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeNHbrEngineResearch@ProtectionArmorQueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="NHbrEngineResearch@ProtectionArmor" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementEq id="EqCountUpgradeNHbrEngineResearch@ProtectionArmorQueuedOrBetter0">
+        <OperandArray index="0" value="CountUpgradeNHbrEngineResearch@ProtectionArmorQueuedOrBetter"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CActorUnit id="NHbrEngine" parent="NHbrBuildingEx" unitName="NHbrEngine">
+        <On Terms="Abil.NHbrEngineResearch.Start" Send="AnimBracketStart Work Work,Start Work Work,End"/>
+        <On Terms="Abil.NHbrEngineResearch.Stop" Send="AnimBracketClear Work"/>
+        <Model value="NHbrEngine@Model"/>
+        <CreepHeightClass value="Small"/>
+        <BuildModel value="NHbrEngine@Model"/>
+        <DeathArray index="Normal" ModelLink="NHbrEngine@Death" SoundLink="NHbrCommon@Death" VoiceLink=""/>
+        <DeathArray index="UnderConstruction" AnimProps="Birth" ModelLink="NHbrEngine@DeathUnderConstruction" SoundLink="NHbrCommon@Death"/>
+        <PlacementModel value="NHbrEngine@Model"/>
+        <PortraitModel value="NHbrCommon@Portrait"/>
+        <BarOffset value="140"/>
+        <BarWidth value="160"/>
+        <GroupIcon>
+            <Image value="assets\Wireframes\Hybrid\Wireframe-Hybrid-roboticssupportbay.dds"/>
+        </GroupIcon>
+        <HeroIcon value="assets\Buttons\Hybrid\btn-hybrid-structure-Shield-Generator.DDS"/>
+        <NameOffset value="130"/>
+        <SoundArray index="Birth" value="NHbrVoidPortal@Birth"/>
+        <SoundArray index="Ready" value="NHbrEngine@Ready"/>
+        <SoundArray index="What" value="NHbrEngine@What"/>
+        <UnitFlags index="ShowBlobShadow" value="0"/>
+        <UnitFlags index="SuppressDefaultStatusBar" value="1"/>
+        <UnitIcon value="assets\Buttons\Hybrid\btn-hybrid-building-roboticssupportbay.dds"/>
+        <Wireframe>
+            <Image value="assets\Wireframes\Hybrid\Wireframe-Hybrid-roboticssupportbay.dds"/>
+        </Wireframe>
+        <WireframeShield>
+            <Image value="assets\Wireframes\Hybrid\Wireframe-Hybrid-roboticssupportbay-shield01.dds"/>
+            <Image value="assets\Wireframes\Hybrid\Wireframe-Hybrid-roboticssupportbay-shield02.dds"/>
+            <Image value="assets\Wireframes\Hybrid\Wireframe-Hybrid-roboticssupportbay-shield03.dds"/>
+        </WireframeShield>
+        <LifeArmorIcon value="Assets\Textures\btn-amonshardsarmor.dds"/>
+        <CustomUnitStatusFrame value="UnitStatus/UnitStatusFrame_HybridEngine"/>
+    </CActorUnit>
+    <CModel id="NHbrEngine@Build" parent="NHbrBuildingBuildLargeBase"/>
+    <CModel id="NHbrEngine@Death">
+        <Model value="Assets\Effects\Protoss\Xelnaga_Construct_EntropicBlast_Explosion\Xelnaga_Construct_EntropicBlast_Explosion.m3"/>
+        <AnimSpeed value="0.400000"/>
+        <EditorCategories value="Race:NHbr"/>
+        <ScaleMax value="0.350000,0.350000,0.350000"/>
+        <ScaleMin value="0.350000,0.350000,0.350000"/>
+    </CModel>
+    <CModel id="NHbrEngine@DeathUnderConstruction">
+        <EditorCategories value="Race:NHbr"/>
+        <ScaleMax value="1.100000,1.100000,1.100000"/>
+        <ScaleMin value="1.100000,1.100000,1.100000"/>
+        <Model value="Assets\Effects\Protoss\Zeratul_ShadowBlade_Impact\Zeratul_ShadowBlade_Impact.m3"/>
+        <AnimSpeed value="0.225000"/>
+        <Lighting value="NHbrCommon@UnderConstructionDeath"/>
+    </CModel>
+    <CModel id="NHbrEngine@Model" parent="Building" Race="Protoss">
+        <Model value="assets\Buildings\Hybrid\XelNaga_RoboticsSupportBay\XelNaga_RoboticsSupportBay.m3"/>
+        <EditorCategories value="Race:NHbr"/>
+        <RadiusLoose value="1.500000"/>
+        <SelectionLayer value="2"/>
+        <SelectionRadius value="1.200000"/>
+        <ShadowRadius value="1.500000"/>
+        <ScaleMax value="1.250000,1.250000,1.250000"/>
+        <ScaleMin value="1.250000,1.250000,1.250000"/>
+        <AttachProps Id="Ref_Center" SquibType="Shield" RadiusShield="1.000000">
+            <Keys index="Shield" value="0"/>
+        </AttachProps>
+    </CModel>
+    <CSound id="NHbrEngine@Ready" parent="Spell">
+        <EditorCategories value="Race:NHbr"/>
+        <AssetArray File="Assets\Sounds\Protoss\RoboticsBay\RoboticsBay_What.ogg" FacialGroup=""/>
+        <SustainFade index="1" Time="1000"/>
+        <Volume value="2.000000,2.000000"/>
+        <Pitch value="-4.000000,-4.000000"/>
+    </CSound>
+    <CSound id="NHbrEngine@What" parent="Spell">
+        <EditorCategories value="Race:NHbr"/>
+        <AssetArray File="Assets\Sounds\Protoss\RoboticsBay\RoboticsBay_What.ogg" FacialGroup=""/>
+        <SustainFade index="1" Time="1000"/>
+        <Volume value="2.000000,2.000000"/>
+        <Pitch value="-4.000000,-4.000000"/>
+    </CSound>
+    <CDataCollectionAbil id="NHbrEngineUpgrades">
+        <EditorCategories value="DataGroup:Ability,Race:NHbr"/>
+        <DataRecord Entry="Button,NHbrEngineUpgrades@GroundArmorLevel1"/>
+        <DataRecord Entry="Button,NHbrEngineUpgrades@GroundArmorLevel2"/>
+        <DataRecord Entry="Button,NHbrEngineUpgrades@GroundArmorLevel3"/>
+        <DataRecord Entry="Button,NHbrEngineUpgrades@GroundWeaponsLevel1"/>
+        <DataRecord Entry="Button,NHbrEngineUpgrades@GroundWeaponsLevel2"/>
+        <DataRecord Entry="Button,NHbrEngineUpgrades@GroundWeaponsLevel3"/>
+        <DataRecord Entry="Requirement,NHbrEngineUpgrades@GroundWeapon1"/>
+        <DataRecord Entry="Requirement,NHbrEngineUpgrades@GroundWeapon2"/>
+        <DataRecord Entry="Requirement,NHbrEngineUpgrades@GroundWeapon3"/>
+        <DataRecord Entry="Requirement,NHbrEngineUpgrades@GroundArmor1"/>
+        <DataRecord Entry="Requirement,NHbrEngineUpgrades@GroundArmor2"/>
+        <DataRecord Entry="Requirement,NHbrEngineUpgrades@GroundArmor3"/>
+        <DataRecord Entry="Upgrade,NHbrEngineUpgrades@GroundWeaponsLevel1"/>
+        <DataRecord Entry="Upgrade,NHbrEngineUpgrades@WeaponsLevel2"/>
+        <DataRecord Entry="Upgrade,NHbrEngineUpgrades@WeaponsLevel3"/>
+        <DataRecord Entry="Upgrade,NHbrEngineUpgrades@GroundArmorsLevel1"/>
+        <DataRecord Entry="Upgrade,NHbrEngineUpgrades@GroundArmorsLevel2"/>
+        <DataRecord Entry="Upgrade,NHbrEngineUpgrades@GroundArmorsLevel3"/>
+    </CDataCollectionAbil>
+    <CDataCollectionAbil id="NHbrEngineResearch">
+        <EditorCategories value="DataGroup:Research,Race:NHbr"/>
+        <DataRecord Entry="Abil,NHbrEngineResearch"/>
+        <DataRecord Entry="Button,NHbrEngineResearch@ResearchProtectionArmor"/>
+        <DataRecord Entry="Button,NHbrEngineResearch@ResearchWeaponDamage"/>
+        <DataRecord Entry="Button,NHbrEngineResearch@ResearchLifeArmor"/>
+        <DataRecord Entry="Requirement,NHbrEngineResearch@ProtectionArmorShow"/>
+        <DataRecord Entry="Requirement,NHbrEngineResearch@WeaponDamageShow"/>
+        <DataRecord Entry="Requirement,NHbrEngineResearch@HealthArmorShow"/>
+        <DataRecord Entry="Upgrade,NHbrEngineResearch@ProtectionArmor"/>
+        <DataRecord Entry="Upgrade,NHbrEngineResearch@WeaponDamage"/>
+        <DataRecord Entry="Upgrade,NHbrEngineResearch@HealthArmor"/>
+    </CDataCollectionAbil>
+    <CDataCollectionUnit id="NHbrEngine">
+        <EditorCategories value="Race:NHbr,DataGroup:Structure"/>
+        <EditorIconSource value="Actor"/>
+        <DataRecord Entry="Actor,NHbrEngine"/>
+        <DataRecord Entry="Actor,NHbrEngine@Build"/>
+        <DataRecord Entry="Model,NHbrEngine@Model"/>
+        <DataRecord Entry="Model,NHbrEngine@Death"/>
+        <DataRecord Entry="Model,NHbrEngine@DeathUnderConstruction"/>
+        <DataRecord Entry="Model,NHbrEngine@Build"/>
+        <DataRecord Entry="Sound,NHbrEngine@Ready"/>
+        <DataRecord Entry="Sound,NHbrEngine@What"/>
+        <DataRecord Entry="Unit,NHbrEngine"/>
+    </CDataCollectionUnit>
+    <CUnit id="NHbrEngine" parent="DefaultSettingsNHbrBuilding">
+        <BehaviorArray Link="DualSummon"/>
+        <Facing value="344.9926"/>
+        <Attributes index="Armored" value="1"/>
+        <Attributes index="Mechanical" value="1"/>
+        <LifeStart value="1400"/>
+        <LifeMax value="1400"/>
+        <EnergyStart value="100"/>
+        <EnergyMax value="200"/>
+        <ShieldsStart value="1000"/>
+        <ShieldsMax value="1000"/>
+        <StationaryTurningRate value="719.4726"/>
+        <TurningRate value="719.4726"/>
+        <CostResource index="Minerals" value="650"/>
+        <CostResource index="Vespene" value="550"/>
+        <AbilArray Link="NHbrEngineResearch"/>
+        <AbilArray Link="que5"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="0" Face="Cancel" Type="AbilCmd" AbilCmd="que5,CancelLast" Row="2" Column="4"/>
+            <LayoutButtons Face="CancelBuilding" Type="AbilCmd" AbilCmd="BuildInProgress,Cancel" Row="2" Column="4"/>
+            <LayoutButtons Face="NHbrEngineResearch@ResearchProtectionArmor" Type="AbilCmd" AbilCmd="NHbrEngineResearch,Research1" Row="0" Column="0"/>
+            <LayoutButtons Face="NHbrEngineResearch@ResearchProtectionArmor2" Type="AbilCmd" AbilCmd="NHbrEngineResearch,Research3" Row="0" Column="0"/>
+            <LayoutButtons Face="NHbrSpiritCloaking@Cloaking" Type="AbilCmd" AbilCmd="NHbrEngineResearch,Research2" Row="0" Column="1"/>
+        </CardLayouts>
+        <Radius value="0.75"/>
+        <SeparationRadius value="1"/>
+        <Footprint value="Footprint3x3ContourNoCreep"/>
+        <PlacementFootprint value="Footprint3x3NoCreep"/>
+        <MinimapRadius value="1.75"/>
+        <GlossaryPriority value="21"/>
+    </CUnit>
+    <CUpgrade id="NHbrEngineUpgrades@GroundArmorsLevel4" parent="NHbrGroundArmors">
+        <Name value="Upgrade/Name/NHbrEngineUpgrades@GroundArmorsLevel4"/>
+        <Icon value="Assets\Textures\btn-upgrade-dehaka-groundcarapace-level3.dds"/>
+        <ScoreAmount value="500"/>
+        <EffectArray Operation="Set" Reference="Actor,NHbrMinion,LifeArmorIcon" Value="Assets\Icons\level4armor.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,NHbrChimera,LifeArmorIcon" Value="Assets\Icons\level4armor.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,NHbrWarrior,LifeArmorIcon" Value="Assets\Icons\level4protossarmor.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,NHbrFlayer,LifeArmorIcon" Value="Assets\Icons\level4armor.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,NHbrWarbringer,LifeArmorIcon" Value="Assets\Icons\level4protossarmor.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,NHbrSentinel,LifeArmorIcon" Value="Assets\Icons\level4armor.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,NHbrDreadnok,LifeArmorIcon" Value="Assets\Icons\level4armor.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,NHbrSilent,LifeArmorIcon" Value="Assets\Icons\level4protossarmor.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,NHbrReaver,LifeArmorIcon" Value="Assets\Icons\level4armor.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,NHbrReaverAdvanced,LifeArmorIcon" Value="Assets\Icons\level4armor.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,NHbrDominator,LifeArmorIcon" Value="Assets\Icons\level4protossarmor.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,NHbrDominatorAdvanced,LifeArmorIcon" Value="Assets\Icons\level4protossarmor.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,NHbrMinion,LifeArmorIcon" Value="Assets\Icons\level4weapoiconprotoss.dds"/>
+        <LeaderLevel value="4"/>
+    </CUpgrade>
+    <CUpgrade id="NHbrEngineUpgrades@WeaponsLevel4" parent="NHbrGroundWeapons">
+        <Name value="Upgrade/Name/NHbrEngineUpgrades@WeaponsLevel4"/>
+        <Icon value="Assets\Textures\btn-upgrade-dehaka-bothattacks-level3.dds"/>
+        <ScoreAmount value="500"/>
+        <EffectArray Operation="Set" Reference="Weapon,NHbrChimeraWeapon,Icon" Value="Assets\Icons\level4weapoiconprotoss.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,NHbrDominatorWeapon,Icon" Value="Assets\Icons\level4weapoiconprotoss.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,NHbrMinionWeapon,Icon" Value="Assets\Icons\level4weapoiconprotoss.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,NHbrDreadnokWeaponMelee,Icon" Value="Assets\Icons\level4weaponiconmelee.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,NHbrFlayerWeaponMelee,Icon" Value="Assets\Icons\level4weaponiconmelee.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,NHbrFlayerWeaponRanged,Icon" Value="Assets\Icons\level4weaponiconranged.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,NHbrReaverWeapon,Icon" Value="Assets\Icons\level4weaponiconmelee.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,NHbrSentinelWeapon,Icon" Value="Assets\Icons\level4weaponiconmelee.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,HybridVoidBlast,Icon" Value="Assets\Icons\level4weapoiconprotoss.dds"/>
+        <EffectArray Reference="Weapon,HybridVoidBlast,Level" Value="1"/>
+        <EffectArray Reference="Effect,HybridVoidBlastDamage,Amount" Value="2"/>
+        <LeaderLevel value="4"/>
+    </CUpgrade>
+    <CUpgrade id="NHbrEngineResearch@ProtectionArmor2">
+        <Icon value="Assets\Icons\level2protection.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,NHbrMinion,ShieldArmorIcon" Value="Assets\Icons\level2protection.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,NHbrChimera,ShieldArmorIcon" Value="Assets\Icons\level2protection.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,NHbrWarrior,ShieldArmorIcon" Value="Assets\Icons\level2protection.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,NHbrFlayer,ShieldArmorIcon" Value="Assets\Icons\level2protection.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,NHbrWarbringer,ShieldArmorIcon" Value="Assets\Icons\level2protection.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,NHbrSentinel,ShieldArmorIcon" Value="Assets\Icons\level2protection.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,NHbrDreadnok,ShieldArmorIcon" Value="Assets\Icons\level2protection.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,NHbrSilent,ShieldArmorIcon" Value="Assets\Icons\level2protection.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,NHbrReaver,ShieldArmorIcon" Value="Assets\Icons\level2protection.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,NHbrReaverAdvanced,ShieldArmorIcon" Value="Assets\Icons\level2protection.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,NHbrDominator,ShieldArmorIcon" Value="Assets\Icons\level2protection.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,NHbrDominatorAdvanced,ShieldArmorIcon" Value="Assets\Icons\level2protection.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,NHbrMinion,ShieldArmorIcon" Value="Assets\Icons\level2protection.dds"/>
+        <EffectArray Reference="Behavior,NHbrNetwork@PowerUser,Modification.ShieldArmorBonus" Value="2"/>
+        <EffectArray Reference="Unit,NHbrMinion,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,NHbrChimera,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,NHbrWarrior,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,NHbrFlayer,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,NHbrWarbringer,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,NHbrSentinel,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,NHbrDreadnok,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,NHbrSilent,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,NHbrReaver,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,NHbrReaverAdvanced,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,NHbrDominator,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,NHbrDominatorAdvanced,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,NHbrPollinator,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,NHbrNavigator,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,NHbrScreamer,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,NHbrHorror,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,NHbrNemesis,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,NHbrSpirit,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,NHbrConstruct@AntiAir,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,NHbrConstruct@AntiAirPlacement,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,NHbrConstruct@AntiGround,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,NHbrConstruct@AntiGroundPlacement,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,NHbrCrystallicShrine,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,NHbrEngine,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,NHbrHarvester,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,NHbrHarvesterRich,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,NHbrIonicCrystal,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,NHbrIonicCrystal@Moveable,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,NHbrNemesisCatacomb,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,NHbrProcessingCore,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,NHbrRevenantKeystone,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,NHbrStasisCell,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,NHbrTemple,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,NHbrVespeneConcentrator,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,NHbrVoidPortal,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,NHbrVoidRift,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,NHbrVoidReanimator,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,NHbrVoidReanimator,ShieldArmor" Value="2"/>
+        <EditorCategories value="Race:NHbr"/>
+    </CUpgrade>
+    <CUpgrade id="NHbrEngineResearch@ProtectionArmor">
+        <Icon value="Assets\Textures\btn-ability-zeratul-warpprism-shieldboosters.dds"/>
+        <EffectArray Reference="Behavior,NHbrNetwork@PowerUser,Modification.ShieldArmorBonus" Value="2"/>
+        <EffectArray Reference="Unit,NHbrMinion,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,NHbrChimera,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,NHbrWarrior,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,NHbrFlayer,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,NHbrWarbringer,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,NHbrSentinel,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,NHbrDreadnok,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,NHbrSilent,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,NHbrReaver,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,NHbrReaverAdvanced,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,NHbrDominator,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,NHbrDominatorAdvanced,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,NHbrPollinator,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,NHbrNavigator,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,NHbrScreamer,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,NHbrHorror,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,NHbrNemesis,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,NHbrSpirit,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,NHbrConstruct@AntiAir,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,NHbrConstruct@AntiAirPlacement,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,NHbrConstruct@AntiGround,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,NHbrConstruct@AntiGroundPlacement,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,NHbrCrystallicShrine,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,NHbrEngine,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,NHbrHarvester,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,NHbrHarvesterRich,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,NHbrIonicCrystal,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,NHbrIonicCrystal@Moveable,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,NHbrNemesisCatacomb,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,NHbrProcessingCore,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,NHbrRevenantKeystone,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,NHbrStasisCell,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,NHbrTemple,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,NHbrVespeneConcentrator,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,NHbrVoidPortal,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,NHbrVoidRift,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,NHbrVoidReanimator,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,NHbrVoidReanimator,ShieldArmor" Value="2"/>
+        <EditorCategories value="Race:NHbr"/>
+    </CUpgrade>
+    <CUpgrade id="NHbrEngineUpgrades@GroundArmorsLevel1" parent="NHbrGroundArmors">
+        <Name value="Upgrade/Name/NHbrEngineUpgrades@GroundArmorsLevel1"/>
+        <Icon value="Assets\Textures\btn-upgrade-dehaka-groundcarapace-level1.dds"/>
+        <ScoreAmount value="200"/>
+        <EffectArray Operation="Set" Reference="Actor,NHbrMinion,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-dehaka-groundcarapace-level1.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,NHbrChimera,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-dehaka-groundcarapace-level1.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,NHbrWarrior,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-groundarmorlevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,NHbrFlayer,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-dehaka-groundcarapace-level1.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,NHbrWarbringer,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-groundarmorlevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,NHbrSentinel,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-dehaka-groundcarapace-level1.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,NHbrDreadnok,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-dehaka-groundcarapace-level1.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,NHbrSilent,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-groundarmorlevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,NHbrReaver,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-dehaka-groundcarapace-level1.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,NHbrReaverAdvanced,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-dehaka-groundcarapace-level1.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,NHbrDominator,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-groundarmorlevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,NHbrDominatorAdvanced,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-groundarmorlevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,NHbrMinion,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-groundarmorlevel1.dds"/>
+        <LeaderLevel value="1"/>
+    </CUpgrade>
+    <CUpgrade id="NHbrEngineUpgrades@GroundArmorsLevel2" parent="NHbrGroundArmors">
+        <Name value="Upgrade/Name/NHbrEngineUpgrades@GroundArmorsLevel2"/>
+        <Icon value="Assets\Textures\btn-upgrade-dehaka-groundcarapace-level2.dds"/>
+        <ScoreAmount value="300"/>
+        <EffectArray Operation="Set" Reference="Actor,NHbrMinion,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-dehaka-groundcarapace-level2.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,NHbrChimera,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-dehaka-groundcarapace-level2.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,NHbrWarrior,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-groundarmorlevel2.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,NHbrFlayer,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-dehaka-groundcarapace-level2.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,NHbrWarbringer,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-groundarmorlevel2.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,NHbrSentinel,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-dehaka-groundcarapace-level2.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,NHbrDreadnok,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-dehaka-groundcarapace-level2.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,NHbrSilent,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-groundarmorlevel2.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,NHbrReaver,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-dehaka-groundcarapace-level2.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,NHbrReaverAdvanced,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-dehaka-groundcarapace-level2.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,NHbrDominator,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-groundarmorlevel2.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,NHbrDominatorAdvanced,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-groundarmorlevel2.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,NHbrMinion,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-groundarmorlevel2.dds"/>
+        <LeaderLevel value="2"/>
+    </CUpgrade>
+    <CUpgrade id="NHbrEngineUpgrades@GroundArmorsLevel3" parent="NHbrGroundArmors">
+        <Name value="Upgrade/Name/NHbrEngineUpgrades@GroundArmorsLevel3"/>
+        <Icon value="Assets\Textures\btn-upgrade-dehaka-groundcarapace-level3.dds"/>
+        <ScoreAmount value="400"/>
+        <LeaderLevel value="3"/>
+        <EffectArray Operation="Set" Reference="Actor,NHbrMinion,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-dehaka-groundcarapace-level3.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,NHbrChimera,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-dehaka-groundcarapace-level3.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,NHbrWarrior,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-groundarmorlevel3.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,NHbrFlayer,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-dehaka-groundcarapace-level3.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,NHbrWarbringer,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-groundarmorlevel3.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,NHbrSentinel,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-dehaka-groundcarapace-level3.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,NHbrDreadnok,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-dehaka-groundcarapace-level3.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,NHbrSilent,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-groundarmorlevel3.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,NHbrReaver,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-dehaka-groundcarapace-level3.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,NHbrReaverAdvanced,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-dehaka-groundcarapace-level3.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,NHbrDominator,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-groundarmorlevel3.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,NHbrDominatorAdvanced,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-groundarmorlevel3.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,NHbrMinion,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-groundarmorlevel3.dds"/>
+    </CUpgrade>
+    <CUpgrade id="NHbrEngineUpgrades@GroundWeaponsLevel1" parent="NHbrGroundWeapons">
+        <Name value="Upgrade/Name/NHbrEngineUpgrades@GroundWeaponsLevel1"/>
+        <Icon value="Assets\Textures\btn-upgrade-dehaka-bothattacks-level1.dds"/>
+        <ScoreAmount value="200"/>
+        <LeaderLevel value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,NHbrChimeraWeapon,Icon" Value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,NHbrDominatorWeapon,Icon" Value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,NHbrMinionWeapon,Icon" Value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel1.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,NHbrDreadnokWeaponMelee,Icon" Value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,NHbrFlayerWeaponMelee,Icon" Value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,NHbrFlayerWeaponRanged,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level1.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,NHbrReaverWeapon,Icon" Value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,NHbrSentinelWeapon,Icon" Value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level1.dds"/>
+        <EffectArray Reference="Effect,HybridVoidBlastDamage,Amount" Value="2"/>
+        <EffectArray Reference="Weapon,HybridVoidBlast,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,HybridVoidBlast,Icon" Value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel1.dds"/>
+    </CUpgrade>
+    <CUpgrade id="NHbrEngineUpgrades@WeaponsLevel2" parent="NHbrGroundWeapons">
+        <Name value="Upgrade/Name/NHbrEngineUpgrades@WeaponsLevel2"/>
+        <Icon value="Assets\Textures\btn-upgrade-dehaka-bothattacks-level2.dds"/>
+        <ScoreAmount value="300"/>
+        <LeaderLevel value="2"/>
+        <EffectArray Operation="Set" Reference="Weapon,NHbrChimeraWeapon,Icon" Value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel2.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,NHbrDominatorWeapon,Icon" Value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel2.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,NHbrMinionWeapon,Icon" Value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel2.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,NHbrDreadnokWeaponMelee,Icon" Value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level2.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,NHbrFlayerWeaponMelee,Icon" Value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level2.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,NHbrFlayerWeaponRanged,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level2.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,NHbrReaverWeapon,Icon" Value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level2.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,NHbrSentinelWeapon,Icon" Value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level2.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,HybridVoidBlast,Icon" Value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel2.dds"/>
+        <EffectArray Reference="Effect,HybridVoidBlastDamage,Amount" Value="2"/>
+        <EffectArray Reference="Weapon,HybridVoidBlast,Level" Value="1"/>
+    </CUpgrade>
+    <CUpgrade id="NHbrEngineUpgrades@WeaponsLevel3" parent="NHbrGroundWeapons">
+        <Name value="Upgrade/Name/NHbrEngineUpgrades@WeaponsLevel3"/>
+        <Icon value="Assets\Textures\btn-upgrade-dehaka-bothattacks-level3.dds"/>
+        <ScoreAmount value="400"/>
+        <LeaderLevel value="3"/>
+        <EffectArray index="1" Reference="Weapon,HybridVoidBlast,Level" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,NHbrChimeraWeapon,Icon" Value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel3.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,NHbrDominatorWeapon,Icon" Value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel3.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,NHbrMinionWeapon,Icon" Value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel3.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,NHbrDreadnokWeaponMelee,Icon" Value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level3.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,NHbrFlayerWeaponMelee,Icon" Value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level3.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,NHbrFlayerWeaponRanged,Icon" Value="Assets\Textures\btn-upgrade-zerg-missileattacks-level3.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,NHbrReaverWeapon,Icon" Value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level3.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,NHbrSentinelWeapon,Icon" Value="Assets\Textures\btn-upgrade-zerg-meleeattacks-level3.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,NHbrChimeraWeapon,Icon" Value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel3.dds"/>
+        <EffectArray Operation="Set" Reference="Weapon,HybridVoidBlast,Icon" Value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel3.dds"/>
+        <EffectArray Reference="Effect,HybridVoidBlastDamage,Amount" Value="2"/>
+    </CUpgrade>
+</Catalog>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DocInfo>
+    <Flags>
+        <Value>ExtensionMod</Value>
+    </Flags>
+    <Icon>
+        <Value>XelnagaGuardian.tga</Value>
+    </Icon>
+    <Dependencies>
+        <Value>bnet:Void (Mod)/0.0/999,file:Mods/Void.SC2Mod</Value>
+        <Value>bnet:Balance Multi (Mod)/0.0/999,file:Mods/BalanceMulti.SC2Mod</Value>
+        <Value>bnet:[ARA] Hybrids/1.0/435070</Value>
+    </Dependencies>
+</DocInfo>

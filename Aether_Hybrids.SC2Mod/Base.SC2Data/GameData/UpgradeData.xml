@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CUpgrade id="AutocraticSupremacy"/>
+    <CUpgrade id="DualSummon">
+        <AffectedUnitArray value="NHbrVoidRift"/>
+    </CUpgrade>
+    <CUpgrade id="EmpoweredRifts">
+        <Icon value="Assets\Textures\btn-ability-protoss-amoncloud.dds"/>
+    </CUpgrade>
+    <CUpgrade id="NHbrHybridTempleofOriginBuildEdgedummyupgrade">
+        <ScoreAmount value="100"/>
+        <UnitAllowed value="NHbrInterceptorEdge"/>
+        <EditorCategories value="Race:NHbr,UpgradeType:Talents"/>
+        <AffectedUnitArray value="NHbrTemple"/>
+        <BonusResourcePerLevel index="Minerals" value="400"/>
+        <BonusResourcePerLevel index="Terrazine" value="200"/>
+        <BonusTimePerLevel value="27"/>
+        <EffectArray Operation="Set" Reference="Abil,NHbrTempleHangar,InfoArray[Ammo1].CountStart" Value="6"/>
+    </CUpgrade>
+    <CUpgrade id="RicochetingGlaives"/>
+</Catalog>

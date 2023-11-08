@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CWeaponLegacy id="HybridVoidBlast">
+        <EditorCategories value=""/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
+        <DisplayEffect value="HybridVoidBlastDamage"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <MinScanRange value="7.5"/>
+        <Range value="7"/>
+        <Period value="1.694"/>
+        <Effect value="HybridVoidBlastLaunchMissile"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="InterceptorLaunch2">
+        <EditorCategories value="Race:Protoss"/>
+        <Options index="Hidden" value="1"/>
+        <Icon value="Assets\Textures\btn-unit-protoss-interceptor.dds"/>
+        <DisplayEffect value="Carrier"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="8"/>
+        <Arc value="360"/>
+        <Period value="0.5"/>
+        <DamagePoint value="0"/>
+        <Backswing value="0"/>
+        <Effect value="NHbrWorldshipInterceptorCreatrePresistent"/>
+        <AllowedMovement value="Slowing"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="InterceptorsDummyWeapon">
+        <EditorCategories value="Race:Protoss"/>
+        <Options index="Hidden" value="1"/>
+        <Icon value="Assets\Textures\btn-unit-protoss-interceptor.dds"/>
+        <DisplayEffect value="InterceptorBeamDamage"/>
+        <DisplayAttackCount value="2"/>
+        <TargetFilters value="Visible;Player,Ally,Neutral,Enemy"/>
+        <Range value="8"/>
+        <Arc value="360"/>
+        <Period value="3"/>
+        <Effect value="NHrbrWorldshipLaunchInterceptorMagazine"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="NHBRCelestialNovaCannon">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-airweaponslevel0.dds"/>
+        <DisplayEffect value="NHbrCelestialNovaCannonDamage"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="12"/>
+        <Period value="15"/>
+        <Backswing value="0.75"/>
+        <Effect value="NHbrCelestialNovaCannonPersistent"/>
+        <LegacyOptions index="CanRetargetWhileChanneling" value="1"/>
+        <AllowedMovement value="Moving"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="NHbrHybridConstructMissileBarrage">
+        <EditorCategories value="Race:Protoss"/>
+        <Options index="OnlyFireWhileInAttackOrder" value="0"/>
+        <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
+        <Options index="LinkedCooldown" value="0"/>
+        <Options index="DisplayCooldown" value="1"/>
+        <Icon value="Assets\Textures\amonshards_weapon.dds"/>
+        <DisplayEffect value="NHbrHybridRampageConstructImpactDamage"/>
+        <DisplayAttackCount value="30"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <MinScanRange value="11"/>
+        <Range value="10"/>
+        <Arc value="360"/>
+        <ArcSlop value="360"/>
+        <Period value="10"/>
+        <Effect value="NHbrHybridRampageConstructCreatePersist"/>
+        <LegacyOptions index="CanRetargetWhileChanneling" value="1"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="NHbrHybridConstructVoidLaser">
+        <EditorCategories value="Race:Protoss"/>
+        <Options index="OnlyFireWhileInAttackOrder" value="0"/>
+        <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
+        <Options index="LinkedCooldown" value="0"/>
+        <Options index="DisplayCooldown" value="1"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-fenix-carrier-solarbeam-purple.tga"/>
+        <DisplayEffect value="NHbrHybridConstructVoidLaserDamage"/>
+        <DisplayAttackCount value="2"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <MinScanRange value="9"/>
+        <Range value="15"/>
+        <Arc value="360"/>
+        <ArcSlop value="360"/>
+        <Period value="2"/>
+        <Effect value="NHbrHybridConstructVoidLaserCreatePersist"/>
+        <LegacyOptions index="CanRetargetWhileChanneling" value="1"/>
+    </CWeaponLegacy>
+    <CWeaponStrafe id="NHbrInterceptorEdgeBeam">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-xelnaga-weaponlevel0.dds"/>
+        <DisplayEffect value="NHbrInterceptorEdgeDamage"/>
+        <DisplayAttackCount value="2"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="1"/>
+        <TeleportResetRange value="0"/>
+        <Arc value="19.6875"/>
+        <Period value="1.75"/>
+        <Effect value="NHbrInterceptorEdgeBeamCreatePersist"/>
+    </CWeaponStrafe>
+    <CWeaponLegacy id="NHbrNemesisAdvancedWeapon">
+        <EditorCategories value="Race:NHbr"/>
+        <Icon value="Assets\Textures\btn-ability-zeratul-stalker-vengeanceofthevoid.dds"/>
+        <DisplayEffect value="NHbrNemesisWeapon@Damage"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="9"/>
+        <TeleportResetRange value="0"/>
+        <ArcSlop value="39.9902"/>
+        <Period value="1.176"/>
+        <Backswing value="0"/>
+        <Effect value="NHbrNemesisWeapon@Persistent"/>
+        <LegacyOptions index="CanRetargetWhileChanneling" value="1"/>
+        <AllowedMovement value="Moving"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="NHbrTempleInterceptorLaunch">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-xelnaga-interceptor-edge.dds"/>
+        <DisplayEffect value="NHbrInterceptorEdgeDamage"/>
+        <DisplayAttackCount value="2"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="30"/>
+        <Arc value="360"/>
+        <Period value="0.5"/>
+        <DamagePoint value="0"/>
+        <Backswing value="0"/>
+        <Effect value="NHbrLaunchTempleInterceptorsCreatePersist"/>
+        <AllowedMovement value="Slowing"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="NHbrMinionPrecursorParticleBeam">
+        <EditorCategories value="Race:Protoss"/>
+        <Options index="Melee" value="1"/>
+        <Icon value="Assets\Textures\btn-upgrade-xelnaga-weaponlevel0.dds"/>
+        <DisplayEffect value="NBhrMinionPrecursorParticleBeamDamage"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="2"/>
+        <Period value="1.5"/>
+        <Effect value="NBhrMinionPrecursorParticleBeamDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="NavigatorScanMove">
+        <EditorCategories value=""/>
+        <Options index="Hidden" value="1"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="8"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="NHbrViridianVoidcaster">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-ability-protoss-oraclepulsarcannonon.dds"/>
+        <DisplayEffect value="NHbrViridianVoidcasterWeaponDamage"/>
+        <DisplayAttackCount value="25"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="8"/>
+        <Period value="7"/>
+        <Backswing value="0.75"/>
+        <Effect value="NHbrViridianVoidcasterWeaponCreatePersistent"/>
+        <LegacyOptions index="CanRetargetWhileChanneling" value="1"/>
+        <Options index="OnlyFireWhileInAttackOrder" value="0"/>
+        <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
+        <Options index="LinkedCooldown" value="0"/>
+        <Arc value="45"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="NHbrAuroraBeamEmitterSeeker">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-airweaponslevel0.dds"/>
+        <DisplayEffect value="NHbrAuroraBeamEmitterDamageSeeker"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="4"/>
+        <Period value="3.5"/>
+        <Backswing value="0.75"/>
+        <Effect value="NHbrAuroraBeamEmitterPersistent"/>
+        <LegacyOptions index="CanRetargetWhileChanneling" value="1"/>
+        <AllowedMovement value="Moving"/>
+    </CWeaponLegacy>
+</Catalog>

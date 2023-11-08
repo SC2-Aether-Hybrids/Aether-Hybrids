@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CValidatorCombine id="AmonTentacleAChannelCheck">
+        <CombineArray value="NotDead"/>
+        <CombineArray value="CasterNotDead"/>
+        <CombineArray value="HasVision"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="AmonTentacleCHealChannelCheck">
+        <CombineArray value="NotDead"/>
+        <CombineArray value="CasterNotDead"/>
+        <CombineArray value="LifeNotFull"/>
+    </CValidatorCombine>
+    <CValidatorUnitCompareDamageTakenTime id="CasterNotInCombatScreamer">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="4"/>
+    </CValidatorUnitCompareDamageTakenTime>
+    <CValidatorLocationEnumArea id="DimensionalApertureFindTarget">
+        <AreaArray>
+            <Compare value="GE"/>
+            <Count value="1"/>
+            <Radius value="8"/>
+            <Validator value="TargetHasLessThanMaxLifeOrShield"/>
+        </AreaArray>
+        <ResultFailed value="CantFindEnoughTargets"/>
+        <WhichLocation Value="SourceUnit"/>
+        <SearchFlags index="ExtendByUnitRadius" value="1"/>
+        <SearchFilters value="Visible;Neutral,Enemy,Structure,Missile,Dead,Hidden"/>
+    </CValidatorLocationEnumArea>
+    <CValidatorUnitCompareBehaviorCount id="HasIonicCrystaldummytransferingunit">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GE"/>
+        <Value value="1"/>
+        <Behavior value="IonicCrystaldummytransferingunit"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorPlayerRequirement id="HaveAutocraticSupremacy">
+        <Find value="1"/>
+        <Value value="HaveAutocraticSupremacy"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="HaveRicohcetingGlaives">
+        <Find value="1"/>
+        <Value value="UseRicochetingGlaives"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorUnitCompareVital id="TargetHasLessThanMaxLife">
+        <Compare value="LT"/>
+        <Type value="Fraction"/>
+        <Value value="1"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorCombine id="TargetHasLessThanMaxLifeOrShield">
+        <CombineArray value="TargetHasLessThanMaxShield"/>
+        <CombineArray value="TargetHasLessThanMaxLife"/>
+    </CValidatorCombine>
+    <CValidatorUnitCompareVital id="TargetHasLessThanMaxShield">
+        <Compare value="LT"/>
+        <Type value="Fraction"/>
+        <Value value="1"/>
+        <Vital value="Shields"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitCompareVital id="TargetHasLessThanMaxEnergy">
+        <Compare value="LT"/>
+        <Type value="Fraction"/>
+        <Value value="1"/>
+        <Vital value="Energy"/>
+    </CValidatorUnitCompareVital>
+    <CValidatorUnitType id="TargetIsChangeling">
+        <Value value="Changeling"/>
+        <Type value="SelectAlias"/>
+    </CValidatorUnitType>
+    <CValidatorUnitCompareBehaviorCount id="NHbrHybridsentinelQuantumArmorBehaviorBlock">
+        <Behavior value="NHbrHybridSentinelQuantumArmor2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="NotHaveIonicCrystaldummytransferingunit">
+        <WhichUnit Value="Caster"/>
+        <Compare value="LT"/>
+        <Value value="1"/>
+        <Behavior value="IonicCrystaldummytransferingunit"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorCombine id="IonicCrystalCombineTransferingCombo">
+        <Type value="And"/>
+        <CombineArray value="HasIonicCrystaldummytransferingunit"/>
+        <CombineArray value="NotHaveIonicCrystaldummytargetunit"/>
+    </CValidatorCombine>
+    <CValidatorUnitCompareBehaviorCount id="NotHaveIonicCrystaldummytargetunit">
+        <Compare value="LT"/>
+        <Value value="1"/>
+        <Behavior value="IonicCrystaldummytargetunit"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="NotVoidUnit">
+        <Behavior value="VoidSpawn"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitType id="VoidCorpse">
+        <Value value="VoidCorpse"/>
+    </CValidatorUnitType>
+    <CValidatorLocationCompareRange id="DistanceLessThan4">
+        <WhichLocation Value="TargetUnitOrPoint"/>
+        <Compare value="LT"/>
+        <Range value="4"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorLocationCompareRange id="DistanceLessThanOrEquals4">
+        <WhichLocation Value="TargetUnitOrPoint"/>
+        <Compare value="LE"/>
+        <Range value="4"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorLocationCompareRange id="DistanceLessThanOrEquals4dot25">
+        <WhichLocation Value="TargetUnitOrPoint"/>
+        <Compare value="LE"/>
+        <Range value="4.25"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorLocationCompareRange id="DistanceLessThanOrEquals4dot5">
+        <WhichLocation Value="TargetUnitOrPoint"/>
+        <Compare value="LE"/>
+        <Range value="4.5"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorCombine id="DontHaveSpray">
+        <CombineArray value="NHbrSpray@HaveSprayNHbr"/>
+    </CValidatorCombine>
+    <CValidatorPlayerRequirement id="HaveDualSummon">
+        <Find value="1"/>
+        <Value value="UseDualSummon"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorUnitType id="IsMineralField1">
+        <Value value="BattleStationMineralField"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="IsMineralField12">
+        <Value value="BattleStationMineralField750"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="IsMineralField13">
+        <Value value="LabMineralField750"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="IsMineralField14">
+        <Value value="LabMineralField"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="IsMineralField15">
+        <Value value="MineralField"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="IsMineralField16">
+        <Value value="MineralField450"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="IsMineralField17">
+        <Value value="MineralField750"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="IsMineralField172">
+        <Value value="MineralFieldOpaque900"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="IsMineralField173">
+        <Value value="MineralFieldOpaque"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="IsMineralField174">
+        <Value value="PurifierMineralField"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="IsMineralField175">
+        <Value value="PurifierMineralField750"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="IsMineralField176">
+        <Value value="PurifierRichMineralField"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="IsMineralField177">
+        <Value value="PurifierRichMineralField750"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="IsMineralField178">
+        <Value value="RichMineralField"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="IsMineralField179">
+        <Value value="RichMineralField750"/>
+    </CValidatorUnitType>
+    <CValidatorUnitCompareVitality id="TargetVitalityLT100">
+        <Compare value="LT"/>
+        <Type value="Maximum"/>
+        <Value value="100"/>
+    </CValidatorUnitCompareVitality>
+    <CValidatorLocationCompareRange id="DistanceGreaterThan14dot5">
+        <WhichLocation Value="TargetUnitOrPoint"/>
+        <Compare value="GT"/>
+        <Range value="14.5"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorLocationCompareRange id="DistanceGreaterThan14">
+        <WhichLocation Value="TargetUnitOrPoint"/>
+        <Compare value="GT"/>
+        <Range value="14"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorLocationCompareRange id="DistanceGreaterThan2">
+        <WhichLocation Value="TargetUnitOrPoint"/>
+        <Compare value="GT"/>
+        <Range value="2"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorLocationCompareRange id="DistanceGreaterThan4Pathing">
+        <WhichLocation Value="TargetUnitOrPoint"/>
+        <Compare value="GT"/>
+        <Range value="4"/>
+        <Pathing value="1"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorLocationCompareRange id="DistanceGreaterThan15">
+        <WhichLocation Value="TargetUnitOrPoint"/>
+        <Compare value="GT"/>
+        <Range value="15"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorLocationCompareRange id="DistanceLessThanOrEquals14">
+        <WhichLocation Value="TargetUnitOrPoint"/>
+        <Compare value="LE"/>
+        <Range value="14"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorLocationCompareRange id="DistanceLessThanOrEquals6">
+        <WhichLocation Value="TargetUnitOrPoint"/>
+        <Compare value="LE"/>
+        <Range value="6"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorLocationCompareRange id="DistanceLessThanOrEquals6dot25">
+        <WhichLocation Value="TargetUnitOrPoint"/>
+        <Compare value="LE"/>
+        <Range value="6.25"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorLocationCompareRange id="DistanceLessThanOrEquals8">
+        <WhichLocation Value="TargetUnitOrPoint"/>
+        <Compare value="LE"/>
+        <Range value="8"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorLocationCompareRange id="DistanceLessThanOrEquals075">
+        <WhichLocation Value="TargetUnitOrPoint"/>
+        <Compare value="LE"/>
+        <Range value="0.75"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorLocationCompareRange id="DistanceLessThanOrEquals5">
+        <WhichLocation Value="TargetUnitOrPoint"/>
+        <Compare value="LE"/>
+        <Range value="5"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorLocationCompareRange id="DistanceGreaterThan4">
+        <WhichLocation Value="TargetUnitOrPoint"/>
+        <Compare value="GT"/>
+        <Range value="4"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorLocationCompareRange id="DistanceLessThanOrEquals15">
+        <WhichLocation Value="TargetUnitOrPoint"/>
+        <Compare value="LE"/>
+        <Range value="15"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorUnitCompareVitality id="TargetVitalityLT200">
+        <Compare value="LT"/>
+        <Type value="Maximum"/>
+        <Value value="200"/>
+    </CValidatorUnitCompareVitality>
+    <CValidatorUnitCompareVitality id="TargetVitalityLT300">
+        <Compare value="LT"/>
+        <Type value="Maximum"/>
+        <Value value="300"/>
+    </CValidatorUnitCompareVitality>
+    <CValidatorUnitCompareVitality id="TargetVitalityLT400">
+        <Compare value="LT"/>
+        <Type value="Maximum"/>
+        <Value value="400"/>
+    </CValidatorUnitCompareVitality>
+    <CValidatorUnitCompareVitality id="TargetVitalityLT500">
+        <Compare value="LT"/>
+        <Type value="Maximum"/>
+        <Value value="500"/>
+    </CValidatorUnitCompareVitality>
+    <CValidatorUnitCompareVitality id="TargetVitalityLT600">
+        <Compare value="LT"/>
+        <Type value="Maximum"/>
+        <Value value="600"/>
+    </CValidatorUnitCompareVitality>
+    <CValidatorUnitCompareVitality id="TargetVitalityLT700">
+        <Compare value="LT"/>
+        <Type value="Maximum"/>
+        <Value value="700"/>
+    </CValidatorUnitCompareVitality>
+    <CValidatorUnitCompareBehaviorCount id="UnitIsVoidSpawn">
+        <Value value="1"/>
+        <Behavior value="VoidSpawn"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareResourceContents id="VespeneNotFull">
+        <ResultFailed value="CantBuildOnThat"/>
+        <ResultNoUnit value="OKPlaceholder"/>
+        <Compare value="LT"/>
+        <Value value="2250"/>
+    </CValidatorUnitCompareResourceContents>
+    <CValidatorUnitCompareField id="IsEnergyCapable">
+        <Compare value="GT"/>
+        <Field value="EnergyMax"/>
+        <Value value="0"/>
+    </CValidatorUnitCompareField>
+    <CValidatorUnitCompareField id="IsEnergyCapableCaster">
+        <WhichUnit Value="Caster"/>
+        <Compare value="GT"/>
+        <Field value="EnergyMax"/>
+        <Value value="0"/>
+    </CValidatorUnitCompareField>
+    <CValidatorUnitOrderQueue id="VoidSpawnSourceNotAttackingChangeling">
+        <WhichUnit Value="Source"/>
+        <AbilLink value="attack"/>
+        <Find value="0"/>
+        <Target Value="TargetUnit"/>
+    </CValidatorUnitOrderQueue>
+</Catalog>
