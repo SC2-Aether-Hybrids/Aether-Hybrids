@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CButton id="PsionicShockwave">
+        <Icon value="Assets\Textures\btn-tips-terran-energynova.dds"/>
+    </CButton>
+    <CButton id="GravitonPrison">
+        <Icon value="Assets\Textures\btn-ability-protoss-gravitonbeam-color.dds"/>
+    </CButton>
+    <CButton id="AutocraticSupremacy">
+        <Icon value="Assets\Icons\praetorianshield.dds"/>
+        <AlertIcon value="Assets\Icons\praetorianshield.dds"/>
+    </CButton>
+    <CButton id="ResearchAutocraticSupremacy">
+        <Icon value="Assets\Icons\praetorianshield.dds"/>
+        <AlertIcon value="Assets\Icons\praetorianshield.dds"/>
+        <HotkeyAlias value="AutocraticSupremacy"/>
+    </CButton>
+    <CButton id="MindControlScreamer">
+        <Icon value="Assets\Textures\btn-ability-protoss-mindblast.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-protoss-mindblast.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
+    <CButton id="DimensionalAperture">
+        <Icon value="Assets\Textures\btn-ability-protoss-astralwind.dds"/>
+    </CButton>
+    <CButton id="BounceAttack">
+        <Icon value="Assets\Icons\shadowcannonimproved.dds"/>
+        <AlertIcon value="Assets\Icons\shadowcannonimproved.dds"/>
+    </CButton>
+    <CButton id="BuildNHbrHybridAbyssalConstruct">
+        <Icon value="Assets\Textures\wireframe-protoss-voidconstruct.dds"/>
+        <AlertIcon value="Assets\Textures\wireframe-protoss-voidconstruct.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+        <HotkeyAlias value="BuildTempleInterceptor"/>
+    </CButton>
+    <CButton id="BuildNHbrHybridResearchEdges">
+        <Icon value="Assets\Textures\btn-xelnaga-interceptor-edge.dds"/>
+        <AlertIcon value="Assets\Textures\btn-xelnaga-interceptor-edge.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
+    <CButton id="HardenedShield"/>
+    <CButton id="NHbrBuildSeeker">
+        <Icon value="btn-unit-xelnaga-psydrone.dds"/>
+        <AlertIcon value="btn-unit-xelnaga-psydrone.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
+    <CButton id="NHbrBuildSeeker2">
+        <Icon value="btn-unit-xelnaga-flawship.dds"/>
+        <AlertIcon value="btn-unit-xelnaga-flawship.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
+    <CButton id="NHbrCosmicGandar">
+        <Icon value="Assets\Textures\btn-scannersweep-purple.dds"/>
+        <AlertIcon value="Assets\Textures\btn-scannersweep-purple.dds"/>
+    </CButton>
+    <CButton id="NHbrHybridConstructVoidLaser">
+        <Icon value="Assets\Textures\btn-missing-kaeo.dds"/>
+    </CButton>
+    <CButton id="NHbrHybridRampageConstructAnimaBall">
+        <Icon value="Assets\Textures\btn-ability-zerg-extinction.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-zerg-extinction.dds"/>
+    </CButton>
+    <CButton id="NHbrHybridRampageConstructBurst">
+        <Icon value="Assets\Textures\amonshards_weapon-blue-purple.dds"/>
+        <AlertIcon value="Assets\Textures\amonshards_weapon-blue-purple.dds"/>
+    </CButton>
+    <CButton id="NHbrHybridsentinelquantumarmorButton">
+        <Icon value="Assets\Textures\btn-icon-hyperchamber.dds"/>
+    </CButton>
+    <CButton id="NHbrPhantomWarriorDarkBrigade">
+        <Icon value="Assets\Icons\btn-evileyes.dds"/>
+        <AlertIcon value="Assets\Icons\btn-evileyes.dds"/>
+    </CButton>
+    <CButton id="NHbrVoidReanimate">
+        <Icon value="Assets\Textures\btn-ability-kerrigan-revive.dds"/>
+    </CButton>
+    <CButton id="AetherVeil"/>
+    <CButton id="BuildTempleInterceptor">
+        <Icon value="Assets\Textures\btn-xelnaga-interceptor-edge.dds"/>
+        <AlertIcon value="Assets\Textures\btn-unit-protoss-interceptor.dds"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CButton>
+    <CButton id="ConsumingDarkness">
+        <Icon value="Assets\Icons\consumingdarkness.dds"/>
+        <AlertIcon value="Assets\Icons\consumingdarkness.dds"/>
+    </CButton>
+    <CButton id="Maelstrom">
+        <Icon value="Assets\Textures\btn-upgrade-vorazun-shadowstun.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-vorazun-shadowstun.dds"/>
+    </CButton>
+    <CButton id="RepairHybrid">
+        <Icon value="Assets\Icons\precursorrepair.dds"/>
+        <AlertIcon value="Assets\Icons\precursorrepair.dds"/>
+        <EditorCategories value="Race:Terran"/>
+        <Universal value="1"/>
+    </CButton>
+    <CButton id="ResearchDualSummon">
+        <Icon value="Assets\Icons\dualsummon.dds"/>
+        <AlertIcon value="Assets\Icons\dualsummon.dds"/>
+    </CButton>
+    <CButton id="VespeneGeneration">
+        <Icon value="Assets\Textures\btn-ability-kerrigan-vespeneefficiency.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-kerrigan-vespeneefficiency.dds"/>
+    </CButton>
+    <CButton id="VoidSpawn">
+        <Icon value="Assets\Textures\btn-ability-protoss-amoncloud.dds"/>
+    </CButton>
+    <CButton id="WarpInVoidReanimator">
+        <Icon value="Assets\Icons\reanimator.dds"/>
+        <AlertIcon value="Assets\Icons\reanimator.dds"/>
+    </CButton>
+</Catalog>

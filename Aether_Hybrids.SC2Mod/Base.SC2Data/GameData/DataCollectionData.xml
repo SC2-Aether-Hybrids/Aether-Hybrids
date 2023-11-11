@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CDataCollectionAbil id="NHbrMinionPrecursorParticleBeam">
+        <EditorCategories value=""/>
+        <DataRecord Entry="Actor,NHbrMinionPrecursorParticleBeam@Attack"/>
+        <DataRecord Entry="Actor,NHbrMinionPrecursorParticleBeam@Beam"/>
+        <DataRecord Entry="Weapon,NHbrMinionPrecursorParticleBeam"/>
+    </CDataCollectionAbil>
+</Catalog>

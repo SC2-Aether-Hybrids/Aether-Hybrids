@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CValidatorUnitCompareBehaviorCount id="NHbrSpellArmorResist@TargetHasNotSpellArmorResistBehavior">
+        <Behavior value="NHbrSpellArmorResist@SpellArmor"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CAccumulatorUnitCustomValue id="NHbrSpellArmorResist@SpellArmor">
+        <ApplicationRule value="Multiply"/>
+        <Index value="2"/>
+        <UnitSource Value="Target"/>
+    </CAccumulatorUnitCustomValue>
+    <CDataCollection id="NHbrSpellArmorResist">
+        <EditorCategories value="DataGroup:Mechanic,Race:NHbr"/>
+        <DataRecord Entry="Behavior,NHbrSpellArmorResist@SpellArmor"/>
+        <DataRecord Entry="Validator,NHbrSpellArmorResist@TargetHasNotSpellArmorResistBehavior"/>
+        <DataRecord Entry="Accumulator,NHbrSpellArmorResist@SpellArmor"/>
+    </CDataCollection>
+    <CBehaviorBuff id="NHbrSpellArmorResist@SpellArmor">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:NHbr"/>
+        <BuffFlags index="RemoveDamageResponseExhausted" value="0"/>
+        <DamageResponse Priority="100">
+            <Kind index="Melee" value="0"/>
+            <Kind index="Ranged" value="0"/>
+            <Kind index="Splash" value="0"/>
+            <Kind index="NoProc" value="0"/>
+            <ModifyAmount value="-1">
+                <AccumulatorArray value="NHbrSpellArmorResist@SpellArmor"/>
+            </ModifyAmount>
+            <Chance value="1"/>
+        </DamageResponse>
+    </CBehaviorBuff>
+</Catalog>

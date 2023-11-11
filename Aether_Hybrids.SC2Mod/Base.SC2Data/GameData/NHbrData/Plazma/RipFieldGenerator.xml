@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CEffectApplyBehavior id="NHbrRipFieldApplyBehavior">
+        <ValidatorArray index="0" value="NotVoidUnit"/>
+        <EditorCategories value=""/>
+        <Behavior value="MolelcularDisintegration"/>
+    </CEffectApplyBehavior>
+    <CEffectDamage id="NhbrRipFieldDamage">
+        <EditorCategories value=""/>
+        <Amount value="1"/>
+        <Death value="Disintegrate"/>
+    </CEffectDamage>
+    <CEffectEnumArea id="NhbrRipFieldSearchArea">
+        <EditorCategories value=""/>
+        <SearchFilters value="-;Self,Player,Ally,Missile,Item,Buried,Dead,Hidden,Invulnerable,Benign"/>
+        <AreaArray Radius="25" Effect="NHbrRipFieldApplyBehavior"/>
+    </CEffectEnumArea>
+    <CAbilMorph id="RipFieldGeneratorMorph">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="UpgradetoRipFieldGenerator"/>
+        <InfoArray Unit="RipFieldGenerator">
+            <SectionArray index="Abils">
+                <EffectArray index="Start" value="Morphtoripfieldab"/>
+            </SectionArray>
+            <SectionArray index="Actor">
+                <DurationArray index="Delay" value="20"/>
+            </SectionArray>
+        </InfoArray>
+        <ProgressButton value="UpgradetoRipFieldGenerator"/>
+    </CAbilMorph>
+    <CButton id="UpgradetoRipFieldGenerator">
+        <Icon value="Assets\Textures\btn-tips-ripfield.dds"/>
+        <AlertIcon value="Assets\Textures\btn-tips-ripfield.dds"/>
+    </CButton>
+    <CActorModel id="RipFieldBirth" parent="ModelAnimationStyleOneShot">
+        <EditorCategories value=""/>
+        <On Terms="AbilMorph.*.Finish; MorphTo RipFieldGenerator" Send="Create"/>
+        <On Terms="ActorCreation" Send="SetTintColor {0,255,115 2.000000}"/>
+        <Scale value="1.000000,1.000000,2.000000"/>
+    </CActorModel>
+    <CActorModel id="RipFieldImpact" parent="ModelAddition">
+        <EditorCategories value=""/>
+        <On Terms="Behavior.MolelcularDisintegration.On" Send="Create"/>
+        <On Terms="Behavior.MolelcularDisintegration.Off" Send="Destroy"/>
+        <HostSiteOps Ops="SOpAttachCenter"/>
+        <AutoScaleFactor value="1.000000"/>
+        <Model value="NHbrRipFieldImpact"/>
+    </CActorModel>
+    <CModel id="NHbrRipField">
+        <Model value="Assets\Effects\Protoss\XelNagaShieldDome\XelNagaShieldDome.m3"/>
+        <Flags index="Download" value="0"/>
+        <SelectionLayer value="2"/>
+    </CModel>
+    <CModel id="NHbrRipFieldGenerator">
+        <Model value="Assets\Doodads\XelNagaHullReactorSmall\XelNagaHullReactorSmall.m3"/>
+        <Flags index="Download" value="0"/>
+    </CModel>
+    <CModel id="NHbrRipFieldGeneratorDeath">
+        <Model value="Assets\Doodads\XelNagaHullReactorSmallDeath\XelNagaHullReactorSmallDeath.m3"/>
+        <Flags index="Download" value="0"/>
+    </CModel>
+    <CModel id="NHbrRipFieldImpact">
+        <Model value="Assets\Effects\Protoss\XelNagaShieldDomeImpact\XelNagaShieldDomeImpact.m3"/>
+        <Flags index="Download" value="0"/>
+    </CModel>
+    <CModelFoliage id="RipFieldBirth">
+        <Model value="Assets\Effects\Neutral\Evolution_Impact_Protoss_Coop\Evolution_Impact_Protoss_Coop.m3"/>
+    </CModelFoliage>
+    <CSound id="RipFieldGeneratorBirth">
+        <AssetArray File="Assets\Sounds\Protoss\Forge\Forge_What.ogg" FacialGroup=""/>
+        <Category value="Ready"/>
+        <Mode value="3DWorld"/>
+        <Pitch value="12.000000,12.000000"/>
+    </CSound>
+    <CSound id="RipFieldGeneratorDeath">
+        <AssetArray File="Assets\Sounds\PhotonCannon_Forged_Death_00.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\PhotonCannon_Forged_Death_00a.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\PhotonCannon_Forged_Death_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\PhotonCannon_Forged_Death_01a.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\PhotonCannon_Forged_Death_02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\PhotonCannon_Forged_Death_02a.wav" FacialGroup=""/>
+        <Category value="Death"/>
+        <Mode value="3DWorld"/>
+    </CSound>
+    <CSound id="RipFieldGeneratorWhat">
+        <AssetArray File="Assets\Sounds\Protoss\Forge\Forge_What.ogg" FacialGroup=""/>
+        <Category value="Ready"/>
+        <Mode value="3DWorld"/>
+        <Pitch value="12.000000,12.000000"/>
+    </CSound>
+    <CUnit id="RipFieldGenerator" parent="DefaultSettingsNHbrBuilding">
+        <ReviveType value="NHbrIonicCrystal"/>
+        <Response value="AcquireNoFlee"/>
+        <Attributes index="Armored" value="1"/>
+        <Attributes index="Mechanical" value="1"/>
+        <LifeStart value="800"/>
+        <LifeMax value="800"/>
+        <EnergyStart value="100"/>
+        <EnergyMax value="200"/>
+        <ShieldsStart value="500"/>
+        <ShieldsMax value="500"/>
+        <StationaryTurningRate value="719.4726"/>
+        <TurningRate value="719.4726"/>
+        <Food value="8"/>
+        <CostCategory value="Economy"/>
+        <CostResource index="Minerals" value="900"/>
+        <CostResource index="Vespene" value="500"/>
+        <AbilArray Link="NHbrIonicCrystalTeleport@Build"/>
+        <AbilArray Link="NHbrIonicCrystalTeleport"/>
+        <BehaviorArray Link="NHbrNetworkCharging"/>
+        <BehaviorArray Link="NHbrNetworkNEW@PeriodicSearch"/>
+        <BehaviorArray Link="RipField"/>
+        <TurretArray value="PylonRingRotate"/>
+        <EffectArray index="Birth" value="NHbrNetworkNEW@PowerSourceCreatedDummySet"/>
+        <EffectArray index="Death" value="NHbrNetworkNEW@PowerSourceDestroyedDummySet"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="NHbrIonicCrystalTeleport" Type="AbilCmd" AbilCmd="NHbrIonicCrystalTeleport,Execute" Row="2" Column="3"/>
+            <LayoutButtons Face="NHbrNetworkFastCharging@FastCharging" Type="Passive" Requirements="NHbrNetworkFastCharging@Completed" Row="1" Column="0"/>
+            <LayoutButtons Face="NHbrNetwork@SourceNetworkCharged" Type="Passive" Requirements="NHbrNetwork@NetworkChargedShow" Row="2" Column="0"/>
+            <LayoutButtons Face="NHbrNetwork@SourceNetworkCharging" Type="Passive" Requirements="NHbrNetwork@NetworkChargingTimerFull" Row="2" Column="0"/>
+            <LayoutButtons Face="NHbrNetwork@SourceNetworkCharging" Type="Passive" Requirements="NHbrNetwork@NetworkChargingTimerReduced" Row="2" Column="0"/>
+        </CardLayouts>
+        <CardLayouts>
+            <LayoutButtons Face="CancelBuilding" Type="AbilCmd" AbilCmd="BuildInProgress,Cancel" Row="2" Column="4"/>
+            <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="NHbrIonicCrystalTeleport@Build,Halt" Row="2" Column="4"/>
+            <LayoutButtons Face="NHbrNetwork@SourceNetworkCharged" Type="Passive" Requirements="NHbrNetwork@NetworkChargedShow" Row="2" Column="0"/>
+            <LayoutButtons>
+                <Face value="NHbrNetwork@SourceNetworkCharging"/>
+                <Type value="Passive"/>
+                <Behavior value="NHbrNetworkCharging@TimerFull"/>
+                <Requirements value="NHbrNetwork@NetworkChargingTimerFull"/>
+                <Row value="2"/>
+                <Column value="0"/>
+            </LayoutButtons>
+            <LayoutButtons>
+                <Face value="NHbrNetwork@SourceNetworkCharging"/>
+                <Type value="Passive"/>
+                <Behavior value="NHbrNetworkCharging@TimerFullReduced"/>
+                <Requirements value="NHbrNetworkCharging@HasTimerReduced"/>
+                <Row value="2"/>
+                <Column value="0"/>
+            </LayoutButtons>
+            <LayoutButtons Face="NHbrNetworkFastCharging@FastCharging" Type="Passive" Requirements="NHbrNetworkFastCharging@Completed" Row="1" Column="0"/>
+            <LayoutButtons Face="NHbrIonicCrystalTeleport" Type="AbilCmd" AbilCmd="NHbrIonicCrystalTeleport,Execute" Row="2" Column="3"/>
+        </CardLayouts>
+        <CardLayouts CardId="0002">
+            <LayoutButtons Face="NHbrIonicCrystalTeleport@Temple" Type="AbilCmd" AbilCmd="NHbrIonicCrystalTeleport@Build,Build1" Row="0" Column="0"/>
+            <LayoutButtons>
+                <Face value="NHbrIonicCrystalTeleport@Harvester"/>
+                <Type value="AbilCmd"/>
+                <AbilCmd value="NHbrIonicCrystalTeleport@Build,Build2"/>
+                <ShowInGlossary value="0"/>
+                <Row value="0"/>
+                <Column value="1"/>
+            </LayoutButtons>
+            <LayoutButtons>
+                <Face value="NHbrIonicCrystalTeleport@Engine"/>
+                <Type value="AbilCmd"/>
+                <AbilCmd value="NHbrIonicCrystalTeleport@Build,Build8"/>
+                <ShowInGlossary value="0"/>
+                <Row value="0"/>
+                <Column value="3"/>
+            </LayoutButtons>
+            <LayoutButtons>
+                <Face value="NHbrIonicCrystalTeleport@VoidPortal"/>
+                <Type value="AbilCmd"/>
+                <AbilCmd value="NHbrIonicCrystalTeleport@Build,Build11"/>
+                <ShowInGlossary value="0"/>
+                <Row value="0"/>
+                <Column value="4"/>
+            </LayoutButtons>
+            <LayoutButtons>
+                <Face value="NHbrIonicCrystalTeleport@VoidRift"/>
+                <Type value="AbilCmd"/>
+                <AbilCmd value="NHbrIonicCrystalTeleport@Build,Build3"/>
+                <ShowInGlossary value="0"/>
+                <Row value="1"/>
+                <Column value="0"/>
+            </LayoutButtons>
+            <LayoutButtons>
+                <Face value="NHbrIonicCrystalTeleport@StasisCell"/>
+                <Type value="AbilCmd"/>
+                <AbilCmd value="NHbrIonicCrystalTeleport@Build,Build4"/>
+                <ShowInGlossary value="0"/>
+                <Row value="1"/>
+                <Column value="1"/>
+            </LayoutButtons>
+            <LayoutButtons>
+                <Face value="NHbrIonicCrystalTeleport@VespeneConcentrator"/>
+                <Type value="AbilCmd"/>
+                <AbilCmd value="NHbrIonicCrystalTeleport@Build,Build5"/>
+                <ShowInGlossary value="0"/>
+                <Row value="1"/>
+                <Column value="2"/>
+            </LayoutButtons>
+            <LayoutButtons>
+                <Face value="NHbrIonicCrystalTeleport@ProcessingCore"/>
+                <Type value="AbilCmd"/>
+                <AbilCmd value="NHbrIonicCrystalTeleport@Build,Build9"/>
+                <ShowInGlossary value="0"/>
+                <Row value="1"/>
+                <Column value="3"/>
+            </LayoutButtons>
+            <LayoutButtons>
+                <Face value="NHbrIonicCrystalTeleport@CrystallicShrine"/>
+                <Type value="AbilCmd"/>
+                <AbilCmd value="NHbrIonicCrystalTeleport@Build,Build12"/>
+                <ShowInGlossary value="0"/>
+                <Row value="1"/>
+                <Column value="4"/>
+            </LayoutButtons>
+            <LayoutButtons>
+                <Face value="NHbrIonicCrystalTeleport@ConstructAntiAir"/>
+                <Type value="AbilCmd"/>
+                <AbilCmd value="NHbrIonicCrystalTeleport@Build,Build6"/>
+                <ShowInGlossary value="0"/>
+                <Row value="2"/>
+                <Column value="0"/>
+            </LayoutButtons>
+            <LayoutButtons>
+                <Face value="NHbrIonicCrystalTeleport@ConstructAntiGround"/>
+                <Type value="AbilCmd"/>
+                <AbilCmd value="NHbrIonicCrystalTeleport@Build,Build7"/>
+                <ShowInGlossary value="0"/>
+                <Row value="2"/>
+                <Column value="1"/>
+            </LayoutButtons>
+            <LayoutButtons>
+                <Face value="NHbrIonicCrystalTeleport@Processor"/>
+                <Type value="AbilCmd"/>
+                <AbilCmd value="NHbrIonicCrystalTeleport@Build,Build10"/>
+                <ShowInGlossary value="0"/>
+                <Row value="2"/>
+                <Column value="3"/>
+            </LayoutButtons>
+            <LayoutButtons>
+                <Face value="NHbrIonicCrystalTeleport@NemesisCatacomb"/>
+                <Type value="AbilCmd"/>
+                <AbilCmd value="NHbrIonicCrystalTeleport@Build,Build13"/>
+                <ShowInGlossary value="0"/>
+                <Row value="2"/>
+                <Column value="4"/>
+            </LayoutButtons>
+        </CardLayouts>
+        <Radius value="1"/>
+        <SeparationRadius value="1"/>
+        <Footprint value="Footprint2x2ContourNoCreep"/>
+        <PlacementFootprint value="Footprint2x2NoCreep"/>
+        <ScoreMake value="100"/>
+        <ScoreKill value="100"/>
+        <SubgroupPriority value="3"/>
+        <MinimapRadius value="1"/>
+        <TacticalAI value="NHbrIonicCrystal"/>
+        <LeaderAlias value="NHbrIonicCrystal"/>
+        <HotkeyAlias value="NHbrIonicCrystal"/>
+        <SelectAlias value="NHbrIonicCrystal"/>
+        <SubgroupAlias value="NHbrIonicCrystal"/>
+        <TechAliasArray value="Alias_NHbrIonicCrystal"/>
+        <GlossaryPriority value="3"/>
+        <AIEvaluateAlias value="NHbrIonicCrystal"/>
+        <ReviveInfoBase>
+            <Charge Link="NHbrIonicCrystal/Revive"/>
+            <Cooldown Link="NHbrIonicCrystal/Revive"/>
+        </ReviveInfoBase>
+    </CUnit>
+    <CBehaviorBuff id="MolelcularDisintegration">
+        <Alignment value="Negative"/>
+        <InfoIcon value="Assets\Textures\btn-tips-ripfield.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <RemoveValidatorArray value="noShields"/>
+        <Duration value="0.5"/>
+        <Period value="0.5"/>
+        <PeriodicEffect value="NhbrRipFieldDamage"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="RipField">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Period value="0.4"/>
+        <PeriodicEffect value="NhbrRipFieldSearchArea"/>
+    </CBehaviorBuff>
+</Catalog>
