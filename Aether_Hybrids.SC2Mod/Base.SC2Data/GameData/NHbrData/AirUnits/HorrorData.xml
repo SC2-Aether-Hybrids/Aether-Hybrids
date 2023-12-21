@@ -449,6 +449,7 @@
         <CardLayouts index="0">
             <LayoutButtons Face="NHbrHorror@NetworksProtection" Type="Passive" Row="2" Column="0"/>
             <LayoutButtons Face="NHbrNemesisCatacombEnhancedArmor@Button" Type="Passive" Requirements="NHbrNemesisCatacombEnhancedArmor@Use" Row="1" Column="0"/>
+            <LayoutButtons Face="HystericalTerror" Type="Passive" Requirements="UseHystericalTerror" Row="2" Column="1"/>
         </CardLayouts>
         <Radius value="0.75"/>
         <SeparationRadius value="1"/>
@@ -456,6 +457,7 @@
         <MinimapRadius value="1"/>
         <GlossaryPriority value="35"/>
         <EnergyStart value="50"/>
+        <BehaviorArray Link="HystericalFearGiver"/>
     </CUnit>
     <CBehaviorBuff id="NHbrHorrorPlasmaticCharge@Behavior">
         <Alignment value="Negative"/>

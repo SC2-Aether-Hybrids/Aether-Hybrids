@@ -195,6 +195,33 @@
         <OperandArray index="0" value="CountUpgradeNHbrNetworkFastChargingQueuedOrBetter"/>
         <OperandArray index="1" value="1"/>
     </CRequirementLT>
+    <CActorText id="TerrazineTextKicker">
+        <Filter index="Ally" value="1"/>
+        <Filter index="Neutral" value="1"/>
+        <Filter index="Enemy" value="1"/>
+        <On Terms="ActorCreation" Send="TimerSet 0.100000 StartMover"/>
+        <On Terms="ActorCreation" Send="TimerSet 2.000000 Die"/>
+        <On Terms="ActorCreation" Send="SetOpacity 0.000000 2.000000"/>
+        <On Terms="TimerExpired; TimerName StartMover" Send="Create TerrazineTextMover"/>
+        <On Terms="TimerExpired; TimerName Die" Send="Destroy"/>
+        <Host Subject="_Unit"/>
+        <FixedSize value="28"/>
+        <AlignV value="Bottom"/>
+        <HeightOffset value="3.500000"/>
+        <Text value="Button/Tooltip/TerrazineTextKicker"/>
+    </CActorText>
+    <CActorSiteMover id="TerrazineTextMover">
+        <Terms value="Cap 1"/>
+        <On Terms="ActorCreation" Target="::Creator" Send="RefSetFromMsg ::Host ::Sender"/>
+        <On Terms="ActorCreation" Send="MoverSetDestinationH 3.000000"/>
+        <On Terms="ActorCreation" Send="MoverMove"/>
+        <On Terms="ActorCreation" Send="TimerSet 3.000000 Die"/>
+        <On Terms="TimerExpired; TimerName Die" Send="Destroy"/>
+        <Acceleration value="5.000000"/>
+        <Deceleration value="1.000000"/>
+        <Speed value="0.800000"/>
+        <SpeedMax value="0.800000"/>
+    </CActorSiteMover>
     <CActorText id="HybridVespeneConcentratorMineralConcentration@TextKicker">
         <Filter index="Ally" value="1"/>
         <Filter index="Neutral" value="1"/>

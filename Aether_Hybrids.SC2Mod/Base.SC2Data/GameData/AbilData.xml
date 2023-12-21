@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CAbilEffectTarget id="ArtanisVortex">
+        <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
+        <Effect index="0" value="VortexCreatePersistent"/>
+        <Cost>
+            <Vital index="Energy" value="75"/>
+            <Cooldown Link="ArtanisVortexArtanisVortex"/>
+        </Cost>
+        <Range value="9"/>
+        <Arc value="360"/>
+        <AutoCastFilters value="Visible;Self,Player,Ally"/>
+        <CursorEffect value="ArtanisVortexSearchArea"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="Vortex"/>
+    </CAbilEffectTarget>
     <CAbilEffectTarget id="AtomicCrush">
         <EditorCategories value="Race:NHbr,AbilityorEffectType:Units"/>
         <Cost>
@@ -8,6 +21,75 @@
         <TargetFilters value="Visible;Player,Ally,Neutral,Heroic,Missile,Hidden,Invulnerable,HeroUnit"/>
         <AutoCastFilters value="-;-"/>
     </CAbilEffectTarget>
+    <CAbilEffectInstant id="AuraPulse">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+    </CAbilEffectInstant>
+    <CAbilMerge id="BuildTerrazineVault">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <CmdButtonArray index="SelectedUnits" DefaultButtonFace="TerrazineVault">
+            <Flags index="ToSelection" value="1"/>
+        </CmdButtonArray>
+        <CmdButtonArray index="WithTarget" DefaultButtonFace="TerrazineVault">
+            <Flags index="ShowInGlossary" value="1"/>
+            <Flags index="ToSelection" value="1"/>
+        </CmdButtonArray>
+        <Info Unit="TerrazineVault"/>
+    </CAbilMerge>
+    <CAbilEffectInstant id="ManifestPropagator">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Effect index="0" value="PropagatorCU"/>
+        <Flags index="AutoCast" value="1"/>
+        <Flags index="AutoCastOn" value="1"/>
+        <Cost>
+            <Vital index="Energy" value="25"/>
+            <Cooldown TimeUse="3"/>
+        </Cost>
+        <AutoCastAcquireLevel value="Defensive"/>
+        <AutoCastFilters value="-;Player,Ally"/>
+        <AutoCastRange value="1000"/>
+        <AutoCastValidatorArray value="CasterInCombat"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="PropagatorManifest" Requirements="NoMoreSacrifices">
+            <Flags index="Hidden" value="1"/>
+        </CmdButtonArray>
+    </CAbilEffectInstant>
+    <CAbilMorph id="NHbrIonicCrystalMorphToRipFieldGenerator">
+        <CmdButtonArray index="Execute" DefaultButtonFace="UpgradetoRipFieldGenerator"/>
+        <CmdButtonArray index="Cancel" DefaultButtonFace="Cancel"/>
+        <Flags index="Birth" value="1"/>
+        <Flags index="DisableAbils" value="1"/>
+        <Flags index="FastBuild" value="1"/>
+        <Flags index="Interruptible" value="1"/>
+        <Flags index="IgnoreFacing" value="1"/>
+        <Flags index="Produce" value="1"/>
+        <Flags index="ShowProgress" value="1"/>
+        <Flags index="SuppressMovement" value="1"/>
+        <InfoArray Unit="RipFieldGenerator" RallyResetPhase="Delay" RallyResetSection="Abils">
+            <SectionArray index="Abils">
+                <EffectArray index="Start" value="Morphtoripfieldab"/>
+            </SectionArray>
+            <SectionArray index="Actor">
+                <DurationArray index="Delay" value="20"/>
+            </SectionArray>
+        </InfoArray>
+    </CAbilMorph>
+    <CAbilEffectInstant id="PropagatorSplit">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Effect index="0" value="PropagatorSplitCU"/>
+        <Flags index="AutoCast" value="1"/>
+        <Flags index="AutoCastOn" value="1"/>
+        <Cost>
+            <Charge>
+                <CountMax value="1"/>
+                <CountStart value="1"/>
+                <CountUse value="1"/>
+                <Link value=""/>
+            </Charge>
+            <Cooldown Link="Abil/250mmStrikeCannons" TimeUse="0.1"/>
+        </Cost>
+        <AutoCastRange value="1000"/>
+        <AutoCastValidatorArray value="PropagatorInCombat"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="Decal_Spray_0058_01"/>
+    </CAbilEffectInstant>
     <CAbilEffectInstant id="PsionicShockwave">
         <EditorCategories value="Race:NHbr,AbilityorEffectType:Units"/>
         <Effect index="0" value="PsionicShockwaveCreatePersistent"/>
@@ -291,7 +373,27 @@
         <CmdButtonArray index="Execute" DefaultButtonFace="Repair">
             <Flags index="ToSelection" value="1"/>
         </CmdButtonArray>
+        <Range value="1"/>
     </CAbilEffectTarget>
+    <CAbilEffectInstant id="SacrificePrecursor">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Effect index="0" value="SacrificePrecursorSet"/>
+        <Flags index="AutoCast" value="1"/>
+        <Cost>
+            <Charge CountMax="10" CountStart="10" CountUse="1"/>
+            <Cooldown TimeUse="0.5"/>
+        </Cost>
+        <AutoCastFilters value="Visible;Ally,Neutral,Enemy"/>
+        <AutoCastValidatorArray value="NearbyPrecursor"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="SacrificePrecursor"/>
+    </CAbilEffectInstant>
+    <CAbilEffectInstant id="UpgradetoRipFieldGenerator">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <PrepEffect value="Morphtoripfieldab"/>
+        <Effect index="0" value="Morphtoripfieldab"/>
+        <PrepTime value="20"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="UpgradetoRipFieldGenerator"/>
+    </CAbilEffectInstant>
     <CAbilEffectInstant id="VoidSpawn">
         <EditorCategories value="AbilityorEffectType:Units"/>
         <Effect index="0" value="VoidSpawnDummySet"/>

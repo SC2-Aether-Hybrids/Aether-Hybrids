@@ -12,7 +12,7 @@
     </CEffectDamage>
     <CEffectEnumArea id="NhbrRipFieldSearchArea">
         <EditorCategories value=""/>
-        <SearchFilters value="-;Self,Player,Ally,Missile,Item,Buried,Dead,Hidden,Invulnerable,Benign"/>
+        <SearchFilters value="-;Self,Player,Ally,Missile,Item,Dead,Hidden,Invulnerable,Benign"/>
         <AreaArray Radius="25" Effect="NHbrRipFieldApplyBehavior"/>
     </CEffectEnumArea>
     <CAbilMorph id="RipFieldGeneratorMorph">
@@ -54,6 +54,7 @@
     <CModel id="NHbrRipFieldGenerator">
         <Model value="Assets\Doodads\XelNagaHullReactorSmall\XelNagaHullReactorSmall.m3"/>
         <Flags index="Download" value="0"/>
+        <SelectionLayer value="2"/>
     </CModel>
     <CModel id="NHbrRipFieldGeneratorDeath">
         <Model value="Assets\Doodads\XelNagaHullReactorSmallDeath\XelNagaHullReactorSmallDeath.m3"/>

@@ -1,5 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CButton id="AuraPulse">
+        <Icon value="Assets\Icons\aurapulse.dds"/>
+        <AlertIcon value="Assets\Icons\aurapulse.dds"/>
+    </CButton>
+    <CButton id="DominatorCount">
+        <Icon value="assets\Buttons\Hybrid\btn-hybrid-unit-Advanced-Protoss.DDS"/>
+        <AlertIcon value="assets\Buttons\Hybrid\btn-hybrid-unit-Advanced-Protoss.DDS"/>
+        <ChargeText value="dominatorcount"/>
+    </CButton>
+    <CButton id="AdversaryCount">
+        <Icon value="assets\Buttons\Hybrid\btn-hybrid-unit-Advanced-Nemesis.dds"/>
+        <AlertIcon value="assets\Buttons\Hybrid\btn-hybrid-unit-Advanced-Nemesis.dds"/>
+        <ChargeText value="adversarycount"/>
+    </CButton>
+    <CButton id="IndomitableWill">
+        <Icon value="Assets\Textures\hardenedwill_coop.dds"/>
+        <AlertIcon value="Assets\Textures\hardenedwill_coop.dds"/>
+    </CButton>
+    <CButton id="NemesisCount">
+        <Icon value="assets\Buttons\Hybrid\btn-hybrid-unit-Nemesis.DDS"/>
+        <AlertIcon value="assets\Buttons\Hybrid\btn-hybrid-unit-Nemesis.DDS"/>
+        <HotkeyAlias value="DestroyerCount"/>
+        <ChargeText value="nemesiscount"/>
+    </CButton>
+    <CButton id="PropagatorManifest">
+        <Icon value="Assets\Textures\propagator_coop.dds"/>
+        <AlertIcon value="Assets\Textures\propagator_coop.dds"/>
+    </CButton>
+    <CButton id="ReaverCount">
+        <Icon value="assets\Buttons\Hybrid\btn-hybrid-unit-Reaver.DDS"/>
+        <AlertIcon value="assets\Buttons\Hybrid\btn-hybrid-unit-Reaver.DDS"/>
+        <ChargeText value="reavercount"/>
+    </CButton>
     <CButton id="PsionicShockwave">
         <Icon value="Assets\Textures\btn-tips-terran-energynova.dds"/>
     </CButton>
@@ -9,6 +42,16 @@
     <CButton id="AutocraticSupremacy">
         <Icon value="Assets\Icons\praetorianshield.dds"/>
         <AlertIcon value="Assets\Icons\praetorianshield.dds"/>
+    </CButton>
+    <CButton id="DestroyerCount">
+        <Icon value="assets\Buttons\Hybrid\btn-hybrid-unit-Destroyer.DDS"/>
+        <AlertIcon value="assets\Buttons\Hybrid\btn-hybrid-unit-Destroyer.DDS"/>
+        <ChargeText value="destroyercount"/>
+    </CButton>
+    <CButton id="BehemothCount">
+        <Icon value="assets\Buttons\Hybrid\btn-hybrid-unit-Advanced-Zerg.DDS"/>
+        <AlertIcon value="assets\Buttons\Hybrid\btn-hybrid-unit-Advanced-Zerg.DDS"/>
+        <ChargeText value="behemothcount"/>
     </CButton>
     <CButton id="ResearchAutocraticSupremacy">
         <Icon value="Assets\Icons\praetorianshield.dds"/>
@@ -34,8 +77,8 @@
         <HotkeyAlias value="BuildTempleInterceptor"/>
     </CButton>
     <CButton id="BuildNHbrHybridResearchEdges">
-        <Icon value="Assets\Textures\btn-xelnaga-interceptor-edge.dds"/>
-        <AlertIcon value="Assets\Textures\btn-xelnaga-interceptor-edge.dds"/>
+        <Icon value="Assets\Icons\btn-xelnaga-interceptor-edge.dds"/>
+        <AlertIcon value="Assets\Icons\btn-xelnaga-interceptor-edge.dds"/>
         <EditorCategories value="Race:Protoss"/>
     </CButton>
     <CButton id="HardenedShield"/>
@@ -50,8 +93,8 @@
         <EditorCategories value="Race:Protoss"/>
     </CButton>
     <CButton id="NHbrCosmicGandar">
-        <Icon value="Assets\Textures\btn-scannersweep-purple.dds"/>
-        <AlertIcon value="Assets\Textures\btn-scannersweep-purple.dds"/>
+        <Icon value="Assets\Icons\btn-scannersweep-purple.dds"/>
+        <AlertIcon value="Assets\Icons\btn-scannersweep-purple.dds"/>
     </CButton>
     <CButton id="NHbrHybridConstructVoidLaser">
         <Icon value="Assets\Textures\btn-missing-kaeo.dds"/>
@@ -61,11 +104,12 @@
         <AlertIcon value="Assets\Textures\btn-ability-zerg-extinction.dds"/>
     </CButton>
     <CButton id="NHbrHybridRampageConstructBurst">
-        <Icon value="Assets\Textures\amonshards_weapon-blue-purple.dds"/>
-        <AlertIcon value="Assets\Textures\amonshards_weapon-blue-purple.dds"/>
+        <Icon value="Assets\Icons\amonshards_weapon-blue-purple.dds"/>
+        <AlertIcon value="Assets\Icons\amonshards_weapon-blue-purple.dds"/>
     </CButton>
     <CButton id="NHbrHybridsentinelquantumarmorButton">
-        <Icon value="Assets\Textures\btn-icon-hyperchamber.dds"/>
+        <Icon value="Assets\Icons\btn-icon-hyperchamber.dds"/>
+        <AlertIcon value="Assets\Icons\btn-icon-hyperchamber.dds"/>
     </CButton>
     <CButton id="NHbrPhantomWarriorDarkBrigade">
         <Icon value="Assets\Icons\btn-evileyes.dds"/>
@@ -76,8 +120,8 @@
     </CButton>
     <CButton id="AetherVeil"/>
     <CButton id="BuildTempleInterceptor">
-        <Icon value="Assets\Textures\btn-xelnaga-interceptor-edge.dds"/>
-        <AlertIcon value="Assets\Textures\btn-unit-protoss-interceptor.dds"/>
+        <Icon value="Assets\Icons\btn-xelnaga-interceptor-edge.dds"/>
+        <AlertIcon value="Assets\Icons\btn-xelnaga-interceptor-edge.dds"/>
         <EditorCategories value="Race:Protoss"/>
     </CButton>
     <CButton id="ConsumingDarkness">
@@ -97,6 +141,42 @@
     <CButton id="ResearchDualSummon">
         <Icon value="Assets\Icons\dualsummon.dds"/>
         <AlertIcon value="Assets\Icons\dualsummon.dds"/>
+    </CButton>
+    <CButton id="ResearchHystericalTerror">
+        <Icon value="Assets\Textures\fear_coop.dds"/>
+        <AlertIcon value="Assets\Textures\fear_coop.dds"/>
+    </CButton>
+    <CButton id="HystericalTerror">
+        <Icon value="Assets\Textures\fear_coop.dds"/>
+        <AlertIcon value="Assets\Textures\fear_coop.dds"/>
+    </CButton>
+    <CButton id="ResearchPhantomBrigade">
+        <Icon value="Assets\Textures\btn-upgrade-vorazun-shadowdash.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-vorazun-shadowdash.dds"/>
+    </CButton>
+    <CButton id="PhantomBrigade">
+        <Icon value="Assets\Textures\btn-upgrade-vorazun-shadowdash.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-vorazun-shadowdash.dds"/>
+    </CButton>
+    <CButton id="SacrificePrecursor">
+        <Icon value="Assets\Textures\btn-upgrade-protoss-alarak-supplicantsacrifice.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-protoss-alarak-supplicantsacrifice.dds"/>
+    </CButton>
+    <CButton id="SovereignAuthority">
+        <Icon value="Assets\Textures\btn-upgrade-protoss-fenix-adeptchampionbounceattack.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-protoss-fenix-adeptchampionbounceattack.dds"/>
+    </CButton>
+    <CButton id="ResearchSovereignAuthority">
+        <Icon value="Assets\Textures\btn-upgrade-protoss-fenix-adeptchampionbounceattack.dds"/>
+        <AlertIcon value="Assets\Textures\btn-upgrade-protoss-fenix-adeptchampionbounceattack.dds"/>
+    </CButton>
+    <CButton id="TerrazineGeneration">
+        <Icon value="Assets\Textures\btn-tips-droppedterrazine.dds"/>
+        <AlertIcon value="Assets\Textures\btn-tips-droppedterrazine.dds"/>
+    </CButton>
+    <CButton id="TerrazineVault">
+        <Icon value="Assets\Icons\btn-building-xelnaga-assimilatorhighyield.dds"/>
+        <AlertIcon value="Assets\Icons\btn-building-xelnaga-assimilatorhighyield.dds"/>
     </CButton>
     <CButton id="VespeneGeneration">
         <Icon value="Assets\Textures\btn-ability-kerrigan-vespeneefficiency.dds"/>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Preload>
-<Abil id="TempleofOriginBuildConstruct"/>
 <Abil id="NHbrMinionBuild"/>
+<Abil id="TempleofOriginBuildConstruct"/>
 <Actor id="SYSTEM_ActorConfig"/>
 <Behavior id="HybridLifeForceSpeedController"/>
 <Behavior id="NHbr@TeleportTemple"/>
@@ -44,6 +44,8 @@
 <Effect id="NHbrTimeScaleBuff@RemoveTimeScaleBuff"/>
 <Race id="Terr"/>
 <Race id="NHbr"/>
+<Sound id="HybridTransmissions" Variations="0,2"/>
+<Unit id="PropagatorChrysalis"/>
 <Unit id="VoidCorpse"/>
 <Unit id="NHbrNemesisAdvanced"/>
 <Unit id="NHbrNemesis"/>

@@ -42,7 +42,7 @@
         <BarOffset value="90"/>
         <BarWidth value="75"/>
         <GroupIcon>
-            <Image value="assets\Wireframes\Hybrid\Wireframe-Hybrid-building-ArtifactContainmentFieldVoid.DDS"/>
+            <Image value="Assets\Textures\wireframe-hybrid-Artifact-wire.dds"/>
         </GroupIcon>
         <HeroIcon value="assets\Buttons\Hybrid\btn-hybrid-building-ArtifactContainmentFieldVoid.dds"/>
         <SoundArray index="Birth" value="NHbrChimeraWeapon@AttackImpact"/>
@@ -53,20 +53,21 @@
         <UnitFlags index="SuppressDefaultStatusBar" value="1"/>
         <UnitIcon value="assets\Buttons\Hybrid\btn-hybrid-building-ArtifactContainmentFieldVoid.dds"/>
         <Wireframe>
-            <Image value="assets\Wireframes\Hybrid\Wireframe-Hybrid-building-ArtifactContainmentFieldVoid.DDS"/>
+            <Image value="Assets\Textures\wireframe-hybrid-Artifact-wire.dds"/>
         </Wireframe>
         <WireframeShield>
-            <Image value="assets\Wireframes\Hybrid\Wireframe-Hybrid-building-ArtifactContainmentFieldVoid-Shield01.DDS"/>
-            <Image value="assets\Wireframes\Hybrid\Wireframe-Hybrid-building-ArtifactContainmentFieldVoid-Shield02.DDS"/>
-            <Image value="assets\Wireframes\Hybrid\Wireframe-Hybrid-building-ArtifactContainmentFieldVoid-Shield03.DDS"/>
+            <Image value="Assets\Icons\btn-wireframe-hybrid-Artifact-shield03.dds"/>
+            <Image value="Assets\Icons\btn-wireframe-hybrid-Artifact-shield02.dds"/>
+            <Image value="Assets\Icons\btn-wireframe-hybrid-Artifact-shield01.dds"/>
         </WireframeShield>
         <LifeArmorIcon value="Assets\Textures\btn-amonshardsarmor.dds"/>
         <CustomUnitStatusFrame value="UnitStatus/UnitStatusFrame_HybridProcessingCore"/>
         <Macros value="QueueAnim"/>
+        <Scale value="1.300000,1.300000,1.500000"/>
     </CActorUnit>
     <CModel id="NHbrProcessingCore@Build" parent="NHbrBuildingBuildSmallBase"/>
     <CModel id="NHbrProcessingCore@Model" parent="PylonBase">
-        <Model value="assets\Buildings\Hybrid\Hybrid_ArtifactContainmentFieldVoid\Hybrid_ArtifactContainmentFieldVoid.m3"/>
+        <Model value="Assets\Models\Artifact.m3"/>
         <EditorCategories value="Race:NHbr"/>
         <ScaleMax value="0.550000,0.550000,0.550000"/>
         <ScaleMin value="0.550000,0.550000,0.550000"/>

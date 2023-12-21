@@ -19,7 +19,7 @@
         </InfoArray>
     </CAbilResearch>
     <CRequirement id="NHbrEngine@BuildRequirement">
-        <NodeArray index="Use" Link="AndCountUnitNHbrStasisCellCompleteOnlyLT497291920TechTreeCheatCountUnitNHbrEngineCompleteOnly1"/>
+        <NodeArray index="Use" Link="AndCountUnitNHbrStasisCellCompleteOnlyLT497291920TechTreeCheatCountUnitNHbrEngineQueuedOrBetter1"/>
     </CRequirement>
     <CRequirement id="NHbrEngineUpgrades@GroundArmor32">
         <EditorCategories value="Race:NHbr,TechType:Upgrade"/>
@@ -137,13 +137,19 @@
         <Tooltip value="Button/Tooltip/NHbrEngineUpgrades@UpgradeGroundWeapons"/>
         <AlertTooltip value="Button/Tooltip/NHbrEngineUpgrades@UpgradeGroundWeapons"/>
     </CButton>
-    <CRequirementAnd id="AndCountUnitNHbrStasisCellCompleteOnlyLT497291920TechTreeCheatCountUnitNHbrEngineCompleteOnly1">
+    <CRequirementAnd id="AndCountUnitNHbrStasisCellCompleteOnlyLT497291920TechTreeCheatCountUnitNHbrEngineQueuedOrBetter1">
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray value="CountUnitNHbrStasisCellCompleteOnly"/>
-        <OperandArray value="LT497291920TechTreeCheatCountUnitNHbrEngineCompleteOnly1"/>
+        <OperandArray value="LT497291920TechTreeCheatCountUnitNHbrEngineQueuedOrBetter1"/>
     </CRequirementAnd>
-    <CRequirementLT id="LT497291920TechTreeCheatCountUnitNHbrEngineCompleteOnly1">
+    <CRequirementCountUnit id="CountUnitNHbrEngineQueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <Count Link="NHbrEngine" State="QueuedOrBetter"/>
+    </CRequirementCountUnit>
+    <CRequirementLT id="LT497291920TechTreeCheatCountUnitNHbrEngineQueuedOrBetter1">
         <Flags index="TechTreeCheat" value="1"/>
-        <OperandArray index="0" value="CountUnitNHbrEngineCompleteOnly"/>
+        <OperandArray index="0" value="CountUnitNHbrEngineQueuedOrBetter"/>
         <OperandArray index="1" value="1"/>
     </CRequirementLT>
     <CRequirementAnd id="AndEq2174772687CountUpgradeNHbrEngineUpgrades@WeaponsLevel2CompleteOnly1CountUnitNHbrProcessingCoreCompleteOnlyTechTreeCheat">
@@ -462,6 +468,8 @@
         <Name value="Upgrade/Name/NHbrEngineUpgrades@GroundArmorsLevel4"/>
         <Icon value="Assets\Textures\btn-upgrade-dehaka-groundcarapace-level3.dds"/>
         <ScoreAmount value="500"/>
+        <EffectArray Operation="Set" Reference="Actor,Propagator,LifeArmorIcon" Value="Assets\Icons\level4armor.dds"/>
+        <EffectArray Reference="Unit,Propagator,LifeArmor" Value="1"/>
         <EffectArray Operation="Set" Reference="Actor,NHbrMinion,LifeArmorIcon" Value="Assets\Icons\level4armor.dds"/>
         <EffectArray Operation="Set" Reference="Actor,NHbrChimera,LifeArmorIcon" Value="Assets\Icons\level4armor.dds"/>
         <EffectArray Operation="Set" Reference="Actor,NHbrWarrior,LifeArmorIcon" Value="Assets\Icons\level4protossarmor.dds"/>
@@ -497,6 +505,7 @@
     <CUpgrade id="NHbrEngineResearch@ProtectionArmor2">
         <Icon value="Assets\Icons\level2protection.dds"/>
         <EffectArray Operation="Set" Reference="Actor,NHbrMinion,ShieldArmorIcon" Value="Assets\Icons\level2protection.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,Propagator,ShieldArmorIcon" Value="Assets\Icons\level2protection.dds"/>
         <EffectArray Operation="Set" Reference="Actor,NHbrChimera,ShieldArmorIcon" Value="Assets\Icons\level2protection.dds"/>
         <EffectArray Operation="Set" Reference="Actor,NHbrWarrior,ShieldArmorIcon" Value="Assets\Icons\level2protection.dds"/>
         <EffectArray Operation="Set" Reference="Actor,NHbrFlayer,ShieldArmorIcon" Value="Assets\Icons\level2protection.dds"/>
@@ -511,6 +520,7 @@
         <EffectArray Operation="Set" Reference="Actor,NHbrMinion,ShieldArmorIcon" Value="Assets\Icons\level2protection.dds"/>
         <EffectArray Reference="Behavior,NHbrNetwork@PowerUser,Modification.ShieldArmorBonus" Value="2"/>
         <EffectArray Reference="Unit,NHbrMinion,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,Propagator,ShieldArmorLevel" Value="2"/>
         <EffectArray Reference="Unit,NHbrChimera,ShieldArmorLevel" Value="2"/>
         <EffectArray Reference="Unit,NHbrWarrior,ShieldArmorLevel" Value="2"/>
         <EffectArray Reference="Unit,NHbrFlayer,ShieldArmorLevel" Value="2"/>
@@ -548,12 +558,14 @@
         <EffectArray Reference="Unit,NHbrVoidRift,ShieldArmorLevel" Value="2"/>
         <EffectArray Reference="Unit,NHbrVoidReanimator,ShieldArmorLevel" Value="2"/>
         <EffectArray Reference="Unit,NHbrVoidReanimator,ShieldArmor" Value="2"/>
+        <EffectArray Reference="Unit,Propagator,ShieldArmor" Value="2"/>
         <EditorCategories value="Race:NHbr"/>
     </CUpgrade>
     <CUpgrade id="NHbrEngineResearch@ProtectionArmor">
         <Icon value="Assets\Textures\btn-ability-zeratul-warpprism-shieldboosters.dds"/>
         <EffectArray Reference="Behavior,NHbrNetwork@PowerUser,Modification.ShieldArmorBonus" Value="2"/>
         <EffectArray Reference="Unit,NHbrMinion,ShieldArmorLevel" Value="2"/>
+        <EffectArray Reference="Unit,Propagator,ShieldArmorLevel" Value="2"/>
         <EffectArray Reference="Unit,NHbrChimera,ShieldArmorLevel" Value="2"/>
         <EffectArray Reference="Unit,NHbrWarrior,ShieldArmorLevel" Value="2"/>
         <EffectArray Reference="Unit,NHbrFlayer,ShieldArmorLevel" Value="2"/>
@@ -591,6 +603,7 @@
         <EffectArray Reference="Unit,NHbrVoidRift,ShieldArmorLevel" Value="2"/>
         <EffectArray Reference="Unit,NHbrVoidReanimator,ShieldArmorLevel" Value="2"/>
         <EffectArray Reference="Unit,NHbrVoidReanimator,ShieldArmor" Value="2"/>
+        <EffectArray Reference="Unit,Propagator,ShieldArmor" Value="2"/>
         <EditorCategories value="Race:NHbr"/>
     </CUpgrade>
     <CUpgrade id="NHbrEngineUpgrades@GroundArmorsLevel1" parent="NHbrGroundArmors">
@@ -598,6 +611,7 @@
         <Icon value="Assets\Textures\btn-upgrade-dehaka-groundcarapace-level1.dds"/>
         <ScoreAmount value="200"/>
         <EffectArray Operation="Set" Reference="Actor,NHbrMinion,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-dehaka-groundcarapace-level1.dds"/>
+        <EffectArray Operation="Set" Reference="Actor,Propagator,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-dehaka-groundcarapace-level1.dds"/>
         <EffectArray Operation="Set" Reference="Actor,NHbrChimera,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-dehaka-groundcarapace-level1.dds"/>
         <EffectArray Operation="Set" Reference="Actor,NHbrWarrior,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-groundarmorlevel1.dds"/>
         <EffectArray Operation="Set" Reference="Actor,NHbrFlayer,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-dehaka-groundcarapace-level1.dds"/>
@@ -610,12 +624,15 @@
         <EffectArray Operation="Set" Reference="Actor,NHbrDominator,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-groundarmorlevel1.dds"/>
         <EffectArray Operation="Set" Reference="Actor,NHbrDominatorAdvanced,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-groundarmorlevel1.dds"/>
         <EffectArray Operation="Set" Reference="Actor,NHbrMinion,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-groundarmorlevel1.dds"/>
+        <EffectArray Reference="Unit,Propagator,LifeArmor" Value="1"/>
         <LeaderLevel value="1"/>
     </CUpgrade>
     <CUpgrade id="NHbrEngineUpgrades@GroundArmorsLevel2" parent="NHbrGroundArmors">
         <Name value="Upgrade/Name/NHbrEngineUpgrades@GroundArmorsLevel2"/>
         <Icon value="Assets\Textures\btn-upgrade-dehaka-groundcarapace-level2.dds"/>
         <ScoreAmount value="300"/>
+        <EffectArray Operation="Set" Reference="Actor,Propagator,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-dehaka-groundcarapace-level2.dds"/>
+        <EffectArray Reference="Unit,Propagator,LifeArmor" Value="1"/>
         <EffectArray Operation="Set" Reference="Actor,NHbrMinion,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-dehaka-groundcarapace-level2.dds"/>
         <EffectArray Operation="Set" Reference="Actor,NHbrChimera,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-dehaka-groundcarapace-level2.dds"/>
         <EffectArray Operation="Set" Reference="Actor,NHbrWarrior,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-groundarmorlevel2.dds"/>
@@ -636,6 +653,8 @@
         <Icon value="Assets\Textures\btn-upgrade-dehaka-groundcarapace-level3.dds"/>
         <ScoreAmount value="400"/>
         <LeaderLevel value="3"/>
+        <EffectArray Operation="Set" Reference="Actor,Propagator,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-dehaka-groundcarapace-level3.dds"/>
+        <EffectArray Reference="Unit,Propagator,LifeArmor" Value="1"/>
         <EffectArray Operation="Set" Reference="Actor,NHbrMinion,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-dehaka-groundcarapace-level3.dds"/>
         <EffectArray Operation="Set" Reference="Actor,NHbrChimera,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-dehaka-groundcarapace-level3.dds"/>
         <EffectArray Operation="Set" Reference="Actor,NHbrWarrior,LifeArmorIcon" Value="Assets\Textures\btn-upgrade-protoss-groundarmorlevel3.dds"/>

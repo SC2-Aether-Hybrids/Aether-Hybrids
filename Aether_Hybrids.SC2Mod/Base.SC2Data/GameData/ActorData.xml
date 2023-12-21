@@ -35,6 +35,39 @@
         <WireframeShieldColor value="255,192,192,192"/>
         <ShieldArmorIcon value="Assets\Textures\btn-ability-zeratul-warpprism-shieldboosters.dds"/>
     </CActorUnit>
+    <CActorSplat id="ArtanisVortexCursorSplat" parent="ProtossCursorSplat" abil="ArtanisVortex"/>
+    <CActorRange id="ArtanisVortexRange" parent="RangeAbil" abil="ArtanisVortex"/>
+    <CActorAction id="AuraPulse" parent="GenericAttack" effectImpact="AuraPulseSet" effectLaunch="AuraPulseSearch">
+        <EditorCategories value=""/>
+        <LaunchAssets Model="AuraPulse" Sound="AuraPulse"/>
+    </CActorAction>
+    <CActorModel id="FloatingTextTerrazine" parent="FloatingTextActorDefault" effectPickup="PickupPalletMinerals" actorCreate="PickupPalletMineralsText">
+        <On index="0" Terms="Effect.TerrazineGenerate.Start" Send="Create"/>
+        <On index="1" Terms="ActorCreation" Send="Create TerrazineTextKicker"/>
+    </CActorModel>
+    <CActorModel id="IndomitableWill" parent="ModelAnimationStyleContinuous">
+        <EditorCategories value=""/>
+        <On Terms="Behavior.IndomitableWill.On" Send="Create"/>
+        <On Terms="Behavior.IndomitableWill.Off" Send="Destroy"/>
+        <On Terms="ActorCreation" Send="SetTintColor 30,255,91"/>
+        <HostSiteOps Ops="SOpAttachCenter"/>
+        <Scale value="0.800000,0.800000,1.300000"/>
+    </CActorModel>
+    <CActorSound id="PrecursorRepairRev1" parent="SoundContinuous">
+        <On Terms="Effect.RepairHybrid.TargetStart; At Target" Send="Create"/>
+        <On Terms="Effect.RepairHybrid.TargetStop; At Target" Send="Destroy"/>
+        <On Terms="ActorOrphan" Send="Destroy"/>
+        <On Terms="ActorCreation" Send="Create PrecursorRepairStart"/>
+        <Host Subject="_Selectable"/>
+        <HostSiteOps Ops="SOpAttachOverhead"/>
+        <Sound value="PrecursorRepair"/>
+    </CActorSound>
+    <CActorSound id="PrecursorRepairLoop" parent="SoundContinuous">
+        <On Terms="ActorCreation" Send="Create PrecursorRepairStart"/>
+        <Host Subject="_Selectable"/>
+        <HostSiteOps Ops="SOpAttachOverhead"/>
+        <Sound value="PrecursorRepair"/>
+    </CActorSound>
     <CActorAction id="NHbrBehemothWeapon@Attack" parent="GenericAttack" effectAttack="NHbrBehemothWeapon@Damage">
         <LaunchAssets Model="NHbrReaverWeapon@AttackLaunch" Sound="NHbrReaverWeapon@AttackLaunch"/>
         <Beam value="NHbrReaverWeapon@AttackBeam"/>
@@ -44,6 +77,70 @@
         <DamageMap index="None" Model="NHbrReaverWeapon@AttackDamage" Sound="NHbrReaverWeapon@AttackDamage" ModelReaction="NHbrReaverWeapon@AttackDamageReaction"/>
         <DamageMap index="Shield" Sound="NHbrReaverWeapon@AttackDamageShield" ModelReaction="NHbrReaverWeapon@AttackDamageReactionShield"/>
     </CActorAction>
+    <CActorSound id="PrecursorRepairStart" parent="SoundOneShot">
+        <EditorCategories value=""/>
+        <On Terms="Effect.RepairHybrid.TargetStart" Send="Create"/>
+    </CActorSound>
+    <CActorUnit id="Propagator" parent="GenericUnitStandard" unitName="Propagator">
+        <EditorCategories value=""/>
+        <DeathArray index="Normal" ModelLink="PropagatorDeath" SoundLink="Marine_DeathFXBloodSpray"/>
+        <PortraitModel value="ChangelingPortrait"/>
+        <WalkAnimMoveSpeed value="1.75"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\wireframe-zerg-changeling.dds"/>
+        </GroupIcon>
+        <LifeArmorIcon value="Assets\Textures\btn-upgrade-dehaka-groundcarapace-level0.dds"/>
+        <ShieldArmorIcon value="Assets\Textures\btn-ability-zeratul-warpprism-shieldboosters.dds"/>
+        <SoundArray index="Ready" value="Changeling_Ready"/>
+        <SoundArray index="Help" value="Changeling_Death"/>
+        <SoundArray index="What" value="Changeling_What"/>
+        <SoundArray index="Yes" value="Changeling_Yes"/>
+        <SoundArray index="Attack" value="Changeling_Yes"/>
+        <SoundArray index="Pissed" value="Changeling_What"/>
+        <VitalColors index="Shields">
+            <ColorArray value="255,255,255,255"/>
+        </VitalColors>
+        <VitalColors index="Energy">
+            <ColorArray value="255,0,255,191"/>
+        </VitalColors>
+        <VitalNames index="Life" value="UI/Tooltip/LifeForce"/>
+        <VitalNames index="Shields" value="UI/Tooltip/Protection"/>
+        <VitalNames index="Energy" value="UI/Tooltip/Aether"/>
+        <Wireframe>
+            <Image value="Assets\Textures\wireframe-zerg-changeling.dds"/>
+        </Wireframe>
+        <CustomUnitStatusFrame value="UnitStatus/UnitStatusFrame_NHbrMinion"/>
+    </CActorUnit>
+    <CActorUnit id="PropagatorChrysalis" parent="GenericUnitStandard" unitName="PropagatorChrysalis">
+        <EditorCategories value=""/>
+        <Scale value="0.700000"/>
+        <HighlightTooltip value="Unit/Name/Bogus"/>
+        <VitalColors index="Shields">
+            <ColorArray value="255,255,255,255"/>
+        </VitalColors>
+        <VitalColors index="Energy">
+            <ColorArray value="255,0,255,191"/>
+        </VitalColors>
+        <VitalNames index="Life" value="UI/Tooltip/LifeForce"/>
+        <VitalNames index="Shields" value="UI/Tooltip/Protection"/>
+        <VitalNames index="Energy" value="UI/Tooltip/Aether"/>
+    </CActorUnit>
+    <CActorSound id="PropagatorChrysalisBirth" parent="SoundOneShot">
+        <EditorCategories value=""/>
+        <On Terms="UnitCreation.PropagatorChrysalis" Send="Create"/>
+    </CActorSound>
+    <CActorSound id="PropagatorChrysalisDeath" parent="SoundOneShot">
+        <EditorCategories value=""/>
+        <On Terms="UnitDeath.PropagatorChrysalis" Send="Create"/>
+    </CActorSound>
+    <CActorModel id="PropagatorSplit" parent="ModelAnimationStyleOneShot">
+        <EditorCategories value=""/>
+        <On Terms="Effect.PropagatorSplitCU.Start" Send="Create"/>
+    </CActorModel>
+    <CActorSound id="PropagatorSplitLaunch" parent="SoundOneShot">
+        <EditorCategories value=""/>
+        <On Terms="Effect.PropagatorSplitCU.Start" Send="Create"/>
+    </CActorSound>
     <CActorModel id="PsionicShockwaveModel">
         <On Terms="Effect.PsionicShockwaveCreatePersistent.Start" Send="Create"/>
         <On Terms="ActorCreation" Send="$Birth"/>
@@ -344,6 +441,15 @@
         <EditorCategories value=""/>
         <Model value="HybridDestroyerMissle"/>
     </CActorMissile>
+    <CActorBeamSimple id="RepairHybridBeam" parent="BeamSimpleAnimationStyleContinuous">
+        <On Terms="Effect.RepairHybrid.TargetStart" Send="Create"/>
+        <On Terms="Effect.RepairHybrid.TargetStop" Send="Destroy"/>
+        <On Terms="ActorCreation" Send="SetTintColor {0,251,75 3.000000}"/>
+        <HostLaunch Subject="_Unit" Scope="Caster" Actor="Find"/>
+        <HostLaunchSiteOps Ops="SOpAttachWeapon"/>
+        <HostImpact Subject="_Unit" Scope="Target" Actor="Find"/>
+        <HostImpactSiteOps Ops="SOpAttachCenter"/>
+    </CActorBeamSimple>
     <CActorBeamSimple id="ScreamerMindControlBeam" parent="BeamSimpleAnimationStyleOneShot">
         <On Terms="Effect.ScreamerMindControlApply.Start" Send="Create"/>
         <HostLaunch Subject="_Unit" Scope="Caster" Actor="Find"/>
@@ -719,6 +825,17 @@
             <Image value="Assets\Textures\Wireframe-Protoss-VoidConstruct.dds"/>
         </Wireframe>
         <CustomUnitStatusOffset value="0,300"/>
+        <ShieldArmorIcon value="Assets\Textures\btn-ability-zeratul-warpprism-shieldboosters.dds"/>
+        <VitalColors index="Shields">
+            <ColorArray value="255,255,255,255"/>
+        </VitalColors>
+        <VitalColors index="Energy">
+            <ColorArray value="255,0,255,191"/>
+            <ColorArray value="255,0,255,191"/>
+        </VitalColors>
+        <VitalNames index="Life" value="UI/Tooltip/LifeForce"/>
+        <VitalNames index="Shields" value="UI/Tooltip/Protection"/>
+        <VitalNames index="Energy" value="UI/Tooltip/Aether"/>
     </CActorUnit>
     <CActorAction id="NHbrHybridRampageConstructAnimaBallAttack" parent="GenericAttack" effectImpact="NHbrHybridRampageConstructAnimaBallSearchArea" effectLaunch="NHbrHybridRampageConstructAnimaBallLaunchMissile">
         <LaunchSiteOps Ops="SOpAttachWeapon"/>
@@ -814,6 +931,7 @@
     </CActorModel>
     <CActorModelMaterial id="MorphingtoRipFieldGlaze" parent="BehaviorGlaze" buff="MorphingtoRIpField">
         <EditorCategories value=""/>
+        <Model value="Morphingtoripfieldglaze"/>
     </CActorModelMaterial>
     <CActorAction id="NHbrViridianVoidcasterWeaponAttack" parent="GenericAttackBase">
         <On Terms="Effect.NHbrViridianVoidcasterWeaponCreatePersistent.Start" Send="Create"/>
@@ -853,7 +971,7 @@
         <LaunchAssets Model="AdeptAttackLaunch" Sound="Adept_AttackLaunch"/>
         <Missile value="NHbrWarriorWeapon@AttackMissile"/>
         <ImpactSite value="PHBounceImpactSite"/>
-        <ImpactMap index="None" Model="PhantomWarriorWeaponImpact" Sound="Adept_AttackImpact" ModelReaction="AdeptAttackImpactReaction"/>
+        <ImpactMap index="None" Model="NHbrWarriorWeapon@Impact" Sound="Adept_AttackImpact" ModelReaction="AdeptAttackImpactReaction"/>
         <ImpactMap index="Shield" Sound="AdeptAttackImpactShield" ModelReaction="AdeptAttackImpactReactionShield"/>
         <DamageMap index="None" Model="AdeptAttackDamage" Sound="AdeptAttackDamage" ModelReaction="AdeptAttackDamageReaction"/>
         <DamageMap index="Shield" Sound="AdeptAttackDamageShield" ModelReaction="AdeptAttackDamageReactionShield"/>
@@ -862,7 +980,7 @@
         <LaunchAssets Model="AdeptAttackLaunch" Sound="Adept_AttackLaunch"/>
         <Missile value="NHbrWarriorWeapon@AttackMissile"/>
         <ImpactSite value="PHBounceImpactSite"/>
-        <ImpactMap index="None" Model="PhantomWarriorWeaponImpact" Sound="Adept_AttackImpact" ModelReaction="AdeptAttackImpactReaction"/>
+        <ImpactMap index="None" Model="NHbrWarriorWeapon@Impact" Sound="Adept_AttackImpact" ModelReaction="AdeptAttackImpactReaction"/>
         <ImpactMap index="Shield" Sound="AdeptAttackImpactShield" ModelReaction="AdeptAttackImpactReactionShield"/>
         <DamageMap index="None" Model="AdeptAttackDamage" Sound="AdeptAttackDamage" ModelReaction="AdeptAttackDamageReaction"/>
         <DamageMap index="Shield" Sound="AdeptAttackDamageShield" ModelReaction="AdeptAttackDamageReactionShield"/>
@@ -894,6 +1012,9 @@
     <CActorUnit id="RipFieldGenerator" parent="NHbrBuildingEx" unitName="RipFieldGenerator">
         <FogVisibility value="Visible"/>
         <On Terms="AbilMorph.*.Finish; MorphFrom NHbrIonicCrystal; MorphTo RipFieldGenerator" Send="Create"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo RipFieldGenerator; MorphFrom NHbrIonicCrystal" Send="Create"/>
+        <On Terms="AbilMorph.*.Finish; MorphFrom RipFieldGenerator; MorphTo NHbrIonicCrystal" Send="Destroy"/>
+        <On Terms="AbilMorph.*.Cancel; MorphFrom RipFieldGenerator; MorphTo NHbrIonicCrystal" Send="Destroy"/>
         <Model value="NHbrRipFieldGenerator"/>
         <Scale value="0.800000"/>
         <BuildModel value="NHbrRipFieldGenerator"/>
@@ -918,6 +1039,7 @@
             <Image value="Assets\Textures\wireframe-protoss-gravitonemitter-shield02.dds"/>
             <Image value="Assets\Textures\wireframe-protoss-gravitonemitter-shield03.dds"/>
         </WireframeShield>
+        <StatusBarFlags index="Energy" value="0"/>
     </CActorUnit>
     <CActorRange id="NHbrHybridAbyssalConstructLaserWeaponRange" parent="RangeWeapon" weapon="NHbrHybridConstructVoidLaser">
         <Icon value="Assets\Textures\cursor-target-invalid.dds"/>
@@ -956,6 +1078,71 @@
         <Missile value="HybridDestroyerAttackMissle"/>
         <ImpactMap index="None" Model="HybridDestroyerMissleImpact"/>
     </CActorAction>
+    <CActorUnit id="TerrazineVault" parent="GenericUnitStandard" unitName="TerrazineVault">
+        <Aliases value="_CreepEngulfable"/>
+        <Aliases value="_ShieldBlack"/>
+        <Macros value="BuildingFlattenTerrainMacro"/>
+        <Macros value="SnowVisualBuildingMacroMP"/>
+        <EditorCategories value=""/>
+        <On Terms="UnitDeathCustomize; CreepEngulfs" Send="CreepEngulfmentStopTransition"/>
+        <On Terms="ActorCreation; CreepIntersects" Send="CreepEngulfmentStartTransition"/>
+        <On Terms="Abil.NHbrWorkshopResearch.Start" Send="AnimBracketStart Work Work,Start Work Work,End"/>
+        <On Terms="Abil.NHbrWorkshopResearch.Stop" Send="AnimBracketClear Work"/>
+        <On Terms="Behavior.TerrazineGenerate.On" Send="SetTintColor 255,255,255 1.000000"/>
+        <On Terms="ActorCreation" Send="SetTintColor 68,68,68"/>
+        <ModelFlags index="OutlineOccluder" value="1"/>
+        <EventDataSound Name="BuildingWarpIn" Actor="UnitSound" Sound="Protoss_BuildingWarpIn"/>
+        <CreepHeightClass value="Small"/>
+        <CreepRateGrow value="Grow"/>
+        <CreepRateShrink value="Shrink"/>
+        <DeathArray index="Normal" ModelLink="NHbrProcessor@Death" SoundLink="NHbrCommon@Death" VoiceLink=""/>
+        <DeathArray index="UnderConstruction" AnimProps="Birth" ModelLink="NHbrProcessor@DeathUnderConstruction" SoundLink="NHbrCommon@Death"/>
+        <PlacementSound value="NHbrCommon@PlacementSound"/>
+        <PlacementActorModel value="NHbrCommon@PlacementModel"/>
+        <PlaceholderActorModel value="NHbrCommon@PlaceholderModel"/>
+        <PortraitModel value="NHbrCommon@Portrait"/>
+        <BarOffset value="140"/>
+        <BarWidth value="160"/>
+        <CustomUnitStatusFrame value="UnitStatus/UnitStatusFrame_HybridProcessor"/>
+        <GroupIcon>
+            <Image value="Assets\Textures\wireframe-xelnaga-assimilator.dds"/>
+        </GroupIcon>
+        <HeroIcon value="assets\Buttons\Hybrid\btn-hybrid-building-roboticsfacility.dds"/>
+        <LifeArmorIcon value="Assets\Textures\btn-amonshardsarmor.dds"/>
+        <NameOffset value="130"/>
+        <ShieldArmorIcon value="Assets\Textures\btn-ability-zeratul-warpprism-shieldboosters.dds"/>
+        <SoundArray index="Birth" value="NHbrVoidPortal@Birth"/>
+        <SoundArray index="Ready" value="NHbrProcessor@Ready"/>
+        <SoundArray index="What" value="NHbrProcessor@What"/>
+        <SoundArray index="Construction" value="NHbrCommon@UnderConstructionWhat"/>
+        <StatusColors index="Shields">
+            <ColorArray index="0" value="255,255,255,255"/>
+        </StatusColors>
+        <StatusColors index="Energy">
+            <ColorArray index="0" value="255,0,255,191"/>
+        </StatusColors>
+        <UnitFlags index="ShowBlobShadow" value="0"/>
+        <UnitFlags index="SuppressDefaultStatusBar" value="1"/>
+        <UnitIcon value="assets\Buttons\Hybrid\btn-hybrid-building-roboticsfacility.dds"/>
+        <VitalColors index="Shields">
+            <ColorArray value="255,255,255,255"/>
+        </VitalColors>
+        <VitalColors index="Energy">
+            <ColorArray value="255,0,255,191"/>
+        </VitalColors>
+        <VitalNames index="Life" value="UI/Tooltip/LifeForce"/>
+        <VitalNames index="Shields" value="UI/Tooltip/Protection"/>
+        <VitalNames index="Energy" value="UI/Tooltip/Aether"/>
+        <Wireframe>
+            <Image value="Assets\Textures\wireframe-xelnaga-assimilator.dds"/>
+        </Wireframe>
+        <WireframeShield>
+            <Image value="Assets\Textures\wireframe-xelnaga-assimilator-shield03.dds"/>
+            <Image value="Assets\Textures\wireframe-xelnaga-assimilator-shield02.dds"/>
+            <Image value="Assets\Textures\wireframe-xelnaga-assimilator-shield01.dds"/>
+        </WireframeShield>
+        <WireframeShieldColor value="255,192,192,192"/>
+    </CActorUnit>
     <CActorModel id="UpgradingtoRipFieldGenerator" parent="ModelAnimationStyleContinuous">
         <EditorCategories value=""/>
         <On Terms="Abil.RipFieldGeneratorMorph.Start" Send="Create"/>
@@ -966,10 +1153,8 @@
     <CActorUnit id="VoidCorpse" parent="GenericUnitStandard" unitName="VoidCorpse">
         <EditorCategories value=""/>
         <VisibleTo index="Ally" value="1"/>
-        <VisibleTo index="Neutral" value="1"/>
         <VisibleTo index="Enemy" value="1"/>
         <Filter index="Ally" value="1"/>
-        <Filter index="Neutral" value="1"/>
         <Filter index="Enemy" value="1"/>
     </CActorUnit>
     <CActorUnit id="NHbrVoidReanimator" parent="GenericUnitBase" unitName="NHbrVoidReanimator">

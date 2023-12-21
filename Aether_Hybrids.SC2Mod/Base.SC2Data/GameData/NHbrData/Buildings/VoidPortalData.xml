@@ -459,10 +459,9 @@
         <CardLayouts index="0">
             <LayoutButtons index="0" Face="Cancel" Type="AbilCmd" AbilCmd="que5,CancelLast" Row="2" Column="4"/>
             <LayoutButtons Face="CancelBuilding" Type="AbilCmd" AbilCmd="BuildInProgress,Cancel" Row="2" Column="4"/>
-            <LayoutButtons Face="NHbrPollinatorExpressMantle@ExpressMantle" Type="AbilCmd" AbilCmd="NHbrVoidPortalResearch,Research1" Row="0" Column="0"/>
-            <LayoutButtons Face="ResearchDualSummon" Type="AbilCmd" AbilCmd="NHbrVoidPortalResearch,Research2" Row="0" Column="1"/>
-            <LayoutButtons Face="ConsumingDarkness" Type="AbilCmd" AbilCmd="NHbrVoidPortalResearch,Research3" Row="0" Column="2"/>
-            <LayoutButtons Face="HybridInfiniteChaos" Type="AbilCmd" AbilCmd="NHbrVoidPortalResearch,Research4" Row="0" Column="3"/>
+            <LayoutButtons Face="ResearchDualSummon" Type="AbilCmd" AbilCmd="NHbrVoidPortalResearch,Research2" Row="0" Column="0"/>
+            <LayoutButtons Face="ConsumingDarkness" Type="AbilCmd" AbilCmd="NHbrVoidPortalResearch,Research3" Row="0" Column="1"/>
+            <LayoutButtons Face="HybridInfiniteChaos" Type="AbilCmd" AbilCmd="NHbrVoidPortalResearch,Research4" Row="0" Column="2"/>
         </CardLayouts>
         <EnergyStart value="100"/>
         <EnergyMax value="200"/>

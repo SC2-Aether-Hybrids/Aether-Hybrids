@@ -60,6 +60,11 @@
             <Resource index="Vespene" value="300"/>
             <Button DefaultButtonFace="NHbrVoidPortalUpgrades@AirWeaponsLevel32" Requirements="NHbrVoidPortalUpgrades@AirWeapon32"/>
         </InfoArray>
+        <InfoArray index="Research12" Time="230" Upgrade="HystericalTerror">
+            <Resource index="Minerals" value="200"/>
+            <Resource index="Vespene" value="200"/>
+            <Button DefaultButtonFace="HystericalTerror" Requirements="LearnHystericalTerror"/>
+        </InfoArray>
     </CAbilResearch>
     <CRequirement id="NHbrCrystallicShrine@BuildRequirement">
         <NodeArray index="Use" Link="AndCountUnitNHbrVoidPortalCompleteOnlyLT3946683476TechTreeCheatCountUnitNHbrCrystallicShrineQueuedOrBetter1"/>
@@ -215,6 +220,7 @@
             <LayoutButtons Face="NHbrNemesisCatacombEnhancedArmor@Button" Type="AbilCmd" AbilCmd="NHbrNemesisCatacombResearch@Research,Research1" Row="1" Column="1"/>
             <LayoutButtons Face="NHbrNemesisCatacombNetworkReassembly@NetworkReassembly" Type="AbilCmd" AbilCmd="NHbrNemesisCatacombResearch@Research,Research2" Row="2" Column="0"/>
             <LayoutButtons Face="NHbrNemesisUpgradeToAdvancedNemesis" Type="AbilCmd" AbilCmd="NHbrNemesisCatacombResearch@Research,Research3" Row="2" Column="1"/>
+            <LayoutButtons Face="ResearchHystericalTerror" Type="AbilCmd" AbilCmd="NHbrCrystallicShrineResearch,Research12" Row="1" Column="2"/>
         </CardLayouts>
         <SeparationRadius value="1"/>
         <Footprint value="Footprint3x3ContourNoCreep"/>

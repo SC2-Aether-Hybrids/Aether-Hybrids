@@ -515,7 +515,7 @@
         <EditorCategories value="Race:NHbr"/>
     </CModel>
     <CModel id="NHbrNemesis" parent="Unit" Race="Zerg">
-        <Model value="Assets\Textures\Hybrid_NemesisAdvanced.m3"/>
+        <Model value="assets\Units\Hybrid\Hybrid_Nemesis\Hybrid_Nemesis.m3"/>
         <Occlusion value="Show"/>
         <Radius value="1.250000"/>
         <SelectionOffset value="0.000000,0.000000,-0.400000"/>

@@ -510,6 +510,78 @@ bool libNHBR_gf_RunValidatorOnUnit (string lp_validator, unit lp_sourceUnit, uni
 
 // Triggers
 //--------------------------------------------------------------------------------------------------
+// Trigger: Create Dominator/Behemoth
+//--------------------------------------------------------------------------------------------------
+bool libNHBR_gt_CreateDominatorBehemoth_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!(((UnitGetType(EventUnitCreatedUnit()) == "NHbrDominatorAdvanced") || (UnitGetType(EventUnitCreatedUnit()) == "NHbrReaverAdvanced")))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    if ((UnitGetType(EventUnitCreatedUnit()) == "NHbrDominatorAdvanced")) {
+        TransmissionSendForPlayerSelect(PlayerGroupAll(), TransmissionSourceFromUnit(EventUnitCreatedUnit(), true, false, "Talk"), libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_CenterLeft), "", "Talk", SoundLink("HybridTransmissions", 2), StringExternal("Param/Value/lib_NHBR_8317D3D1"), StringExternal("Param/Value/lib_NHBR_DE72DB85"), 0.0, c_transmissionDurationAdd, false, c_maxPlayers, false);
+    }
+    else {
+        TransmissionSendForPlayerSelect(PlayerGroupAll(), TransmissionSourceFromUnit(EventUnitCreatedUnit(), true, false, "Talk"), libNtve_gf_CinematicPortrait(libNtve_ge_CinematicPortraitPosition_CenterLeft), "", "Talk", SoundLink("HybridTransmissions", 0), StringExternal("Param/Value/lib_NHBR_B8AA51A9"), StringExternal("Param/Value/lib_NHBR_AA8E6B34"), 0.0, c_transmissionDurationAdd, false, c_maxPlayers, false);
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libNHBR_gt_CreateDominatorBehemoth_Init () {
+    libNHBR_gt_CreateDominatorBehemoth = TriggerCreate("libNHBR_gt_CreateDominatorBehemoth_Func");
+    TriggerAddEventUnitCreated(libNHBR_gt_CreateDominatorBehemoth, null, "NHbrVoidRiftTrain", null);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Propagator Touch Ground
+//--------------------------------------------------------------------------------------------------
+bool libNHBR_gt_PropagatorTouchGround_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libNtve_gf_CreateUnitsWithDefaultFacing(1, "PropagatorChrysalis", 0, EventPlayer(), UnitGetPosition(EventPlayerEffectUsedUnitImpact()));
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libNHBR_gt_PropagatorTouchGround_Init () {
+    libNHBR_gt_PropagatorTouchGround = TriggerCreate("libNHBR_gt_PropagatorTouchGround_Func");
+    TriggerAddEventPlayerEffectUsed(libNHBR_gt_PropagatorTouchGround, c_playerAny, "PropagatorGroundDamage");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Propagator Touch Air
+//--------------------------------------------------------------------------------------------------
+bool libNHBR_gt_PropagatorTouchAir_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libNtve_gf_CreateUnitsWithDefaultFacing(1, "PropagatorChrysalis", 0, EventPlayer(), UnitGetPosition(EventPlayerEffectUsedUnitImpact()));
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libNHBR_gt_PropagatorTouchAir_Init () {
+    libNHBR_gt_PropagatorTouchAir = TriggerCreate("libNHBR_gt_PropagatorTouchAir_Func");
+    TriggerAddEventPlayerEffectUsed(libNHBR_gt_PropagatorTouchAir, c_playerAny, "PropagatorAirDamage");
+}
+
+//--------------------------------------------------------------------------------------------------
 // Trigger: Void Reanimate Revive
 //--------------------------------------------------------------------------------------------------
 bool libNHBR_gt_VoidReanimateRevive_Func (bool testConds, bool runActions) {
@@ -576,6 +648,10 @@ bool libNHBR_gt_VoidReanimatorUnitDeath_Func (bool testConds, bool runActions) {
         }
 
         if (!((UnitFilterMatch(EventUnit(), EventPlayer(), UnitFilter((1 << c_targetFilterGround) | (1 << c_targetFilterLight) | (1 << c_targetFilterBiological), 0, (1 << c_targetFilterAlly) | (1 << c_targetFilterNeutral) | (1 << c_targetFilterEnemy) | (1 << c_targetFilterMissile), 0)) == true))) {
+            return false;
+        }
+
+        if (!((UnitHasBehavior2(EventUnit(), "VoidSpawn") == false))) {
             return false;
         }
     }
@@ -655,6 +731,7 @@ bool libNHBR_gt_MapInit_Func (bool testConds, bool runActions) {
             if (auto748CCDDB_var < 0) { break; }
             if ((GameAttributePlayerValue("1", auto748CCDDB_var) == "0001")) {
                 PlayerSetRace(auto748CCDDB_var, "NHbr");
+                UISetResourceVisible(PlayerGroupSingle(auto748CCDDB_var), c_resourceTypeTerrazine, true);
             }
 
             if ((PlayerRace(auto748CCDDB_var) == "NHbr") && (GameAttributePlayerValue("1", auto748CCDDB_var) == "0002")) {
@@ -3353,6 +3430,10 @@ bool libNHBR_gt_VoidRiftUpgrades_Func (bool testConds, bool runActions) {
 
     // Conditions
     if (testConds) {
+        if (!((PlayerRace(EventPlayer()) == ("NHbr")))) {
+            return false;
+        }
+
         if (!((libNHBR_gf_VoidRiftUpgrade(EventUpgradeName()) == true))) {
             return false;
         }
@@ -3378,6 +3459,22 @@ bool libNHBR_gt_VoidRiftUpgrades_Func (bool testConds, bool runActions) {
         libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), (("zergflyerarmor" + IntToString(autoCBA19294_var))), TechTreeUpgradeCount(EventPlayer(), (("NHbrVoidPortalUpgrades@AirArmorsLevel" + IntToString(autoCBA19294_var))), c_techCountCompleteOnly));
         libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), (("ProtossGroundWeaponsLevel" + IntToString(autoCBA19294_var))), TechTreeUpgradeCount(EventPlayer(), (("NHbrEngineUpgrades@GroundWeaponsLevel" + IntToString(autoCBA19294_var))), c_techCountCompleteOnly));
         libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), (("ProtossGroundArmorLevel" + IntToString(autoCBA19294_var))), TechTreeUpgradeCount(EventPlayer(), (("NHbrEngineUpgrades@GroundArmorsLevel" + IntToString(autoCBA19294_var))), c_techCountCompleteOnly));
+        libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), (("ProtossShieldsLevel" + IntToString((autoCBA19294_var + 1)))), TechTreeUpgradeCount(EventPlayer(), (("NHbrEngineResearch@ProtectionArmor" + IntToString(autoCBA19294_var))), c_techCountCompleteOnly));
+        libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), (("ProtossAirWeaponsLevel" + IntToString(autoCBA19294_var))), TechTreeUpgradeCount(EventPlayer(), (("NHbrVoidPortalUpgrades@WeaponsLevel" + IntToString(autoCBA19294_var))), c_techCountCompleteOnly));
+        libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), (("ProtossAirArmorsLevel" + IntToString(autoCBA19294_var))), TechTreeUpgradeCount(EventPlayer(), (("NHbrVoidPortalUpgrades@AirArmorsLevel" + IntToString(autoCBA19294_var))), c_techCountCompleteOnly));
+        libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), (("TerranInfantryWeaponsLevel" + IntToString(autoCBA19294_var))), TechTreeUpgradeCount(EventPlayer(), (("NHbrEngineUpgrades@GroundWeaponsLevel" + IntToString(autoCBA19294_var))), c_techCountCompleteOnly));
+        libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), (("TerranInfantryArmorsLevel" + IntToString(autoCBA19294_var))), TechTreeUpgradeCount(EventPlayer(), (("NHbrEngineUpgrades@GroundArmorsLevel" + IntToString(autoCBA19294_var))), c_techCountCompleteOnly));
+        libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), (("TerranVehicleWeaponsLevel" + IntToString(autoCBA19294_var))), TechTreeUpgradeCount(EventPlayer(), (("NHbrEngineUpgrades@GroundWeaponsLevel" + IntToString(autoCBA19294_var))), c_techCountCompleteOnly));
+        libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), (("TerranVehicleArmorsLevel" + IntToString(autoCBA19294_var))), TechTreeUpgradeCount(EventPlayer(), (("NHbrEngineUpgrades@GroundArmorsLevel" + IntToString(autoCBA19294_var))), c_techCountCompleteOnly));
+        libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), (("TerranShipWeaponsLevel" + IntToString(autoCBA19294_var))), TechTreeUpgradeCount(EventPlayer(), (("NHbrVoidPortalUpgrades@WeaponsLevel" + IntToString(autoCBA19294_var))), c_techCountCompleteOnly));
+        libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), (("TerranShipArmorsLevel" + IntToString(autoCBA19294_var))), TechTreeUpgradeCount(EventPlayer(), (("NHbrVoidPortalUpgrades@AirArmorsLevel" + IntToString(autoCBA19294_var))), c_techCountCompleteOnly));
+        libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), (("ZergMeleeWeaponsLevel" + IntToString(autoCBA19294_var))), TechTreeUpgradeCount(EventPlayer(), (("NHbrEngineUpgrades@GroundWeaponsLevel" + IntToString(autoCBA19294_var))), c_techCountCompleteOnly));
+        libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), (("ZergMissileWeaponsLevel" + IntToString(autoCBA19294_var))), TechTreeUpgradeCount(EventPlayer(), (("NHbrEngineUpgrades@GroundWeaponsLevel" + IntToString(autoCBA19294_var))), c_techCountCompleteOnly));
+        libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), (("ZergGroundArmorsLevel" + IntToString(autoCBA19294_var))), TechTreeUpgradeCount(EventPlayer(), (("NHbrEngineUpgrades@GroundArmorsLevel" + IntToString(autoCBA19294_var))), c_techCountCompleteOnly));
+        libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), (("ZergFlyerWeaponsLevel" + IntToString(autoCBA19294_var))), TechTreeUpgradeCount(EventPlayer(), (("NHbrVoidPortalUpgrades@WeaponsLevel" + IntToString(autoCBA19294_var))), c_techCountCompleteOnly));
+        libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), (("ZergFlyerArmorsLevel" + IntToString(autoCBA19294_var))), TechTreeUpgradeCount(EventPlayer(), (("NHbrVoidPortalUpgrades@AirArmorsLevel" + IntToString(autoCBA19294_var))), c_techCountCompleteOnly));
+        libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), (("ProtossGroundWeaponsLevel" + IntToString(autoCBA19294_var))), TechTreeUpgradeCount(EventPlayer(), (("NHbrEngineUpgrades@GroundWeaponsLevel" + IntToString(autoCBA19294_var))), c_techCountCompleteOnly));
+        libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), (("ProtossGroundArmorsLevel" + IntToString(autoCBA19294_var))), TechTreeUpgradeCount(EventPlayer(), (("NHbrEngineUpgrades@GroundArmorsLevel" + IntToString(autoCBA19294_var))), c_techCountCompleteOnly));
         libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), (("ProtossShieldsLevel" + IntToString((autoCBA19294_var + 1)))), TechTreeUpgradeCount(EventPlayer(), (("NHbrEngineResearch@ProtectionArmor" + IntToString(autoCBA19294_var))), c_techCountCompleteOnly));
         libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), (("ProtossAirWeaponsLevel" + IntToString(autoCBA19294_var))), TechTreeUpgradeCount(EventPlayer(), (("NHbrVoidPortalUpgrades@WeaponsLevel" + IntToString(autoCBA19294_var))), c_techCountCompleteOnly));
         libNtve_gf_SetUpgradeLevelForPlayer(EventPlayer(), (("ProtossAirArmorsLevel" + IntToString(autoCBA19294_var))), TechTreeUpgradeCount(EventPlayer(), (("NHbrVoidPortalUpgrades@AirArmorsLevel" + IntToString(autoCBA19294_var))), c_techCountCompleteOnly));
@@ -3418,7 +3515,7 @@ bool libNHBR_gt_VoidRiftIdleUnits_Func (bool testConds, bool runActions) {
             for (;; auto2CF7D153_u -= 1) {
                 auto2CF7D153_var = UnitGroupUnitFromEnd(auto2CF7D153_g, auto2CF7D153_u);
                 if (auto2CF7D153_var == null) { break; }
-                if ((UnitHasBehavior2(auto2CF7D153_var, "VoidSpawn") == true)) {
+                if (((UnitHasBehavior2(auto2CF7D153_var, "VoidSpawn") == true) || (UnitGetType(auto2CF7D153_var) == "Propagator"))) {
                     UnitIssueOrder(auto2CF7D153_var, OrderTargetingPoint(AbilityCommand("attack", 0), UnitGetPosition(UnitGroupClosestToPoint(UnitGroupAlliance(auto0045C0AB_var, c_unitAllianceEnemy, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile) | (1 << c_targetFilterCloaked), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32)) | (1 << (c_targetFilterInvulnerable - 32))), 0), UnitGetPosition(auto2CF7D153_var)))), c_orderQueueReplace);
                 }
 
@@ -3432,11 +3529,13 @@ bool libNHBR_gt_VoidRiftIdleUnits_Func (bool testConds, bool runActions) {
 //--------------------------------------------------------------------------------------------------
 void libNHBR_gt_VoidRiftIdleUnits_Init () {
     libNHBR_gt_VoidRiftIdleUnits = TriggerCreate("libNHBR_gt_VoidRiftIdleUnits_Func");
-    TriggerEnable(libNHBR_gt_VoidRiftIdleUnits, false);
-    TriggerAddEventTimePeriodic(libNHBR_gt_VoidRiftIdleUnits, 5.0, c_timeGame);
+    TriggerAddEventTimePeriodic(libNHBR_gt_VoidRiftIdleUnits, 3.0, c_timeGame);
 }
 
 void libNHBR_InitTriggers () {
+    libNHBR_gt_CreateDominatorBehemoth_Init();
+    libNHBR_gt_PropagatorTouchGround_Init();
+    libNHBR_gt_PropagatorTouchAir_Init();
     libNHBR_gt_VoidReanimateRevive_Init();
     libNHBR_gt_VoidReanimatorUnitDeath_Init();
     libNHBR_gt_MapInit_Init();

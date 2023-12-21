@@ -21,7 +21,7 @@ const int libNHBR_ge__UnitDataType_Unit = 6;
 const int libNHBR_ge__UnitDataType_UnitGroup = 7;
 
 // Constants
-const int libNHBR_gv_c_UNIT_REVIVE_MAX = 100;
+const int libNHBR_gv_c_UNIT_REVIVE_MAX = 30;
 const int libNHBR_gv_hybridBuildControllerMaxOrderCount_C = 31;
 const int libNHBR_gv_hybridNetworkMaximumPowerSourcesInNetwork = 12;
 const int libNHBR_gv_hybridNetworkPowerSourceUnitTypeMaxCount_C = 3;
@@ -91,6 +91,9 @@ void libNHBR_gf_UpgradeUnittoUnitForPlayer (string lp_sourceUnit, string lp_targ
 bool libNHBR_gf_RunValidatorOnUnit (string lp_validator, unit lp_sourceUnit, unit lp_targetUnit);
 
 // Trigger Declarations
+trigger libNHBR_gt_CreateDominatorBehemoth;
+trigger libNHBR_gt_PropagatorTouchGround;
+trigger libNHBR_gt_PropagatorTouchAir;
 trigger libNHBR_gt_VoidReanimateRevive;
 trigger libNHBR_gt_VoidReanimatorUnitDeath;
 trigger libNHBR_gt_MapInit;

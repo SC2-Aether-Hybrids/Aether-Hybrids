@@ -47,6 +47,27 @@
         <EditorCategories value="Race:NHbr"/>
         <Lighting value="NHbrCommon@StructureDeathCommon"/>
     </CModel>
+    <CModel id="AuraPulse">
+        <Model value="Assets\Effects\Terran\PredatorImpactShockwave\PredatorImpactShockwave.m3"/>
+    </CModel>
+    <CModel id="IndomitableWill">
+        <Model value="Assets\Effects\Protoss\SOA_GuardianShell\SOA_GuardianShell.m3"/>
+    </CModel>
+    <CModel id="NighSphere">
+        <Model value="Assets\Models\NighSphere.m3"/>
+    </CModel>
+    <CModel id="Propagator">
+        <Model value="Assets\Units\Neutral\Propagator_Coop\Propagator_Coop.m3"/>
+    </CModel>
+    <CModel id="PropagatorChrysalis">
+        <Model value="Assets\Effects\Neutral\Propagator_Coop_Cocoon_Ground\Propagator_Coop_Cocoon_Ground.m3"/>
+    </CModel>
+    <CModel id="PropagatorDeath">
+        <Model value="Assets\Units\Neutral\Propagator_Coop_Death\Propagator_Coop_Death.m3"/>
+    </CModel>
+    <CModel id="PropagatorSplit">
+        <Model value="Assets\Units\Neutral\VoidUnit_Death\VoidUnit_Death.m3"/>
+    </CModel>
     <CModel id="PsionicShockwaveModel" parent="OneShotSpellFX">
         <Model value="Assets\Effects\Zerg\HybridPsionicShockwave\HybridPsionicShockwave.m3"/>
         <EditorCategories value="Race:Protoss"/>
@@ -188,6 +209,9 @@
         <SelectionRadius value="2.500000"/>
         <ShadowRadius value="2.500000"/>
     </CModel>
+    <CModel id="RepairHybridBeam">
+        <Model value="Assets\Effects\Protoss\TractorBeam\TractorBeam.m3"/>
+    </CModel>
     <CModel id="ScreamerAstralWindCastModel" parent="OneShotSpellFX">
         <Model value="Assets\Effects\Protoss\Artanis_AstralWinds\Artanis_AstralWinds.m3"/>
         <EditorCategories value="Race:Protoss"/>
@@ -302,6 +326,16 @@
         <RadiusLoose value="1.000000"/>
         <ScaleMax value="4.000000,4.000000,4.000000"/>
         <ScaleMin value="4.000000,4.000000,4.000000"/>
+    </CModel>
+    <CModel id="TerrazineVault" parent="Unit">
+        <Model value="Assets\Models\Xelnaga_HighYield_Assimilator.m3"/>
+        <EditorCategories value=""/>
+        <Radius value="1.000000"/>
+        <SelectionLayer value="2"/>
+        <SelectionRadius value="1.000000"/>
+    </CModel>
+    <CModel id="TerrazineVaultDeath">
+        <Model value="Assets\Effects\Protoss\Xelnaga_Construct_EntropicBlast_Explosion\Xelnaga_Construct_EntropicBlast_Explosion.m3"/>
     </CModel>
     <CModelFoliage id="UpgradingtoRipFieldGenerator">
         <Model value="Assets\Effects\Zerg\HybridEnergyDrainImpact\HybridEnergyDrainImpact.m3"/>

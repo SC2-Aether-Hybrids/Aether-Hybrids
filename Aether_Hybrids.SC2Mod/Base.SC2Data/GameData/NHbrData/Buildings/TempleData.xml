@@ -186,7 +186,6 @@
         <EditorCategories value="Race:NHbr"/>
         <AssetArray File="assets\Sounds\Base_Fenix\Fenix_Talent_DivertPower_Start_01.ogg" FacialGroup=""/>
         <Mode value="3DWorld"/>
-        <Volume value="6.000000,6.000000"/>
     </CSound>
     <CSound id="NHbrTemple@Ready">
         <EditorCategories value="Race:NHbr"/>

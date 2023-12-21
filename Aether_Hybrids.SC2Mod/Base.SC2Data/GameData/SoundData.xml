@@ -1,5 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CSound id="AuraPulse">
+        <AssetArray File="assets\sounds\Base_Tassadar\Tassadar_Shockblast_Launch_Bolt_02g.ogg" FacialGroup=""/>
+        <AssetArray File="assets\sounds\Base_Tassadar\Tassadar_Shockblast_Launch_Bolt_02h.ogg" FacialGroup=""/>
+        <AssetArray File="assets\sounds\Base_Tassadar\Tassadar_Shockblast_Launch_Bolt_03b.ogg" FacialGroup=""/>
+        <AssetArray File="assets\sounds\Base_Tassadar\Tassadar_Shockblast_Launch_Bolt_03d.ogg" FacialGroup=""/>
+        <AssetArray File="assets\sounds\Base_Tassadar\Tassadar_Shockblast_Launch_Bolt_03e.ogg" FacialGroup=""/>
+        <AssetArray File="assets\sounds\Base_Tassadar\Tassadar_Shockblast_Launch_Bolt_03f.ogg" FacialGroup=""/>
+        <Category value="Combat"/>
+        <Mode value="3DWorld"/>
+        <Pitch value="-2.000000,2.000000"/>
+    </CSound>
+    <CSound id="HybridTransmissions">
+        <AssetArray File="Assets\Sounds\pMission_Korhal02_Hybrid01_040.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\pMission_Korhal02_Hybrid01_014.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\TZeratul02HybridProtoss00019.ogg" FacialGroup=""/>
+    </CSound>
+    <CSound id="PrecursorRepair">
+        <AssetArray>
+            <File value="Assets\Sounds\Terran\Medivac\Medivac_HealLoop.wav"/>
+            <LoopCount value="99"/>
+            <LoopTime value="0,400812"/>
+            <FacialGroup value=""/>
+        </AssetArray>
+        <Category value="Spell"/>
+        <DupeDestroyCount value="4"/>
+        <DupeMuteCount value="4"/>
+        <Mode value="3DWorld"/>
+        <Pitch value="-4.000000,-4.000000"/>
+        <Volume value="-13.000000,-13.000000"/>
+    </CSound>
+    <CSound id="PrecursorRepairStart">
+        <AssetArray File="Assets\Sounds\Ultralisk_Mooch_Start_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Ultralisk_Mooch_Start_02.wav" FacialGroup=""/>
+        <Flags index="Purgable" value="1"/>
+        <Category value="Spell"/>
+        <DupeDestroyCount value="4"/>
+        <Mode value="3DWorld"/>
+        <Pitch value="-1.820000,1.640000"/>
+        <ReverbBalance Room="0"/>
+        <Volume value="-12.000000,-12.000000"/>
+    </CSound>
+    <CSound id="PropagatorChrysalisBirth">
+        <AssetArray File="Assets\Sounds\Cocoon_InfestedBirth_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Cocoon_InfestedBirth_02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Cocoon_InfestedBirth_03.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Cocoon_InfestedBirth_04.wav" FacialGroup=""/>
+        <Category value="Combat"/>
+        <Mode value="3DWorld"/>
+        <Volume value="-3.000000,-3.000000"/>
+    </CSound>
+    <CSound id="PropagatorChrysalisDeath">
+        <AssetArray File="Assets\Sounds\Doodad_Eggsplosion_Death_00.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Doodad_Eggsplosion_Death_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Doodad_Eggsplosion_Death_02.wav" FacialGroup=""/>
+        <Category value="Combat"/>
+        <Mode value="3DWorld"/>
+    </CSound>
+    <CSound id="PropagatorSplitLaunch">
+        <AssetArray File="Assets\Sounds\Protoss\Sentry\Sentry_HallucinationDeathSmall.wav" FacialGroup=""/>
+        <Category value="Combat"/>
+        <Mode value="3DWorld"/>
+    </CSound>
     <CSound id="PsionicShockwaveSound">
         <AssetArray>
             <File value="Assets\Sounds\Hybrid_PsionicShockwaveLaunch1.wav"/>

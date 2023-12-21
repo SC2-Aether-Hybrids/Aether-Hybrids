@@ -1,5 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CEffectApplyBehavior id="ArtanisVortexApplyDisable">
+        <EditorCategories value="Race:Protoss"/>
+        <Behavior value="ArtanisVortexBehavior"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="ArtanisVortexApplyHide">
+        <ValidatorArray value="ArtanisVortexApplyHide"/>
+        <EditorCategories value="Race:Protoss"/>
+        <Behavior value="ArtanisVortexHide"/>
+    </CEffectApplyBehavior>
+    <CEffectCreatePersistent id="ArtanisVortexCreatePersistent">
+        <ValidatorArray value="CliffLevelGE1"/>
+        <EditorCategories value="Race:Protoss"/>
+        <PeriodCount value="320"/>
+        <PeriodicEffectArray value="ArtanisVortexSearchArea"/>
+        <PeriodicPeriodArray value="0.0625"/>
+    </CEffectCreatePersistent>
+    <CEffectSet id="ArtanisVortexEffect">
+        <ValidatorArray value="NotForceField"/>
+        <EditorCategories value="Race:Protoss"/>
+        <EffectArray value="ArtanisVortexUnburrow"/>
+        <EffectArray value="ArtanisVortexUnsiege"/>
+        <EffectArray value="ArtanisVortexApplyHide"/>
+        <EffectArray value="ArtanisVortexApplyDisable"/>
+        <EffectArray value="ArtanisVortexForce"/>
+    </CEffectSet>
+    <CEffectApplyForce id="ArtanisVortexForce">
+        <EditorCategories value="Race:Protoss"/>
+        <WhichLocation Effect="ArtanisVortexCreatePersistent" Value="TargetPoint"/>
+        <Amount value="-0.1"/>
+    </CEffectApplyForce>
+    <CEffectEnumArea id="ArtanisVortexSearchArea">
+        <EditorCategories value="Race:Protoss"/>
+        <SearchFilters value="-;Self,Structure,Missile,Item,Dead"/>
+        <AreaArray Radius="3" Effect="ArtanisVortexEffect"/>
+    </CEffectEnumArea>
+    <CEffectIssueOrder id="ArtanisVortexUnburrow">
+        <EditorCategories value="Race:Protoss"/>
+        <Abil value="BurrowZerglingUp"/>
+    </CEffectIssueOrder>
+    <CEffectDamage id="AstralNebulaDamage">
+        <EditorCategories value=""/>
+        <VitalFractionMax index="Life" value="0.25"/>
+        <VitalFractionMax index="Shields" value="0.25"/>
+        <AreaArray Radius="2.5" Fraction="1"/>
+        <SearchFilters value="-;Player,Ally,Structure,Missile,Stasis,Dead,Invulnerable,Benign"/>
+    </CEffectDamage>
+    <CEffectDamage id="AuraPulse">
+        <EditorCategories value=""/>
+        <Amount value="5"/>
+    </CEffectDamage>
+    <CEffectApplyBehavior id="AuraPulseAB">
+        <EditorCategories value=""/>
+        <Behavior value="SlowedAuraPulse"/>
+    </CEffectApplyBehavior>
+    <CEffectEnumArea id="AuraPulseSearch">
+        <EditorCategories value=""/>
+        <SearchFilters value="-;Player,Ally,Missile,Stasis,Dead,Invulnerable,Benign"/>
+        <AreaArray Radius="2" Effect="AuraPulseSet"/>
+    </CEffectEnumArea>
+    <CEffectSet id="AuraPulseSet">
+        <EditorCategories value=""/>
+        <EffectArray value="AuraPulse"/>
+        <EffectArray value="AuraPulseAB"/>
+    </CEffectSet>
+    <CEffectEnumArea id="GlaiveWurmE2222">
+        <EditorCategories value="Race:Zerg"/>
+        <ExcludeArray Value="Outer"/>
+        <ExcludeArray Value="Target"/>
+        <SearchFilters value="Visible;Player,Ally,Neutral,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="3" Effect="GlaiveWurmM3222"/>
+        <MaxCount value="1"/>
+    </CEffectEnumArea>
+    <CEffectEnumArea id="GlaiveWurmE2223">
+        <EditorCategories value="Race:Zerg"/>
+        <ExcludeArray Value="Outer"/>
+        <ExcludeArray Value="Target"/>
+        <SearchFilters value="Visible;Player,Ally,Neutral,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="3" Effect="GlaiveWurmM32222"/>
+        <MaxCount value="1"/>
+    </CEffectEnumArea>
+    <CEffectLaunchMissile id="GlaiveWurmM3222">
+        <ValidatorArray value="noMarkers"/>
+        <ValidatorArray value="TargetNotChangeling"/>
+        <ValidatorArray value="HaveRicohcetingGlaives"/>
+        <EditorCategories value="Race:Zerg"/>
+        <ImpactEffect value="GlaiveWurmS22222"/>
+        <AmmoUnit value="NHbrWarriorWeapon@Missile"/>
+    </CEffectLaunchMissile>
+    <CEffectLaunchMissile id="GlaiveWurmM32222">
+        <ValidatorArray value="noMarkers"/>
+        <ValidatorArray value="TargetNotChangeling"/>
+        <ValidatorArray value="HaveRicohcetingGlaives"/>
+        <EditorCategories value="Race:Zerg"/>
+        <ImpactEffect value="NHbrWarriorWeapon@Damage"/>
+        <AmmoUnit value="NHbrWarriorWeapon@Missile"/>
+    </CEffectLaunchMissile>
+    <CEffectSet id="GlaiveWurmS2222">
+        <EditorCategories value="Race:Zerg"/>
+        <EffectArray value="NHbrWarriorWeapon@Damage"/>
+        <EffectArray value="GlaiveWurmE2222"/>
+    </CEffectSet>
+    <CEffectSet id="GlaiveWurmS22222">
+        <EditorCategories value="Race:Zerg"/>
+        <EffectArray value="NHbrWarriorWeapon@Damage"/>
+        <EffectArray value="GlaiveWurmE2223"/>
+    </CEffectSet>
+    <CEffectApplyBehavior id="HystericalFearAB">
+        <ValidatorArray index="0" removed="1"/>
+        <EditorCategories value=""/>
+        <Behavior value="HystericalTerror"/>
+    </CEffectApplyBehavior>
+    <CEffectEnumArea id="HystericalFearSA">
+        <EditorCategories value=""/>
+        <SearchFilters value="-;Player,Ally,Neutral,Missile,Item,Stasis,Dead,Benign"/>
+        <AreaArray Radius="7" Effect="HystericalFearAB"/>
+    </CEffectEnumArea>
+    <CEffectApplyBehavior id="IndomitableWillAB">
+        <EditorCategories value=""/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="IndomitableWill"/>
+    </CEffectApplyBehavior>
+    <CEffectRemoveBehavior id="IndomitableWillRB">
+        <EditorCategories value=""/>
+        <WhichUnit Value="Caster"/>
+        <BehaviorLink value="IndomitableWill"/>
+    </CEffectRemoveBehavior>
     <CEffectApplyBehavior id="NHbrBehemothWeapon@ApplyBehavior">
         <ValidatorArray index="0" removed="1"/>
         <EditorCategories value="Race:NHbr"/>
@@ -48,6 +174,50 @@
         <EffectArray value="NHbrDominatorWeapon@ApplyBehavior"/>
         <EffectArray value="NHbrDominatorWeapon@Damage"/>
     </CEffectSet>
+    <CEffectCreateUnit id="PropagatorCU">
+        <EditorCategories value=""/>
+        <SpawnUnit value="Propagator"/>
+    </CEffectCreateUnit>
+    <CEffectCreateUnit id="PropagatorSplitCU">
+        <EditorCategories value=""/>
+        <SpawnUnit value="Propagator"/>
+    </CEffectCreateUnit>
+    <CEffectSet id="PropagatorChrysalisSet">
+        <EditorCategories value=""/>
+        <EffectArray value="PropagatorCU"/>
+        <EffectArray value="Suicide"/>
+    </CEffectSet>
+    <CEffectDamage id="PropagatorGroundDamage">
+        <EditorCategories value=""/>
+        <Kind value="Melee"/>
+        <KindSplash value="Melee"/>
+        <VitalFractionMax index="Life" value="1"/>
+        <VitalFractionMax index="Shields" value="1"/>
+        <Death value="Remove"/>
+    </CEffectDamage>
+    <CEffectDamage id="PropagatorAirDamage">
+        <EditorCategories value=""/>
+        <VitalFractionMax index="Life" value="1"/>
+        <VitalFractionMax index="Shields" value="1"/>
+    </CEffectDamage>
+    <CEffectEnumArea id="PropagatorGroundSA">
+        <EditorCategories value=""/>
+        <SearchFilters value="Ground;Player,Ally,Neutral,Missile,Stasis,Dead,Benign"/>
+        <AreaArray Radius="0.6" Effect="PropagatorGroundDamage"/>
+    </CEffectEnumArea>
+    <CEffectEnumArea id="PropagatorAirSA">
+        <EditorCategories value=""/>
+        <SearchFilters value="Air;Player,Ally,Neutral,Missile,Stasis,Dead,Benign"/>
+        <AreaArray Radius="0.6" Effect="PropagatorAirDamage"/>
+    </CEffectEnumArea>
+    <CEffectSet id="PropagatorSet">
+        <EditorCategories value=""/>
+        <EffectArray value="PropagatorGroundSA"/>
+        <EffectArray value="PropagatorAirSA"/>
+    </CEffectSet>
+    <CEffectDamage id="PropagatorWeaponDummy">
+        <EditorCategories value=""/>
+    </CEffectDamage>
     <CEffectApplyBehavior id="PsionicShockwaveApplyControllerBehavior">
         <ValidatorArray index="0" value="DoesNotHaveControllerBehavior"/>
         <EditorCategories value="Race:Protoss"/>
@@ -172,6 +342,31 @@
     <CEffectSwitch id="NHbrNemesisAdvancedWeapon@PeriodicSwitch">
         <EditorCategories value=""/>
     </CEffectSwitch>
+    <CEffectDamage id="SacrificePrecursor">
+        <ValidatorArray value="NHbrCommon@IsMinion"/>
+        <EditorCategories value=""/>
+        <VitalFractionMax index="Life" value="1"/>
+        <VitalFractionMax index="Shields" value="1"/>
+    </CEffectDamage>
+    <CEffectApplyBehavior id="SacrificePrecursorAB">
+        <EditorCategories value=""/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="NumberofSacrifices"/>
+    </CEffectApplyBehavior>
+    <CEffectEnumArea id="SacrificePrecursorSA">
+        <EditorCategories value=""/>
+        <SearchFilters value="-;Ally,Neutral,Enemy,Stasis,Dead,Invulnerable"/>
+        <TargetSorts>
+            <SortArray value="TSDistance"/>
+        </TargetSorts>
+        <AreaArray MaxCount="1" Radius="7" Effect="SacrificePrecursor"/>
+    </CEffectEnumArea>
+    <CEffectSet id="SacrificePrecursorSet">
+        <ValidatorArray value="NearbyPrecursor"/>
+        <EditorCategories value=""/>
+        <EffectArray value="SacrificePrecursorSA"/>
+        <EffectArray value="SacrificePrecursorAB"/>
+    </CEffectSet>
     <CEffectApplyBehavior id="ScreamerMindControlApply">
         <EditorCategories value="Race:Protoss"/>
         <Behavior value="MindControlledScreamer"/>
@@ -304,7 +499,7 @@
         <ValidatorArray value="TargetNotChangeling"/>
         <ValidatorArray value="HaveRicohcetingGlaives"/>
         <EditorCategories value="Race:Zerg"/>
-        <ImpactEffect value="NHbrWarriorWeapon@Damage"/>
+        <ImpactEffect value="GlaiveWurmS2222"/>
         <AmmoUnit value="NHbrWarriorWeapon@Missile"/>
     </CEffectLaunchMissile>
     <CEffectSet id="GlaiveWurmS12">
@@ -582,6 +777,11 @@
         <BehaviorLink value="SentryShieldRepairDoubleHealing2"/>
         <Count value="1"/>
     </CEffectRemoveBehavior>
+    <CEffectModifyPlayer id="TerrazineGenerate">
+        <EditorCategories value=""/>
+        <Resources index="Terrazine" value="2"/>
+        <ResourcesCollected index="Terrazine" value="2"/>
+    </CEffectModifyPlayer>
     <CEffectSet id="VoidReanimate">
         <ValidatorArray value="VoidCorpse"/>
         <EditorCategories value=""/>
@@ -648,7 +848,7 @@
         <DrainResourceCostFactor index="Vespene" value="0.2"/>
         <DrainResourceCostFactor index="Terrazine" value="0.2"/>
         <DrainResourceCostFactor index="Custom" value="0.2"/>
-        <RechargeVitalRate value="5"/>
+        <RechargeVitalRate value="8.5"/>
         <TimeFactor value="0.75"/>
     </CEffectCreateHealer>
     <CEffectApplyKinetic id="NHbrTempleVoidApplyKinetic">
@@ -794,4 +994,10 @@
         <EditorCategories value=""/>
         <TargetLocationType value="UnitOrPoint"/>
     </CEffectSet>
+    <CEffectCreatePersistent id="VortexCreatePersistent">
+        <InitialEffect value="AstralNebulaDamage"/>
+    </CEffectCreatePersistent>
+    <CEffectEnumArea id="VortexSearchArea">
+        <SearchFilters value="-;Self,Player,Ally,Structure,Missile,Item,Dead,Hidden"/>
+    </CEffectEnumArea>
 </Catalog>

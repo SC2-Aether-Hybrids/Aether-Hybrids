@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+    <CWeaponLegacy id="PropagatorDummy">
+        <EditorCategories value="Race:Terran"/>
+        <Options index="Hidden" value="1"/>
+        <Icon value="Assets\Textures\btn-upgrade-terran-infantryweaponslevel0.dds"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <MinScanRange value="50"/>
+        <Range value="0"/>
+        <Period value="1"/>
+        <Effect value="PropagatorWeaponDummy"/>
+    </CWeaponLegacy>
     <CWeaponLegacy id="HybridVoidBlast">
         <EditorCategories value=""/>
         <Icon value="Assets\Textures\btn-upgrade-protoss-groundweaponslevel0.dds"/>
@@ -83,7 +93,7 @@
         <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
         <Options index="LinkedCooldown" value="0"/>
         <Options index="DisplayCooldown" value="1"/>
-        <Icon value="Assets\Textures\btn-upgrade-protoss-fenix-carrier-solarbeam-purple.tga"/>
+        <Icon value="Assets\Icons\btn-upgrade-protoss-fenix-carrier-solarbeam-purple.tga"/>
         <DisplayEffect value="NHbrHybridConstructVoidLaserDamage"/>
         <DisplayAttackCount value="2"/>
         <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
@@ -123,7 +133,7 @@
     </CWeaponLegacy>
     <CWeaponLegacy id="NHbrTempleInterceptorLaunch">
         <EditorCategories value="Race:Protoss"/>
-        <Icon value="Assets\Textures\btn-xelnaga-interceptor-edge.dds"/>
+        <Icon value="Assets\Icons\btn-xelnaga-interceptor-edge.dds"/>
         <DisplayEffect value="NHbrInterceptorEdgeDamage"/>
         <DisplayAttackCount value="2"/>
         <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
@@ -138,7 +148,7 @@
     <CWeaponLegacy id="NHbrMinionPrecursorParticleBeam">
         <EditorCategories value="Race:Protoss"/>
         <Options index="Melee" value="1"/>
-        <Icon value="Assets\Textures\btn-upgrade-xelnaga-weaponlevel0.dds"/>
+        <Icon value="Assets\Icons\btn-upgrade-xelnaga-weaponlevel0.dds"/>
         <DisplayEffect value="NBhrMinionPrecursorParticleBeamDamage"/>
         <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
         <Range value="2"/>

@@ -16,9 +16,21 @@
     <CRequirement id="LearnAutocraticSupremacy">
         <NodeArray index="Show" Link="NotCountUpgradeAutocraticSupremacyQueuedOrBetter"/>
     </CRequirement>
+    <CRequirement id="LearnHystericalTerror">
+        <EditorCategories value="TechType:Upgrade"/>
+        <NodeArray index="Show" Link="LTCountUpgradeHystericalTerrorQueuedOrBetter0"/>
+    </CRequirement>
     <CRequirement id="LearnNHbrHybridTempleOfOriginEdgeResearch">
         <EditorCategories value="TechType:Upgrade"/>
         <NodeArray index="Show" Link="LTECountUpgradeNHbrHybridTempleofOriginBuildEdgedummyupgradeQueuedOrBetterTechTreeCheat0"/>
+    </CRequirement>
+    <CRequirement id="LearnPhantomBrigade">
+        <EditorCategories value="TechType:Upgrade"/>
+        <NodeArray index="Show" Link="LTCountUpgradePhantomBrigadeQueuedOrBetter0"/>
+    </CRequirement>
+    <CRequirement id="LearnSovereignAuthority">
+        <EditorCategories value="TechType:Upgrade"/>
+        <NodeArray index="Show" Link="LTCountUpgradeSovereignAuthorityQueuedOrBetter0"/>
     </CRequirement>
     <CRequirement id="NHbrTempleArmInterceptor">
         <EditorCategories value="Race:Protoss,TechType:Unit"/>
@@ -43,6 +55,12 @@
         <EditorCategories value="TechType:Upgrade"/>
         <NodeArray index="Show" Link="LTCountUpgradeRicochetingGlaivesQueuedOrBetter0"/>
     </CRequirement>
+    <CRequirement id="NoMoreSacrifices">
+        <NodeArray index="Show" Link="GTECountBehaviorNumberofSacrificesCompleteOnlyAtUnit10"/>
+    </CRequirement>
+    <CRequirement id="RequiresRevenantKeystoneandAncientShrine">
+        <NodeArray index="Use" Link="AndCountUnitNHbrProcessingCoreCompleteOnly2003211978CountUnitNHbrCrystallicShrineCompleteOnly3588192422NotGTECountUnitTerrazineVaultQueuedOrBetter5833868012"/>
+    </CRequirement>
     <CRequirement id="TrainWorldship">
         <EditorCategories value="Race:NHbr,TechType:Unit"/>
         <NodeArray index="Use" Link="AndEq1228785331CountUnitNHbrWorldshipQueuedOrBetter0"/>
@@ -51,9 +69,21 @@
         <EditorCategories value="TechType:Ability"/>
         <NodeArray index="Use" Link="CountUpgradeEmpoweredRiftsCompleteOnly"/>
     </CRequirement>
+    <CRequirement id="UseHystericalTerror">
+        <EditorCategories value="TechType:Ability"/>
+        <NodeArray index="Use" Link="CountUpgradeHystericalTerrorCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="UsePhantomBrigade">
+        <EditorCategories value="TechType:Ability"/>
+        <NodeArray index="Use" Link="CountUpgradePhantomBrigadeCompleteOnly"/>
+    </CRequirement>
     <CRequirement id="UseRicochetingGlaives">
         <EditorCategories value="TechType:Ability"/>
         <NodeArray index="Use" Link="CountUpgradeRicochetingGlaivesCompleteOnly"/>
+    </CRequirement>
+    <CRequirement id="UseSovereignAuthority">
+        <EditorCategories value="TechType:Ability"/>
+        <NodeArray index="Use" Link="CountUpgradeSovereignAuthorityCompleteOnly"/>
     </CRequirement>
     <CRequirement id="VoidRiftRequirement">
         <NodeArray index="Use" Link="AndTechTreeCheatCountUnitAlias_NHbrIonicCrystalCompleteOnly557504770GT4CountUnitNHbrVoidRiftQueuedOrBetter3275562120"/>

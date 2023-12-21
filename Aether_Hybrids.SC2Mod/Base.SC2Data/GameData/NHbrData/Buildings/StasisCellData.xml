@@ -62,6 +62,16 @@
             <Resource index="Vespene" value="300"/>
             <Button DefaultButtonFace="NHbrEngineUpgrades@GroundArmorLevel32" Requirements="NHbrEngineUpgrades@GroundArmor32"/>
         </InfoArray>
+        <InfoArray index="Research14" Time="308" Upgrade="PhantomBrigade">
+            <Resource index="Minerals" value="200"/>
+            <Resource index="Vespene" value="200"/>
+            <Button DefaultButtonFace="ResearchPhantomBrigade" Requirements="LearnPhantomBrigade"/>
+        </InfoArray>
+        <InfoArray index="Research15" Time="308" Upgrade="SovereignAuthority">
+            <Resource index="Minerals" value="200"/>
+            <Resource index="Vespene" value="200"/>
+            <Button DefaultButtonFace="ResearchSovereignAuthority" Requirements="LearnSovereignAuthority"/>
+        </InfoArray>
     </CAbilResearch>
     <CRequirement id="NHbrStasisCell@RequiresVoidRiftandGenesisChamberCountLT1Use">
         <EditorCategories value="Race:NHbr"/>
@@ -163,8 +173,10 @@
     </CModel>
     <CModel id="NHbrStasisCell@Build" parent="NHbrBuildingBuildSmallBase"/>
     <CModel id="NHbrStasisCell@Model" parent="PylonBase">
-        <Model value="assets\Buildings\Hybrid\XelNaga_StasisCell\XelNaga_StasisCell.m3"/>
+        <Model value="xelnagastasiscellV2.2.m3"/>
         <EditorCategories value="Race:NHbr"/>
+        <Radius value="1.500000"/>
+        <SelectionRadius value="1.500000"/>
     </CModel>
     <CSound id="NHbrStasisCell@Ready">
         <EditorCategories value="Race:NHbr"/>
@@ -233,7 +245,8 @@
             <LayoutButtons Face="NHbrEngineUpgrades@GroundWeaponsLevel32" Type="AbilCmd" AbilCmd="NHbrStasisCellResearch,Research11" Row="0" Column="1"/>
             <LayoutButtons Face="NHbrFlayerBerserker@Berserker" Type="AbilCmd" AbilCmd="NHbrStasisCellResearch,Research4" Row="1" Column="0"/>
             <LayoutButtons Face="NHbrFlayerFury@Research" Type="AbilCmd" AbilCmd="NHbrStasisCellResearch,Research1" Row="1" Column="1"/>
-            <LayoutButtons Face="NHbrWarriorDeconstruction@Deconstruction" Type="AbilCmd" AbilCmd="NHbrStasisCellResearch,Research3" Row="1" Column="2"/>
+            <LayoutButtons Face="ResearchSovereignAuthority" Type="AbilCmd" AbilCmd="NHbrStasisCellResearch,Research15" Row="1" Column="2"/>
+            <LayoutButtons Face="ResearchPhantomBrigade" Type="AbilCmd" AbilCmd="NHbrStasisCellResearch,Research14" Row="1" Column="3"/>
         </CardLayouts>
         <Radius value="1"/>
         <SeparationRadius value="1"/>

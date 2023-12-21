@@ -497,6 +497,199 @@
         <GlossaryPriority value="180"/>
         <GlossaryAlias value="NHbrInterceptorEdge"/>
     </CUnit>
+    <CUnit id="Propagator">
+        <DeathRevealRadius value="3"/>
+        <ReviveType value="NHbrWarrior"/>
+        <Race value="NHbr"/>
+        <Mob value="Multiplayer"/>
+        <FlagArray index="Uncommandable" value="1"/>
+        <FlagArray index="PreventDestroy" value="1"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <FlagArray index="ArmySelect" value="1"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Collide index="Ground" value="1"/>
+        <Collide index="ForceField" value="1"/>
+        <Collide index="Locust" value="1"/>
+        <Collide index="Small" value="1"/>
+        <Attributes index="Biological" value="1"/>
+        <LifeStart value="10"/>
+        <LifeMax value="10"/>
+        <LifeArmor value="1"/>
+        <LifeRegenRate value="0.711"/>
+        <LifeArmorName value="Unit/LifeArmorName/VoidCarapace"/>
+        <LifeArmorTip value="Unit/LifeArmorTooltip/LifeForce"/>
+        <EnergyStart value="10"/>
+        <EnergyMax value="10"/>
+        <ShieldsStart value="10"/>
+        <ShieldsMax value="10"/>
+        <ShieldRegenRate value="0.711"/>
+        <ShieldArmorName value="Unit/ShieldArmorName/NHbrShields"/>
+        <ShieldArmorTip value="Unit/ShieldArmorTooltip/NHbrShields"/>
+        <Speed value="1.75"/>
+        <Acceleration value="1000"/>
+        <LateralAcceleration value="46.0625"/>
+        <StationaryTurningRate value="999.8437"/>
+        <TurningRate value="999.8437"/>
+        <Sight value="9"/>
+        <Food value="-1"/>
+        <CostCategory value="Army"/>
+        <AttackTargetPriority value="20"/>
+        <DamageDealtXP value="1"/>
+        <DamageTakenXP value="1"/>
+        <KillXP value="20"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="attack"/>
+        <AbilArray Link="move"/>
+        <AbilArray Link="PropagatorSplit"/>
+        <BehaviorArray Link="NHbrSpellArmorResist@SpellArmor"/>
+        <BehaviorArray Link="NHbrNetwork@PowerUser"/>
+        <BehaviorArray Link="PropagatorPeriodic"/>
+        <WeaponArray Link="PropagatorDummy"/>
+        <CardLayouts>
+            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="move,AcquireMove" Row="0" Column="4"/>
+            <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
+        </CardLayouts>
+        <SeparationRadius value="0.375"/>
+        <InnerRadius value="0.375"/>
+        <CargoSize value="2"/>
+        <ScoreMake value="100"/>
+        <ScoreKill value="100"/>
+        <ScoreResult value="BuildOrder"/>
+        <SubgroupPriority value="47"/>
+        <MinimapRadius value="0.375"/>
+        <EditorCategories value="ObjectFamily:NetworkHybrids"/>
+        <TacticalAI value="NHbrWarrior"/>
+        <LeaderAlias value="NHbrWarrior"/>
+        <HotkeyAlias value="NHbrWarrior"/>
+        <SelectAlias value="NHbrWarrior"/>
+        <SubgroupAlias value="NHbrWarrior"/>
+        <GlossaryCategory value="Unit/Category/NHbrUnits"/>
+        <GlossaryPriority value="11"/>
+        <GlossaryStrongArray value="Marauder"/>
+        <GlossaryStrongArray value="Zergling"/>
+        <GlossaryStrongArray value="Immortal"/>
+        <GlossaryWeakArray value="HellionTank"/>
+        <GlossaryWeakArray value="Roach"/>
+        <GlossaryWeakArray value="Colossus"/>
+        <HotkeyCategory value="Unit/Category/NHbrUnits"/>
+        <KillDisplay value="Always"/>
+        <RankDisplay value="Always"/>
+        <AIEvaluateAlias value="NHbrWarrior"/>
+        <Fidget>
+            <ChanceArray index="Anim" value="20"/>
+            <ChanceArray index="Idle" value="70"/>
+            <ChanceArray index="Turn" value="10"/>
+        </Fidget>
+        <TauntDuration index="Cheer" value="5"/>
+        <TauntDuration index="Dance" value="5"/>
+        <ReviveInfoBase>
+            <Charge Link="NHbrWarrior/Revive"/>
+            <Cooldown Link="NHbrWarrior/Revive"/>
+        </ReviveInfoBase>
+        <DataCollection value="NHbrWarrior"/>
+    </CUnit>
+    <CUnit id="PropagatorChrysalis">
+        <Race value="NHbr"/>
+        <FlagArray index="Turnable" value="0"/>
+        <FlagArray index="Unselectable" value="1"/>
+        <FlagArray index="Invulnerable" value="1"/>
+        <Collide index="Ground" value="1"/>
+        <Collide index="Locust" value="1"/>
+        <Collide index="Small" value="1"/>
+        <Attributes index="Biological" value="1"/>
+        <Sight value="3"/>
+        <Height value="0.5"/>
+        <BehaviorArray Link="PropagatorChrysalis"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:NetworkHybrids"/>
+    </CUnit>
+    <CUnit id="TerrazineVault">
+        <DeathRevealRadius value="3"/>
+        <Facing value="315"/>
+        <Race value="NHbr"/>
+        <Mob value="Multiplayer"/>
+        <FlagArray index="Turnable" value="0"/>
+        <FlagArray index="PreventDefeat" value="1"/>
+        <FlagArray index="PreventDestroy" value="1"/>
+        <FlagArray index="PenaltyRevealed" value="1"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <FlagArray index="TownAlert" value="1"/>
+        <FlagArray index="NoPortraitTalk" value="1"/>
+        <FlagArray index="ArmorDisabledWhileConstructing" value="1"/>
+        <FogVisibility value="Snapshot"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Collide index="Burrow" value="1"/>
+        <Collide index="Ground" value="1"/>
+        <Collide index="Structure" value="1"/>
+        <Collide index="RoachBurrow" value="1"/>
+        <Collide index="ForceField" value="1"/>
+        <Collide index="Locust" value="1"/>
+        <Collide index="Phased" value="1"/>
+        <Collide index="Small" value="1"/>
+        <Attributes index="Armored" value="1"/>
+        <Attributes index="Mechanical" value="1"/>
+        <Attributes index="Structure" value="1"/>
+        <LifeStart value="1650"/>
+        <LifeMax value="1650"/>
+        <LifeArmor value="1"/>
+        <LifeRegenRate value="0.711"/>
+        <LifeArmorName value="Unit/LifeArmorName/VoidArmor"/>
+        <EnergyStart value="250"/>
+        <EnergyMax value="500"/>
+        <ShieldsStart value="1400"/>
+        <ShieldsMax value="1400"/>
+        <ShieldArmor value="1"/>
+        <ShieldRegenRate value="0.711"/>
+        <ShieldArmorName value="Unit/ShieldArmorName/NHbrShields"/>
+        <ShieldArmorTip value="Unit/ShieldArmorTooltip/NHbrShields"/>
+        <StationaryTurningRate value="719.4726"/>
+        <TurningRate value="719.4726"/>
+        <Sight value="9"/>
+        <CostCategory value="Technology"/>
+        <CostResource index="Minerals" value="2500"/>
+        <CostResource index="Vespene" value="1800"/>
+        <AttackTargetPriority value="11"/>
+        <AbilArray Link="BuildInProgress"/>
+        <AbilArray Link="que5"/>
+        <AbilArray Link="SacrificePrecursor"/>
+        <AbilArray Link="ManifestPropagator"/>
+        <BehaviorArray Link="NHbrSpellArmorResist@SpellArmor"/>
+        <BehaviorArray Link="NHbrCommon@BuildersTracker"/>
+        <BehaviorArray Link="NHbrNetwork@PowerUser"/>
+        <BehaviorArray Link="NHbrNetworkNEW@NetworkController"/>
+        <BehaviorArray Link="DualSummon"/>
+        <BehaviorArray Link="TerrazineGenerate"/>
+        <CardLayouts>
+            <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="que5,CancelLast" Row="2" Column="4"/>
+            <LayoutButtons Face="CancelBuilding" Type="AbilCmd" AbilCmd="BuildInProgress,Cancel" Row="2" Column="4"/>
+            <LayoutButtons Face="TerrazineGeneration" Type="Passive" Requirements="NoMoreSacrifices" Row="2" Column="0"/>
+            <LayoutButtons Face="SacrificePrecursor" Type="AbilCmd" AbilCmd="SacrificePrecursor,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="ReaverCount" Type="Passive" Row="0" Column="0"/>
+            <LayoutButtons Face="DestroyerCount" Type="Passive" Row="0" Column="1"/>
+            <LayoutButtons Face="NemesisCount" Type="Passive" Row="0" Column="2"/>
+            <LayoutButtons Face="BehemothCount" Type="Passive" Row="1" Column="0"/>
+            <LayoutButtons Face="DominatorCount" Type="Passive" Row="1" Column="1"/>
+            <LayoutButtons Face="AdversaryCount" Type="Passive" Row="1" Column="2"/>
+            <LayoutButtons Face="PropagatorManifest" Type="Passive" Requirements="NoMoreSacrifices" Row="2" Column="1"/>
+        </CardLayouts>
+        <Radius value="1"/>
+        <SeparationRadius value="1"/>
+        <Footprint value="Footprint3x3ContourNoCreep"/>
+        <PlacementFootprint value="Footprint3x3NoCreep"/>
+        <ScoreResult value="BuildOrder"/>
+        <SubgroupPriority value="2"/>
+        <MinimapRadius value="1.75"/>
+        <EditorCategories value="ObjectType:Structure,ObjectFamily:NetworkHybrids"/>
+        <GlossaryPriority value="25"/>
+        <HotkeyCategory value="Unit/Category/NHbrUnits"/>
+        <AIEvaluateAlias value="NHbrProcessingCore"/>
+        <ReviveInfoBase>
+            <Charge Link="NHbrRevenantKeystone/Revive"/>
+            <Cooldown Link="NHbrRevenantKeystone/Revive"/>
+        </ReviveInfoBase>
+    </CUnit>
     <CUnit id="VoidCorpse">
         <Race value="Zerg"/>
         <FlagArray index="Unselectable" value="1"/>

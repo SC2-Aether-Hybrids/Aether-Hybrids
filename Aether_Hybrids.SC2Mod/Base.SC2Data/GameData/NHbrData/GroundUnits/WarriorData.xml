@@ -125,9 +125,7 @@
         <ImpactMap index="None" Model="NHbrWarriorWeapon@Impact" Scale="0.750000"/>
         <LaunchAttachQuery Methods="AMFilterWeaponRight"/>
     </CActorAction>
-    <CActorMissile id="NHbrWarriorWeapon@AttackMissile" parent="GenericAttackMissile" unitName="NHbrWarriorWeapon@Missile">
-        <On Terms="ActorCreation; ValidateUnit AdeptGlaivesUpgraded" Send="ModelSwap Adept_Missile_Upgrade"/>
-    </CActorMissile>
+    <CActorMissile id="NHbrWarriorWeapon@AttackMissile" parent="GenericAttackMissile" unitName="NHbrWarriorWeapon@Missile"/>
     <CActorUnit id="NHbrWarrior" parent="GenericUnitStandard" unitName="NHbrWarrior">
         <Aliases value="_UnitSmall"/>
         <Aliases value="_ShieldBlack"/>
@@ -207,11 +205,11 @@
         <Image value="Assets\Textures\protossblankportrait_static.dds"/>
     </CModel>
     <CModel id="NHbrWarriorWeapon@Impact" parent="MissileFX">
-        <Model value="Assets\Effects\Protoss\DragoonMissileImpact\DragoonMissileImpact.m3"/>
+        <Model value="Assets\Effects\Terran\EMP_ShadowScrambler_Shockwave_Impact\EMP_ShadowScrambler_Shockwave_Impact.m3"/>
         <EditorCategories value="Race:NHbr"/>
     </CModel>
     <CModel id="NHbrWarriorWeapon@Missile" parent="MissileFX">
-        <Model value="Assets\Effects\Protoss\DragoonEX2_Missile\DragoonEX2_Missile.m3"/>
+        <Model value="Assets\Models\NighSphere.m3"/>
         <EditorCategories value="Race:NHbr"/>
     </CModel>
     <CWeaponLegacy id="NHbrWarriorWeapon">
@@ -365,6 +363,8 @@
         <CardLayouts index="0">
             <LayoutButtons Face="NHbrPhantomWarriorDarkBrigade" Type="Passive" Row="2" Column="0"/>
             <LayoutButtons Face="BounceAttack" Type="Passive" Row="2" Column="1"/>
+            <LayoutButtons Face="PhantomBrigade" Type="Passive" Requirements="UsePhantomBrigade" Row="1" Column="0"/>
+            <LayoutButtons Face="SovereignAuthority" Type="Passive" Requirements="UseSovereignAuthority" Row="1" Column="1"/>
         </CardLayouts>
         <SeparationRadius value="0.375"/>
         <InnerRadius value="0.375"/>

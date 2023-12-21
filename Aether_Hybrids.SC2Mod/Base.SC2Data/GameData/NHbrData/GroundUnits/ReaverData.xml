@@ -581,6 +581,7 @@
     <CSound id="NHbrReaver@Ready" parent="Archon_Ready">
         <EditorCategories value="Race:NHbr"/>
         <Volume value="-2.000000,-2.000000"/>
+        <AssetArray index="0" removed="1"/>
     </CSound>
     <CSound id="NHbrReaver@What" parent="Archon_What">
         <EditorCategories value="Race:NHbr"/>

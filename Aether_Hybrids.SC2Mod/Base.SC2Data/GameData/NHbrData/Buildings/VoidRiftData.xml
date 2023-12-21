@@ -76,8 +76,6 @@
         <InfoArray index="Train1" Time="41" Effect="NHbrVoidRiftTrain@Set">
             <Button DefaultButtonFace="NHbrVoidRiftTrain@WarpInChimera"/>
             <Unit value="NHbrChimera"/>
-            <Unit value="NHbrWarrior"/>
-            <Unit value="NHbrWarrior"/>
         </InfoArray>
         <InfoArray index="Train2" Time="23.8" Effect="NHbrVoidRiftTrain@Set">
             <Button DefaultButtonFace="NHbrVoidRiftTrain@WarpInWarrior"/>

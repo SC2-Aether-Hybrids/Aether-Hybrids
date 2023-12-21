@@ -16,6 +16,12 @@
         <OperandArray value="LTETechTreeCheatCountUpgradeNHbrEngineResearch@ProtectionArmor2QueuedOrBetter0"/>
         <OperandArray value="CountUpgradeNHbrEngineResearch@ProtectionArmorCompleteOnly3758457479"/>
     </CRequirementAnd>
+    <CRequirementAnd id="AndCountUnitNHbrProcessingCoreCompleteOnly2003211978CountUnitNHbrCrystallicShrineCompleteOnly3588192422NotGTECountUnitTerrazineVaultQueuedOrBetter5833868012">
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <OperandArray value="CountUnitNHbrProcessingCoreCompleteOnly2003211978"/>
+        <OperandArray value="CountUnitNHbrCrystallicShrineCompleteOnly3588192422"/>
+        <OperandArray value="NotGTECountUnitTerrazineVaultQueuedOrBetter5833868012"/>
+    </CRequirementAnd>
     <CRequirementAnd id="AndEq1228785331CountUnitNHbrWorldshipQueuedOrBetter0">
         <OperandArray value="Eq1228785331CountUnitNHbrWorldshipQueuedOrBetter0"/>
     </CRequirementAnd>
@@ -88,18 +94,25 @@
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="NHbrCommon@RequiresProcessingCore" State="CompleteOnly"/>
     </CRequirementCountBehavior>
+    <CRequirementCountBehavior id="CountBehaviorNumberofSacrificesCompleteOnlyAtUnit">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <Count Link="NumberofSacrifices" State="CompleteOnlyAtUnit"/>
+    </CRequirementCountBehavior>
     <CRequirementCountUnit id="CountUnitAlias_NHbrIonicCrystalCompleteOnly557504770">
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="Alias_NHbrIonicCrystal" State="CompleteOnly"/>
     </CRequirementCountUnit>
     <CRequirementCountUnit id="CountUnitNHbrCrystallicShrineCompleteOnly">
         <Flags index="TechTreeCheat" value="0"/>
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <Count Link="NHbrCrystallicShrine" State="CompleteOnly"/>
+    </CRequirementCountUnit>
+    <CRequirementCountUnit id="CountUnitNHbrCrystallicShrineCompleteOnly3588192422">
+        <Flags index="TechTreeCheat" value="0"/>
         <Count Link="NHbrCrystallicShrine" State="CompleteOnly"/>
     </CRequirementCountUnit>
     <CRequirementCountUnit id="CountUnitNHbrDominatorAdvancedQueuedOrBetter">
         <Flags index="TechTreeCheat" value="0"/>
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <Count Link="NHbrDominatorAdvanced" State="QueuedOrBetter"/>
     </CRequirementCountUnit>
     <CRequirementCountUnit id="CountUnitNHbrInterceptorEdgeQueuedOrBetterAtUnit">
@@ -108,12 +121,14 @@
     </CRequirementCountUnit>
     <CRequirementCountUnit id="CountUnitNHbrNemesisAdvancedQueuedOrBetter">
         <Flags index="TechTreeCheat" value="0"/>
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <Count Link="NHbrNemesisAdvanced" State="QueuedOrBetter"/>
+    </CRequirementCountUnit>
+    <CRequirementCountUnit id="CountUnitNHbrProcessingCoreCompleteOnly2003211978">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="NHbrProcessingCore" State="CompleteOnly"/>
     </CRequirementCountUnit>
     <CRequirementCountUnit id="CountUnitNHbrReaverAdvancedInProgressOrBetter">
         <Flags index="TechTreeCheat" value="0"/>
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <Count Link="NHbrReaverAdvanced" State="InProgressOrBetter"/>
     </CRequirementCountUnit>
     <CRequirementCountUnit id="CountUnitNHbrVoidRiftQueuedOrBetter3275562120">
@@ -123,6 +138,10 @@
     <CRequirementCountUnit id="CountUnitNHbrWorldshipQueuedOrBetter">
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="NHbrWorldship" State="QueuedOrBetter"/>
+    </CRequirementCountUnit>
+    <CRequirementCountUnit id="CountUnitTerrazineVaultQueuedOrBetter583386801">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="TerrazineVault" State="QueuedOrBetter"/>
     </CRequirementCountUnit>
     <CRequirementCountUpgrade id="CountUpgradeAutocraticSupremacyCompleteOnly9608209">
         <Flags index="TechTreeCheat" value="0"/>
@@ -144,6 +163,12 @@
     <CRequirementCountUpgrade id="CountUpgradeEmpoweredRiftsQueuedOrBetter">
         <Count Link="EmpoweredRifts" State="QueuedOrBetter"/>
     </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeHystericalTerrorCompleteOnly">
+        <Count Link="HystericalTerror" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeHystericalTerrorQueuedOrBetter">
+        <Count Link="HystericalTerror" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeNHbrEngineResearch@ProtectionArmor2CompleteOnly">
         <Count Link="NHbrEngineResearch@ProtectionArmor2" State="CompleteOnly"/>
     </CRequirementCountUpgrade>
@@ -161,11 +186,23 @@
     <CRequirementCountUpgrade id="CountUpgradeNHbrHybridTempleofOriginBuildEdgedummyupgradeQueuedOrBetterTechTreeCheat">
         <Count Link="NHbrHybridTempleofOriginBuildEdgedummyupgrade" State="QueuedOrBetter"/>
     </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradePhantomBrigadeCompleteOnly">
+        <Count Link="PhantomBrigade" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradePhantomBrigadeQueuedOrBetter">
+        <Count Link="PhantomBrigade" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeRicochetingGlaivesCompleteOnly">
         <Count Link="RicochetingGlaives" State="CompleteOnly"/>
     </CRequirementCountUpgrade>
     <CRequirementCountUpgrade id="CountUpgradeRicochetingGlaivesQueuedOrBetter">
         <Count Link="RicochetingGlaives" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeSovereignAuthorityCompleteOnly">
+        <Count Link="SovereignAuthority" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeSovereignAuthorityQueuedOrBetter">
+        <Count Link="SovereignAuthority" State="QueuedOrBetter"/>
     </CRequirementCountUpgrade>
     <CRequirementEq id="Eq1228785331CountUnitNHbrWorldshipQueuedOrBetter0">
         <OperandArray index="0" value="CountUnitNHbrWorldshipQueuedOrBetter"/>
@@ -183,6 +220,16 @@
         <OperandArray index="0" value="CountUpgradeNHbrHybridTempleofOriginBuildEdgedummyupgradeCompleteOnlyTechTreeCheat"/>
         <OperandArray index="1" value="0"/>
     </CRequirementGT>
+    <CRequirementGTE id="GTECountBehaviorNumberofSacrificesCompleteOnlyAtUnit10">
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <OperandArray index="0" value="CountBehaviorNumberofSacrificesCompleteOnlyAtUnit"/>
+        <OperandArray index="1" value="10"/>
+    </CRequirementGTE>
+    <CRequirementGTE id="GTECountUnitTerrazineVaultQueuedOrBetter5833868012">
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <OperandArray index="0" value="CountUnitTerrazineVaultQueuedOrBetter583386801"/>
+        <OperandArray index="1" value="2"/>
+    </CRequirementGTE>
     <CRequirementLT id="LT993843883CountUnitNHbrInterceptorEdgeQueuedOrBetterAtUnit6">
         <OperandArray index="0" value="CountUnitNHbrInterceptorEdgeQueuedOrBetterAtUnit"/>
         <OperandArray index="1" value="6"/>
@@ -195,8 +242,20 @@
         <OperandArray index="0" value="CountUpgradeEmpoweredRiftsQueuedOrBetter"/>
         <OperandArray index="1" value="0"/>
     </CRequirementLTE>
+    <CRequirementLTE id="LTCountUpgradeHystericalTerrorQueuedOrBetter0">
+        <OperandArray index="0" value="CountUpgradeHystericalTerrorQueuedOrBetter"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementLTE>
+    <CRequirementLTE id="LTCountUpgradePhantomBrigadeQueuedOrBetter0">
+        <OperandArray index="0" value="CountUpgradePhantomBrigadeQueuedOrBetter"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementLTE>
     <CRequirementLTE id="LTCountUpgradeRicochetingGlaivesQueuedOrBetter0">
         <OperandArray index="0" value="CountUpgradeRicochetingGlaivesQueuedOrBetter"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementLTE>
+    <CRequirementLTE id="LTCountUpgradeSovereignAuthorityQueuedOrBetter0">
+        <OperandArray index="0" value="CountUpgradeSovereignAuthorityQueuedOrBetter"/>
         <OperandArray index="1" value="0"/>
     </CRequirementLTE>
     <CRequirementLTE id="LTECountUpgradeNHbrHybridTempleofOriginBuildEdgedummyupgradeQueuedOrBetterTechTreeCheat0">
@@ -209,18 +268,19 @@
         <OperandArray index="1" value="0"/>
     </CRequirementLTE>
     <CRequirementNot id="NotCountUnitNHbrDominatorAdvancedQueuedOrBetter">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray index="0" value="CountUnitNHbrDominatorAdvancedQueuedOrBetter"/>
     </CRequirementNot>
     <CRequirementNot id="NotCountUnitNHbrNemesisAdvancedQueuedOrBetter">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray index="0" value="CountUnitNHbrNemesisAdvancedQueuedOrBetter"/>
     </CRequirementNot>
     <CRequirementNot id="NotCountUnitNHbrReaverAdvancedInProgressOrBetter">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray index="0" value="CountUnitNHbrReaverAdvancedInProgressOrBetter"/>
     </CRequirementNot>
     <CRequirementNot id="NotCountUpgradeAutocraticSupremacyQueuedOrBetter">
         <OperandArray index="0" value="CountUpgradeAutocraticSupremacyQueuedOrBetter"/>
+    </CRequirementNot>
+    <CRequirementNot id="NotGTECountUnitTerrazineVaultQueuedOrBetter5833868012">
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <OperandArray index="0" value="GTECountUnitTerrazineVaultQueuedOrBetter5833868012"/>
     </CRequirementNot>
 </Catalog>

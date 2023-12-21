@@ -10,6 +10,11 @@
         <CombineArray value="CasterNotDead"/>
         <CombineArray value="LifeNotFull"/>
     </CValidatorCombine>
+    <CValidatorUnitCompareDamageTakenTime id="PropagatorInCombat">
+        <WhichUnit Value="Caster"/>
+        <Compare value="LT"/>
+        <Value value="0.09"/>
+    </CValidatorUnitCompareDamageTakenTime>
     <CValidatorUnitCompareDamageTakenTime id="CasterNotInCombatScreamer">
         <WhichUnit Value="Caster"/>
         <Compare value="GE"/>
@@ -37,10 +42,30 @@
         <Find value="1"/>
         <Value value="HaveAutocraticSupremacy"/>
     </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="HaveHystericalFear">
+        <Find value="1"/>
+        <Value value="UseHystericalTerror"/>
+    </CValidatorPlayerRequirement>
     <CValidatorPlayerRequirement id="HaveRicohcetingGlaives">
         <Find value="1"/>
         <Value value="UseRicochetingGlaives"/>
     </CValidatorPlayerRequirement>
+    <CValidatorLocationEnumArea id="NearbyPrecursor">
+        <ResultFailed value="Error,NoPrecursorNearby"/>
+        <WhichLocation Value="CasterPoint"/>
+        <AreaArray>
+            <Compare value="GE"/>
+            <Count value="1"/>
+            <Radius value="7"/>
+            <Validator value="NHbrCommon@IsMinion"/>
+        </AreaArray>
+        <SearchFilters value="-;Ally,Neutral,Enemy,Stasis,Dead"/>
+    </CValidatorLocationEnumArea>
+    <CValidatorUnitCompareBehaviorCount id="NoMoreSacrifices">
+        <WhichUnit Value="Caster"/>
+        <Value value="10"/>
+        <Behavior value="NumberofSacrifices"/>
+    </CValidatorUnitCompareBehaviorCount>
     <CValidatorUnitCompareVital id="TargetHasLessThanMaxLife">
         <Compare value="LT"/>
         <Type value="Fraction"/>

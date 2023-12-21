@@ -445,7 +445,6 @@
     </CSound>
     <CSound id="NHbrDominator@Ready" parent="Ready">
         <EditorCategories value="Race:NHbr"/>
-        <AssetArray File="assets\Sounds\VO\Hybrid\Hybrid_Ready00.ogg" FacialGroup=""/>
         <Volume value="-2.000000,-2.000000"/>
     </CSound>
     <CSound id="NHbrDominator@What" parent="ProtossAck">

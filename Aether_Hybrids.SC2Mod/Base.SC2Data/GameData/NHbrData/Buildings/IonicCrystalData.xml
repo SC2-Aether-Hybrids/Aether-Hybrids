@@ -140,6 +140,9 @@
             <ValidatorArray value="NHbrNetwork@PowerSourceNearby"/>
             <ValidatorArray value="HasVisionOfTarget"/>
         </InfoArray>
+        <InfoArray index="Build14" Unit="TerrazineVault" Time="5">
+            <Button DefaultButtonFace="TerrazineVault" Requirements="RequiresRevenantKeystoneandAncientShrine"/>
+        </InfoArray>
         <Range value="500"/>
         <Alert value=""/>
         <EffectArray index="Start" value="NHbrIonicCrystalTeleport@BuildStart"/>
@@ -563,6 +566,9 @@
         <On Terms="UnitBirth" Send="AttachModel {} NHbrIonicCrystal@HitTestSphere {Origin 0} SOpMoveUpByDot25"/>
         <On Terms="AbilMorph.*.Finish; MorphTo RipFieldGenerator" Send="Destroy"/>
         <On Terms="Behavior.MorphingtoRIpField.On" Send="AnimSetTimeScale Stand 0.001000"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo NHbrIonicCrystal; MorphFrom RipFieldGenerator" Send="Create"/>
+        <On Terms="AbilMorph.*.Finish; MorphFrom NHbrIonicCrystal; MorphTo RipFieldGenerator" Send="Destroy"/>
+        <On Terms="AbilMorph.*.Cancel; MorphFrom NHbrIonicCrystal; MorphTo RipFieldGenerator" Send="Destroy"/>
         <HostSiteOps Ops="SOpMoveUpByDot5 SOpMoveUpByDot25"/>
         <Model value="NHbrIonicCrystal@Model"/>
         <AnimBlendTime value="0.750000"/>
@@ -872,12 +878,12 @@
         <Response value="AcquireNoFlee"/>
         <Attributes index="Armored" value="1"/>
         <Attributes index="Mechanical" value="1"/>
-        <LifeStart value="250"/>
-        <LifeMax value="250"/>
+        <LifeStart value="275"/>
+        <LifeMax value="275"/>
         <EnergyStart value="50"/>
         <EnergyMax value="100"/>
-        <ShieldsStart value="175"/>
-        <ShieldsMax value="175"/>
+        <ShieldsStart value="225"/>
+        <ShieldsMax value="225"/>
         <StationaryTurningRate value="719.4726"/>
         <TurningRate value="719.4726"/>
         <Food value="8"/>
@@ -888,11 +894,13 @@
         <AbilArray Link="NHbrIonicCrystalTeleport@Build"/>
         <AbilArray Link="IonicCrystalTargetApplyBehaviors"/>
         <AbilArray Link="RipFieldGeneratorMorph"/>
+        <AbilArray Link="NHbrIonicCrystalMorphToRipFieldGenerator"/>
         <TurretArray value="PylonRingRotate"/>
         <EffectArray index="Birth" value="NHbrNetworkNEW@PowerSourceCreatedDummySet"/>
         <EffectArray index="Death" value="NHbrNetworkNEW@PowerSourceDestroyedDummySet"/>
         <CardLayouts index="0">
             <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="NHbrIonicCrystalTeleport@Build,Halt" Row="2" Column="4"/>
+            <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="NHbrIonicCrystalMorphToRipFieldGenerator,Cancel" Row="2" Column="4"/>
             <LayoutButtons Face="NHbrNetwork@SourceNetworkCharged" Type="Passive" Requirements="NHbrNetwork@NetworkChargedShow" Row="2" Column="0"/>
             <LayoutButtons>
                 <Face value="NHbrNetwork@SourceNetworkCharging"/>
@@ -913,7 +921,7 @@
             <LayoutButtons Face="NHbrIonicCrystalTeleport" Type="AbilCmd" AbilCmd="NHbrIonicCrystalTeleport,Execute" Row="2" Column="3"/>
             <LayoutButtons Face="NHbrIonicCrystalMorph@TransformToMoveableIonicCrystal" Type="AbilCmd" AbilCmd="NHbrIonicCrystalMorph@TransfromToMoveableIonicCrystal,Execute" Row="2" Column="2"/>
             <LayoutButtons Face="NHbrNetworkFastCharging@FastCharging" Type="Passive" Requirements="NHbrNetworkFastCharging@Completed" Row="1" Column="0"/>
-            <LayoutButtons Face="UpgradetoRipFieldGenerator" Type="AbilCmd" AbilCmd="RipFieldGeneratorMorph,Execute" Row="1" Column="1"/>
+            <LayoutButtons Face="UpgradetoRipFieldGenerator" Type="AbilCmd" AbilCmd="NHbrIonicCrystalMorphToRipFieldGenerator,Execute" Row="1" Column="1"/>
         </CardLayouts>
         <CardLayouts CardId="0002">
             <LayoutButtons Face="NHbrIonicCrystalTeleport@Temple" Type="AbilCmd" AbilCmd="NHbrIonicCrystalTeleport@Build,Build1" Row="0" Column="0"/>

@@ -7,6 +7,9 @@
     <CUpgrade id="EmpoweredRifts">
         <Icon value="Assets\Textures\btn-ability-protoss-amoncloud.dds"/>
     </CUpgrade>
+    <CUpgrade id="HystericalTerror">
+        <AffectedUnitArray value="NHbrHorror"/>
+    </CUpgrade>
     <CUpgrade id="NHbrHybridTempleofOriginBuildEdgedummyupgrade">
         <ScoreAmount value="100"/>
         <UnitAllowed value="NHbrInterceptorEdge"/>
@@ -17,5 +20,13 @@
         <BonusTimePerLevel value="27"/>
         <EffectArray Operation="Set" Reference="Abil,NHbrTempleHangar,InfoArray[Ammo1].CountStart" Value="6"/>
     </CUpgrade>
+    <CUpgrade id="PhantomBrigade">
+        <EffectArray Operation="Set" Reference="Abil,NHbrVoidRiftTrain,InfoArray[Train2].Time" Value="0.100000"/>
+        <AffectedUnitArray value="NHbrWarrior"/>
+    </CUpgrade>
     <CUpgrade id="RicochetingGlaives"/>
+    <CUpgrade id="SovereignAuthority">
+        <EffectArray Reference="Effect,PhantomWarriorInitialUserDataStart,Amount" Value="2"/>
+        <AffectedUnitArray value="NHbrWarrior"/>
+    </CUpgrade>
 </Catalog>
